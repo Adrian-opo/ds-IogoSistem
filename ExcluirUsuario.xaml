@@ -1,0 +1,62 @@
+﻿<Window x:Class="IogoSistem_vs1.Excluir_Usuario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IogoSistem_vs1"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Excluir Usuário" Height="300" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
+    <Grid Background="#d3ecff">
+        <StackPanel >
+            <TextBlock Text="Selecione um usuário e confirme a senha antes de excluir" 
+                       FontSize="16.6" Margin="30 30 30 3" />
+
+            <ComboBox x:Name="Cmbusers"
+                      Margin="30 0" Padding="5" FontSize="17"
+                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                      ItemsSource="{Binding ShortStringList}" />
+
+            <TextBlock Text="Senha:" FontSize="17" Margin="30 25 15 0" />
+
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left">
+                <TextBox x:Name="revelarexcluir" Width="300" Padding="5" FontSize="17" Margin="30 0 15 0" Style="{StaticResource MaterialDesignOutlinedTextBox}" Visibility="Collapsed"/>
+                <PasswordBox  x:Name="senhauser" Width="300" Padding="5" Margin="30 0 15 0" Style="{StaticResource MaterialDesignOutlinedPasswordBox}" FontSize="17" />
+
+                <CheckBox   x:Name="verexcluir" Width="110" Padding="5"  Content="Visualizar"  Margin="15 0"  Style="{StaticResource MaterialDesignCheckBox}" Checked="verexcluir_Checked" Unchecked="verexcluir_Checked"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0 15" HorizontalAlignment="Center">
+
+                <Button x:Name="BtnExcluir" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                Height="50" Margin="20 10 30 20" Width="150" FontSize="20"
+                    materialDesign:ButtonAssist.CornerRadius="25"
+               ToolTip="MaterialDesignRaisedLightButton with Round Corners" Click="Btn_excluir" Background="#FFFF4C4C" BorderBrush="#FFFF4C4C">
+                    <TextBlock Text="Excluir" />
+                </Button>
+
+                <Button x:Name="BtnCancelar" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="25 10 20 20" Width="150" FontSize="20"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" BorderBrush="#FFAAAAAA" Click="Btn_cancelar" >
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFAAAAAA" Offset="1"/>
+                            <GradientStop Color="White" Offset="0.225"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <TextBlock Text="Cancelar" />
+                </Button>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>
