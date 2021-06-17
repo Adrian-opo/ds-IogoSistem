@@ -41,7 +41,7 @@
                 <TextBox x:Name="revelar" Width="250" Padding="5" FontSize="17" Margin="45 0 20 0" Style="{StaticResource MaterialDesignOutlinedTextBox}" Visibility="Collapsed"/>
                 <PasswordBox  x:Name="senhauser" Width="250" Padding="5" Margin="45 0 20 0" Style="{StaticResource MaterialDesignOutlinedPasswordBox}" FontSize="17" />
 
-                <CheckBox   x:Name="ver" Width="250" Padding="5"  Content="Visualizar"  Style="{StaticResource MaterialDesignCheckBox}" Checked="Visualizar" Unchecked="Visualizar" />
+                <CheckBox   x:Name="ver" Width="250" Padding="100"  Content="Visualizar"  Style="{StaticResource MaterialDesignCheckBox}" Checked="Visualizar" Unchecked="Visualizar" />
             </StackPanel>
             
 
