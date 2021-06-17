@@ -8,9 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 
 namespace IogoSistem.Properties
 {
+=======
+namespace IogoSistem_vs1.Properties
+{
+
+
+>>>>>>> main
     /// <summary>
     ///   Uma classe de recurso fortemente tipados, para pesquisar cadeias de caracteres localizadas etc.
     /// </summary>
@@ -43,7 +50,11 @@ namespace IogoSistem.Properties
             {
                 if ((resourceMan == null))
                 {
+<<<<<<< HEAD
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("IogoSistem.Properties.Resources", typeof(Resources).Assembly);
+=======
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("IogoSistem_vs1.Properties.Resources", typeof(Resources).Assembly);
+>>>>>>> main
                     resourceMan = temp;
                 }
                 return resourceMan;
