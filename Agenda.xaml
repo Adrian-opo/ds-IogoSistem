@@ -14,46 +14,80 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="Agenda" Height="450" Width="800" WindowStartupLocation="CenterOwner" WindowState="Maximized" ResizeMode="NoResize">
+        Title="Agenda" Height="852" Width="1598" WindowStartupLocation="CenterOwner" WindowState="Maximized" ResizeMode="NoResize">
 
-    <DockPanel>
+    <DockPanel Background="#d3ecff">
 
-        <StackPanel DockPanel.Dock="Left" Width="235">
-            <Calendar  Language="pt-BR" BorderBrush="Black"
-                       Width="235" Height="316"/>
-        </StackPanel>
+        <StackPanel DockPanel.Dock="Left" Width="300" >
+            <Calendar  Language="pt-BR"  
+                       Width="237" Height="87" Margin="10 40 10 80" />
 
-        <StackPanel DockPanel.Dock="Top">
-            <TextBlock FontSize="50">Topo</TextBlock>
+            <Calendar materialDesign:CalendarAssist.IsHeaderVisible="False"  Margin="0 0 0 95" HorizontalAlignment="Center" Language="pt-BR"/>
 
-        </StackPanel>
-
-        <Grid>
-            <TextBlock FontSize="50">ccc</TextBlock>
-
-        </Grid>
-    </DockPanel>
-    <!-- <WrapPanel></WrapPanel>
-        
-
-        <Button x:Name="BtnExcluir" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                Height="50" Margin="127,45,168,326" Width="150" BorderBrush="#FFFF4C4C"
-                   materialDesign:ButtonAssist.CornerRadius="25"
-                    
-               ToolTip="MaterialDesignRaisedLightButton with Round Corners"  Background="#FFFF4C4C" Grid.Column="1">
-            <TextBlock Text="Excluir" />
-        </Button>
-        <Button x:Name="Btnadicionarevento" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                Height="50" Margin="277,45,18,326" Width="150" BorderBrush="Lime"
+            <Button x:Name="BtnExcluir" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                Height="80"  Width="230" BorderBrush="#FFFF4C4C"
+                   materialDesign:ButtonAssist.CornerRadius="30"
+               ToolTip="MaterialDesignRaisedLightButton with Round Corners"  Background="#FFFF4C4C" Grid.Column="1" Margin="0 0 0 70" >
+                <TextBlock Text="Excluir" />
+            </Button>
+            <Button x:Name="Btnadicionarevento" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                Height="80"  Width="230"  BorderBrush="Lime"
                    materialDesign:ButtonAssist.CornerRadius="25"     
                ToolTip="MaterialDesignRaisedLightButton with Round Corners"  Background="Lime" Grid.Column="1">
-            <TextBlock Text="Excluir" />
-        </Button>
+                <TextBlock Text="Adicionar Evento"  />
+            </Button>
+        </StackPanel>
 
-        <DataGrid Margin="350,122,10,10" Name="dataGridAgenda" IsReadOnly="True" Grid.ColumnSpan="2"/>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Center">
 
-    </>-->
-        
-        
-        
+            <Button x:Name="Btn_semana" Content="Semana" Margin="0 40 270 0" Width="200" Background="White" Height="80" FontSize="30" Click="Btn_Semana"  BorderThickness="3"/>
+            <Button x:Name="Btn_mes" Content="Mês" Margin="40 40 0 0" Width="200" Height="80" FontSize="30" Click="Btn_Mes" BorderThickness="3"/>
+
+
+        </StackPanel>
+
+        <Grid Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="727*"/>
+                <ColumnDefinition Width="525*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="650"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="1" Text="Compromissos" FontSize="30" Margin="25 30 0 15" Grid.ColumnSpan="2"/>
+
+
+
+            <DataGrid Grid.Row="2" ColumnWidth="*"  Margin="25 0 25 10" x:Name="dataGridAgenda"  IsReadOnly="True" AutoGenerateColumns="False" AlternatingRowBackground="#FF03A9F4" AlternationCount="2" Grid.ColumnSpan="2">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Horas" Binding="{Binding Horas}"  />
+                    <DataGridTextColumn Header="Domingo" Binding="{Binding Domingo}" />
+                    <DataGridTextColumn Header="Segunda" Binding="{Binding Segunda}" />
+                    <DataGridTextColumn Header="Terça" Binding="{Binding Terca}" />
+                    <DataGridTextColumn Header="Quarta" Binding="{Binding Quarta}" />
+                    <DataGridTextColumn Header="Quinta" Binding="{Binding Quinta}"/>
+                    <DataGridTextColumn Header="Sexta" Binding="{Binding Sexta}" />
+                    <DataGridTextColumn Header="Sabado" Binding="{Binding Sabado}" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <DataGrid Grid.Row="2" ColumnWidth="*"  Margin="25 0 25 10" x:Name="dataGridAgenda1" Visibility="Collapsed" IsReadOnly="True" AutoGenerateColumns="False" AlternatingRowBackground="#FF03A9F4" AlternationCount="2" Grid.ColumnSpan="2">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Semana 1"  Binding="{Binding Semana1}"/>
+                    <DataGridTextColumn Header="Semana 2" Binding="{Binding Semana2}"/>
+                    <DataGridTextColumn Header="Semana 3" Binding="{Binding Semana3}"/>
+                    <DataGridTextColumn Header="Semana 4" Binding="{Binding Semana4}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+
+    </DockPanel>
+
 </Window>
+
+

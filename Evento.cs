@@ -18,6 +18,12 @@ namespace IogoSistem_vs1
         public string Sexta { get; set; }
         public string Sabado { get; set; }
 
-        
+
+
+        public string Semana1 { get; set; }
+        public string Semana2 { get; set; }
+        public string Semana3 { get; set; }
+        public string Semana4 { get; set; } 
+       
     }
 }
