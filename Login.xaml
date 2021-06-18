@@ -1,0 +1,34 @@
+﻿<Window x:Class="IogoSistem_vs1.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IogoSistem_vs1"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Login" Height="450" Width="371">
+    <Grid Margin="28,0,-468,-31" Height="419" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="842"  >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="194*"/>
+            <RowDefinition Height="225*"/>
+        </Grid.RowDefinitions>
+
+        <Image 
+        Source="C:\Users\adria\Downloads\logo.png" Margin="10,-112,539,111" Grid.RowSpan="2"/>
+        <materialDesign:PackIcon Kind="Account" Margin="-6,12,0,0" Height="62" Width="56" Grid.Row="1" />
+        <TextBox  x:Name="usuario" materialDesign:HintAssist.Hint="Usuario"  Margin="72,24,582,161"  Padding="5" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Grid.Row="1" />
+
+        <materialDesign:PackIcon Kind="Lock" RenderTransformOrigin="4.798,12.832" Margin="-6,90,0,0" Width="56" Height="52" Grid.Row="1" />
+        <PasswordBox  x:Name="senhauser"  materialDesign:HintAssist.Hint="Senha" Padding="5" Margin="72,98,582,89" Style="{StaticResource MaterialDesignOutlinedPasswordBox}" FontSize="17" RenderTransformOrigin="1.56,0.383" Grid.Row="1" />
+
+
+        <TextBox x:Name="revelar" Width="250" Padding="5" FontSize="17" Margin="308,0,284,0" Style="{StaticResource MaterialDesignOutlinedTextBox}" Visibility="Collapsed" Grid.RowSpan="2"/>
+    </Grid>
+</Window>
