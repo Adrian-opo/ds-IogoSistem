@@ -94,7 +94,7 @@ namespace IogoSistem_vs1
             string email = txtemail.Text.Trim();
 
 
-            if (!Util.IsEmail(email))
+            if (!Util.IsEmail(email) )
             {
                 e.Handled = true;
                 tbemail_error.Visibility = Visibility.Visible;
