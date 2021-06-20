@@ -23,5 +23,53 @@ namespace IogoSistem_vs1
         {
             InitializeComponent();
         }
+        private void Visualizar(object sender, RoutedEventArgs e)
+        {
+
+            String revelasenha = senhauser.Password;
+            String voltar = revelar.Text;
+           
+            if (ver.IsChecked == true)
+            {
+                senhauser.Visibility = Visibility.Collapsed;
+                revelar.Visibility = Visibility.Visible;
+
+                revelar.Text = revelasenha;
+            }
+            if (ver.IsChecked == false)
+            {
+                senhauser.Visibility = Visibility.Visible;
+                revelar.Visibility = Visibility.Collapsed;
+
+                senhauser.Password = voltar;
+            }
+
+
+        }
+      
+
+
+      
+
+        private void Btn_Salvar(object sender, RoutedEventArgs e)
+        {
+            string senha = senhauser.Password;
+
+
+            if (senha == "1234")
+            {
+               
+                Menu menu = new Menu();
+                this.Close();
+                menu.ShowDialog();
+               
+
+            }
+        }
     }
+
+
+
+
 }
+
