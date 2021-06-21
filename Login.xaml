@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="Login" Height="474" Width="371 " WindowStartupLocation="CenterScreen">
-    <Grid Margin="10,0,-489,-31" Height="419" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="842"  >
+    <Grid Margin="10,0,0,-31" Height="419" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="842"  >
         <Grid.RowDefinitions>
             <RowDefinition Height="194*"/>
             <RowDefinition Height="183*"/>
@@ -22,15 +22,15 @@
         </Grid.RowDefinitions>
 
         <Image 
-        Source="C:\Users\adria\OneDrive\Área de Trabalho\DS\ds-IogoSistem\Imagens\logo.png" Margin="10,-133,539,90" Grid.RowSpan="2"/>
+        Source="Imagens\logo.png" Margin="10,-133,539,90" Grid.RowSpan="2"/>
         <materialDesign:PackIcon Kind="Account" Margin="-6,185,0,0" Height="62" Width="56" Grid.RowSpan="2" />
         <TextBox  x:Name="usuario" materialDesign:HintAssist.Hint="Usuario"  Margin="72,3,571,140"  Padding="5" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Grid.Row="1" />
 
         <materialDesign:PackIcon Kind="Lock" RenderTransformOrigin="4.798,12.832" Margin="-6,69,0,0" Width="56" Height="52" Grid.Row="1" />
 
-        <CheckBox   x:Name="ver" Width="250" Padding="5"  Content=""  Style="{StaticResource MaterialDesignCheckBox}" Checked="Visualizar" Unchecked="Visualizar" Margin="276,0,316,31" Grid.Row="1" Grid.RowSpan="2" />
+        <CheckBox   x:Name="ver" Padding="5"  Content=""  Style="{StaticResource MaterialDesignCheckBox}" Checked="Visualizar" Unchecked="Visualizar" Margin="276,0,512,31" Grid.Row="1" Grid.RowSpan="2" />
 
-        <StackPanel Orientation="Horizontal" Margin="0,-21,0,21">
+        <StackPanel Orientation="Horizontal" Margin="0,-21,512,21">
 
         </StackPanel>
         <TextBox x:Name="revelar"  materialDesign:HintAssist.Hint="Senha" Padding="5" FontSize="17" Margin="72,77,571,67" Style="{StaticResource MaterialDesignOutlinedTextBox}" Visibility="Collapsed"  RenderTransformOrigin="1.56,0.383" Grid.Row="1"/>

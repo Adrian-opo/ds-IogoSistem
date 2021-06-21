@@ -35,5 +35,17 @@ namespace IogoSistem_vs1
             Agenda agenda = new Agenda();
             agenda.ShowDialog();
         }
+
+        private void BtnCadastrarFornecedor(object sender, RoutedEventArgs e)
+        {
+            CadastrarFornecedor cadastrarfornecedor = new CadastrarFornecedor();
+            cadastrarfornecedor.ShowDialog();
+        }
+
+        private void BtnConsultarProduto(object sender, RoutedEventArgs e)
+        {
+            ConsultarProdutos consultarprod = new ConsultarProdutos();
+            consultarprod.ShowDialog();
+        }
     }
 }

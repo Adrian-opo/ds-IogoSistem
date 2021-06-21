@@ -94,5 +94,18 @@ namespace IogoSistem_vs1
 			digito = digito + resto.ToString();
 			return cnpj.EndsWith(digito);
 		}
+
+		public string Codigo { get; set; }
+		public string Nome { get; set; }
+		public string Sabor { get; set; }
+		public string Categoria { get; set; }
+		public string Peso_Litros { get; set; }
+		public string Preco_Custo { get; set; }
+		public string Preco_Venda { get; set; }
+		public string Qtd_Estoque { get; set; }
+		public string Descrição { get; set; }
+
+		public object checkbox { get; set; }
+
 	}
 }

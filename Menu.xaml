@@ -4,25 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IogoSistem_vs1"
+        xmlns:wpftool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
         mc:Ignorable="d"
-        Title="Menu" Height="450" Width="800">
-    <DockPanel>
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"  
+        Title="Menu" Height="594" Width="1148" WindowState="Maximized" ResizeMode="NoResize">
+    <Grid>
+        <Button x:Name="Agenda" Content="Agenda" Height="50" Margin="150,0,150,0" Click="BtnAgenda"/>
+        <Button x:Name="CadastrarUsuario" Content="Cadastrar Usuario" Height="50" Margin="150,200,150,0" Click="BtnCadastrarUsuario"/>
+        <Button x:Name="ConsultarProduto" Content="Consultar Produto" Height="50" Margin="150,0,150,200" Click="BtnConsultarProduto"/>
+        <Button x:Name="CadastrarFornecedor" Content="Cadastrar Fornecedor" Height="50" Margin="150,0,150,400" Click="BtnCadastrarFornecedor"/>
 
-        <StackPanel DockPanel.Dock="Left" Width="200">
-            <TextBlock FontSize="50">Left</TextBlock>
-            
-        </StackPanel>
 
-        <StackPanel DockPanel.Dock="Top">
-            <TextBlock FontSize="50">Topo</TextBlock>
-            
-        </StackPanel>
-
-        <Grid>
-            <TextBlock FontSize="50">ccc</TextBlock>
-
-        </Grid>
-    </DockPanel>
-        
+    </Grid>
 </Window>
-<!-- <Button x:Name="Agenda" Content="Agenda" Height="Auto" Margin="320,38,277,342" Click="BtnAgenda"/> <Button x:Name="CadastrarUsuario" Content="Cadastrar Usuario" Height="Auto" Margin="30,38,566,342" Click="BtnCadastrarUsuario"/>-->
