@@ -12,21 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace IogoSistem
+namespace IogoSistem_vs1
 {
     /// <summary>
-    /// Lógica interna para Window1.xaml
+    /// Lógica interna para SuporteUsuario.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class SuporteUsuario : Window
     {
-        public Window1()
+        public SuporteUsuario()
         {
             InitializeComponent();
-        }
-
-        private void Visualizar(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
