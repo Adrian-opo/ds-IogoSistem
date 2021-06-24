@@ -12,32 +12,26 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-
-
-
 namespace IogoSistem_vs1
 {
     /// <summary>
-    /// Lógica interna para Suporte_Usuario.xaml
+    /// Interaction logic for CadastrarFuncionario.xaml
     /// </summary>
-    public partial class Suporte_Usuario : Window
+    public partial class CadastrarFuncionario : Window
     {
-        public Suporte_Usuario()
+        public CadastrarFuncionario()
         {
             InitializeComponent();
-
-
         }
 
-
-
-    
-
-        private void BtnManual(object sender, RoutedEventArgs e)
+        private void BtnAdicionarFoto_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
-    
-    
+
+        private void TxtBox_RecebeCPF_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

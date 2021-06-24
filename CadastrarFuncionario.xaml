@@ -1,0 +1,141 @@
+﻿<Window x:Class="IogoSistem_vs1.CadastrarFuncionario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IogoSistem_vs1"
+       xmlns:wpftool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Cadastrar Funcionario" Height="650" Width="800" BorderThickness="0" ForceCursor="True" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Background="#d3ecff" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="56"/>
+            <RowDefinition Height="444"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="111.2"/>
+            <ColumnDefinition Width="240.8"/>
+            <ColumnDefinition Width="70.4"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Pessoal" HorizontalAlignment="Left" Margin="15,27,0,0" VerticalAlignment="Top" Width="98" Height="28" Background="#FFA6A4A4" Grid.ColumnSpan="2"/>
+        <Button Content="Profissional" HorizontalAlignment="Left" Margin="1.8,28,0,0" Width="104" Height="Auto" BorderBrush="#FFC3BFBF" Background="#FFE8E4E4" Grid.Column="1"/>
+
+        <StackPanel  Grid.Column="0" Grid.Row="1" Margin="0,0,3.2,0">
+            <TextBlock Text="Nome:" Margin="10,40,10,10" FontSize="20" HorizontalAlignment="Right"/>
+            <TextBlock Text="CPF:" Margin="0,10,9.8,10" FontSize="20" HorizontalAlignment="Right"/>
+            <TextBlock Text="E-mail:" Margin="10,10,10,10" FontSize="20" HorizontalAlignment="Right"/>
+            <TextBlock Text="Telefone:" Margin="10,10,10,10" FontSize="20" HorizontalAlignment="Right"/>
+            <TextBlock Text="Endereço:" Margin="10,10,10,10" FontSize="20" HorizontalAlignment="Right"/>
+            <TextBlock Text="UF:" Margin="10,10,10,10" FontSize="20" HorizontalAlignment="Right"/>
+            <TextBlock Text="Bairro:" Margin="10,10,10,10" FontSize="20" HorizontalAlignment="Right"/>
+            <TextBlock Text="Cidade:" Margin="0,10" FontSize="20" HorizontalAlignment="Right" RenderTransformOrigin="0.471,2.379"/>
+
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="1" Margin="0,75,3.4,36">
+            <TextBlock Text="ID:" Margin="0,10" FontSize="20" HorizontalAlignment="Right" RenderTransformOrigin="0.471,2.379"/>
+            <TextBlock Text="RG:" Margin="0,10" FontSize="20" HorizontalAlignment="Right" RenderTransformOrigin="0.471,2.379"/>
+            <TextBlock Text="Sexo:" Margin="0,10" FontSize="20" HorizontalAlignment="Right" RenderTransformOrigin="0.471,2.379"/>
+            <TextBlock Text="CEP:" Margin="0,10" FontSize="20" HorizontalAlignment="Right" RenderTransformOrigin="0.471,2.379"/>
+
+
+        </StackPanel>
+
+        <StackPanel  Grid.Column="1" Grid.Row="1" Margin="4.8,4,2,116" Grid.RowSpan="2" >
+            <TextBox x:Name="recebe_nom" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,40,-220.6,10"/>
+            <wpftool:MaskedTextBox  Mask="000\.000\.000-00" x:Name="TxtBox_RecebeCPF"  Margin="10,3,10,10"  Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" LostFocus="TxtBox_RecebeCPF_LostFocus" />
+
+            <TextBox x:Name="recebe_email" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,10,10.2,10"/>
+            <wpftool:MaskedTextBox  Mask="(00) 0 0000-0000" x:Name="recebe_telefone" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,10,10.2,10"/>
+            <TextBox x:Name="recebe_Endereco" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="8,10,16.4,10" Width="210"/>
+            <ComboBox x:Name="recebe_uf"
+                      Margin="8,10,176.4,10" Padding="1" FontSize="17"
+                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                      Width="50">
+
+            </ComboBox>
+            <TextBox x:Name="recebe_bairro" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="9,10,76.4,10" Width="149"/>
+            <ComboBox x:Name="recebe_cidade"
+                      Margin="8,10,16.4,10" Padding="1" FontSize="17"
+                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                      ItemsSource="{Binding ShortStringList}" Height="29"/>
+        </StackPanel>
+        <StackPanel Grid.Column="3" Grid.Row="1" Margin="9.6,73,2.6,16">
+            <TextBox x:Name="recebe_id" Text="00" Margin="10,10,307.4,10" FontSize="15" IsEnabled="False"/>
+            <TextBox x:Name="recebe_rg" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="0,3,220.2,10" Height="25"/>
+
+            <ComboBox x:Name="recebe_sexo"
+                      Margin="1,10,307.2,10" Padding="1" FontSize="17"
+                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                      ItemsSource="{Binding ShortStringList}"/>
+            <wpftool:MaskedTextBox  Mask="00000-000" x:Name="recebe_cep" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="-2,10,220.2,10" Height="22"/>
+
+
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" Margin="10,10,10,10">
+            <Button x:Name="btn_novo" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="0 10 20 10" Width="130"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Cyan" BorderBrush="Cyan">
+                <TextBlock Text="NOVO" />
+            </Button>
+
+            <Button x:Name="btn_excluir" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="0 10 20 10" Width="130"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red">
+                <TextBlock Text="EXCLUIR" />
+            </Button>
+
+            <Button x:Name="btn_editar" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="0 10 20 10" Width="130"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange">
+                <TextBlock Text="EDITAR" />
+            </Button>
+
+            <Button x:Name="btn_cancelar" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="0 10 20 10" Width="130"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Gray" BorderBrush="Gray">
+                <TextBlock Text="CANCELAR" />
+            </Button>
+
+            <Button x:Name="BtnSalvar"  Style="{StaticResource MaterialDesignRaisedAccentButton}" 
+                     
+                     Height="Auto" Margin="20,10" FontSize="23"
+                     ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                     Content="SALVAR" Background="Lime" BorderBrush="Lime" Width="150"
+            />
+        </StackPanel>
+        <materialDesign:PackIcon HorizontalAlignment="Center" BorderBrush="Black" Kind="Account" Width="209" Height="189" Grid.Column="3" Margin="152.6,0,9.6,0" Grid.Row="1"/>
+
+        <Button x:Name="Btnadicionar_fotos" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                     Margin="192.6,195,48.6,217"
+                     ToolTip="MaterialDesignRaisedLightButton with Round Corners"
+                     Content="Adicionar Foto" Click="BtnAdicionarFoto_Click" BorderBrush="White" Grid.Column="3" Grid.Row="1" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFAAAAAA" Offset="1"/>
+                    <GradientStop Color="White" Offset="0.225"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>
