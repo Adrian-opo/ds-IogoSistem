@@ -1,5 +1,5 @@
-﻿ ﻿<Window x:Class="IogoSistem_vs1.CadastrarFuncionario"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<Window x:Class="IogoSistem_vs1.CadastrarFuncionario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -51,7 +51,7 @@
         </StackPanel>
 
         <StackPanel  Grid.Column="1" Grid.Row="1" Margin="4.8,4,2,116" Grid.RowSpan="2" >
-            <TextBox x:Name="recebe_nome" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,40,-220.6,10"/>
+            <TextBox x:Name="recebe_nom" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,40,-220.6,10"/>
             <wpftool:MaskedTextBox  Mask="000\.000\.000-00" x:Name="TxtBox_RecebeCPF"  Margin="10,3,10,10"  Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" LostFocus="TxtBox_RecebeCPF_LostFocus" />
 
             <TextBox x:Name="recebe_email" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,10,10.2,10"/>
