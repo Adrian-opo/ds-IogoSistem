@@ -47,5 +47,11 @@ namespace IogoSistem_vs1
             ConsultarProdutos consultarprod = new ConsultarProdutos();
             consultarprod.ShowDialog();
         }
+
+        private void BtnCadastrarFuncionario(object sender, RoutedEventArgs e)
+        {
+            CadastrarFuncionario cadastrarFuncionario = new CadastrarFuncionario();
+            cadastrarFuncionario.ShowDialog();
+        }
     }
 }

@@ -20,6 +20,7 @@
         <Button x:Name="CadastrarUsuario" Content="Cadastrar Usuario" Height="50" Margin="150,200,150,0" Click="BtnCadastrarUsuario"/>
         <Button x:Name="ConsultarProduto" Content="Consultar Produto" Height="50" Margin="150,0,150,200" Click="BtnConsultarProduto"/>
         <Button x:Name="CadastrarFornecedor" Content="Cadastrar Fornecedor" Height="50" Margin="150,0,150,400" Click="BtnCadastrarFornecedor"/>
+        <Button x:Name="CadastrarFuncionario" Content="Cadastrar Funcionario" Height="50" Margin="150,447,149.6,67" Click="BtnCadastrarFuncionario"/>
 
 
     </Grid>
