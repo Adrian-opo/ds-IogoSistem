@@ -30,6 +30,8 @@ namespace IogoSistem_vs1
             recebe_uf.Items.Add("RO");
             recebe_uf.Items.Add("RJ");
             recebe_uf.Items.Add("SP");
+
+            pessoafisica.IsChecked = true;
         }
 
         private void pessoafisica_Checked(object sender, RoutedEventArgs e)
@@ -123,6 +125,15 @@ namespace IogoSistem_vs1
             {
                 e.Handled = true;
             }
+        }
+
+        private void btn_cancelar_Click(object sender, RoutedEventArgs e)
+        {
+
+            CadastrarFornecedor cadastrarfornecedor = new CadastrarFornecedor();
+            cadastrarfornecedor.Close();
+            Menu menu = new Menu();
+            menu.ShowDialog();
         }
     }
 }

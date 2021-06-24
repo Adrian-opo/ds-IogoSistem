@@ -9,7 +9,7 @@
     
         mc:Ignorable="d"
     
-        Title="Cadastrar Fornecedor" Height="650" Width="800">
+        Title="Cadastrar Fornecedor" Height="650" Width="800" ResizeMode="NoResize">
     <Grid Background="#d3ecff">
         <Grid.RowDefinitions>
             <RowDefinition Height="150"/>
@@ -61,7 +61,7 @@
 
         <StackPanel Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" Height="50" Margin="0,4,0,296" Grid.Row="1">
             <TextBlock Text="ID:" Margin="10,10,10,10" FontSize="15"/>
-            <TextBox x:Name="recebe_id" Text="00" Margin="10,10,10,10" FontSize="15" IsEnabled="False"/>
+            <TextBox x:Name="recebe_idfornecedor" Text="00" Margin="10,10,10,10" FontSize="15" IsEnabled="False"/>
             <TextBlock Text="Lagradouro:" Margin="10,10,10,10" FontSize="15"/>
             <TextBox x:Name="recebe_lagradouro" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10" Width="210"/>
             <TextBlock Text="Número:" Margin="10,10,10,10" FontSize="15"/>
@@ -139,7 +139,7 @@
                 
                 Height="50" Margin="0 10 20 10" Width="130"
                 materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Gray" BorderBrush="Gray">
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Gray" BorderBrush="Gray" Click="btn_cancelar_Click">
                 <TextBlock Text="CANCELAR" />
             </Button>
 
