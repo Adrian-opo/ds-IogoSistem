@@ -130,10 +130,7 @@ namespace IogoSistem_vs1
         private void btn_cancelar_Click(object sender, RoutedEventArgs e)
         {
 
-            CadastrarFornecedor cadastrarfornecedor = new CadastrarFornecedor();
-            cadastrarfornecedor.Close();
-            Menu menu = new Menu();
-            menu.ShowDialog();
+            this.Close();
         }
     }
 }

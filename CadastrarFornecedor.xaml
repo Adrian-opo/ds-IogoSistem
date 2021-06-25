@@ -9,7 +9,7 @@
     
         mc:Ignorable="d"
     
-        Title="Cadastrar Fornecedor" Height="650" Width="800" ResizeMode="NoResize">
+        Title="Cadastrar Fornecedor" Height="650" Width="800" ResizeMode="NoResize" SizeToContent="Width" WindowStartupLocation="CenterScreen">
     <Grid Background="#d3ecff">
         <Grid.RowDefinitions>
             <RowDefinition Height="150"/>

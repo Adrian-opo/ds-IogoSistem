@@ -112,10 +112,10 @@ namespace IogoSistem_vs1
 
         private void btn_cancelar_Click(object sender, RoutedEventArgs e)
         {
-            RegistrarGanhos registrarganhos = new RegistrarGanhos();
-            registrarganhos.Close();
-            Menu menu = new Menu();
-            menu.ShowDialog();
+            
+
+            this.Close();
+            
             
         }
     }

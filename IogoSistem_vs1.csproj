@@ -87,6 +87,9 @@
     <Compile Include="CadastrarFuncionario.xaml.cs">
       <DependentUpon>CadastrarFuncionario.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ConsultarClientes.xaml.cs">
+      <DependentUpon>ConsultarClientes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ConsultarProdutos.xaml.cs">
       <DependentUpon>ConsultarProdutos.xaml</DependentUpon>
     </Compile>
@@ -113,6 +116,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CadastrarFuncionario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConsultarClientes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
