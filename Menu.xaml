@@ -14,14 +14,14 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"  
-        Title="Menu" Height="594" Width="1148" WindowState="Maximized" ResizeMode="NoResize">
-    <Grid>
-        <Button x:Name="Agenda" Content="Agenda" Height="50" Margin="150,0,150,0" Click="BtnAgenda"/>
-        <Button x:Name="CadastrarUsuario" Content="Cadastrar Usuario" Height="50" Margin="150,200,150,0" Click="BtnCadastrarUsuario"/>
-        <Button x:Name="ConsultarProduto" Content="Consultar Produto" Height="50" Margin="150,0,150,200" Click="BtnConsultarProduto"/>
-        <Button x:Name="CadastrarFornecedor" Content="Cadastrar Fornecedor" Height="50" Margin="150,0,150,400" Click="BtnCadastrarFornecedor"/>
-        <Button x:Name="CadastrarFuncionario" Content="Cadastrar Funcionario" Height="50" Margin="150,447,149.6,67" Click="BtnCadastrarFuncionario"/>
+        Title="Menu" Height="594" Width="1148" WindowState="Maximized" ResizeMode="NoResize"><Grid>
+    <Button x:Name="Agenda" Content="Agenda" Height="50" Margin="150,0,150,0" Click="BtnAgenda"/>
+    <Button x:Name="CadastrarUsuario" Content="Cadastrar Usuario" Height="50" Margin="150,200,150,0" Click="BtnCadastrarUsuario"/>
+    <Button x:Name="ConsultarProduto" Content="Consultar Produto" Height="50" Margin="150,0,150,200" Click="BtnConsultarProduto"/>
+    <Button x:Name="CadastrarFornecedor" Content="Cadastrar Fornecedor" Height="50" Margin="150,75,149.6,439" Click="BtnCadastrarFornecedor"/>
+    <Button x:Name="CadastrarFuncionario" Content="Cadastrar Funcionario" Height="50" Margin="150,428,149.6,86" Click="BtnCadastrarFuncionario"/>
+    <Button x:Name="CadastrarRegistrarDespesas" Content="Registrar despesas" Height="50" Margin="150,502,149.6,12" Click="BtnRegistrarDespesas"/>
 
 
-    </Grid>
+</Grid>
 </Window>

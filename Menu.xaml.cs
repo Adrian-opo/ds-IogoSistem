@@ -53,5 +53,12 @@ namespace IogoSistem_vs1
             CadastrarFuncionario cadastrarFuncionario = new CadastrarFuncionario();
             cadastrarFuncionario.ShowDialog();
         }
+
+        private void BtnRegistrarDespesas(object sender, RoutedEventArgs e)
+        {
+
+            RegistrarDespesas registrarDespesas = new RegistrarDespesas();
+            registrarDespesas.ShowDialog();
+        }
     }
 }

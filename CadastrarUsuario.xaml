@@ -15,10 +15,10 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="Cadastrar Usuários" Height="450" Width="800" BorderThickness="0" ForceCursor="True" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    
-    
-    
-    
+
+
+
+
     <Grid Background="#d3ecff" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="550"/>
@@ -36,15 +36,15 @@
 
             <TextBlock Text="E-mail:"  Margin="45 23 0 0"   FontSize="17"/>
             <TextBox  x:Name="txtemail" Margin="45 0 45 0" Padding="5" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" LostFocus="txtemail_lostFocus" />
-            
+
             <TextBlock x:Name="tbemail_error"  Margin="45 0 0 0"  Text="E-mail inválido " Foreground=  "Red"  Visibility="Collapsed"   />
 
             <TextBlock x:Name="tbcpf" Text="CPF:"  Margin="45 23 0 0"   FontSize="17"/>
             <wpftool:MaskedTextBox  Mask="000\.000\.000-00" x:Name="txtcpf"  Margin="45 0 370 0"  Padding="5" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" LostFocus="txtcpf_lostFocus" />
-            
+
             <TextBlock x:Name="tbcpf_error"  Margin="45 0"  Text="CPF inválido " Foreground=  "Red"  Visibility="Collapsed"   />
-            
-            
+
+
             <TextBlock x:Name="tbsenha" Text="Senha:"  Margin="45 23 0 0"   FontSize="17"/>
 
             <StackPanel Orientation="Horizontal">
@@ -56,7 +56,7 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="0">
-            
+
             <Button x:Name="BtnExcluir" Style="{StaticResource MaterialDesignRaisedLightButton}"
                 Height="50" Margin="20,20,80,20" Width="150" BorderBrush="#FFFF4C4C"
                     materialDesign:ButtonAssist.CornerRadius="25"
