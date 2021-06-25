@@ -23,5 +23,37 @@ namespace IogoSistem_vs1
         {
             InitializeComponent();
         }
+
+        private void Agenda_Loaded(object sender, RoutedEventArgs e)
+        {
+            CbxRecebe_categoria.SelectedIndex = 1;
+            List<Util> ListaRegistrarDespesas = new List<Util>();
+
+            for (int i = 1; i <= 24; i++)
+            {
+                ListaRegistrarDespesas.Add(new Util()
+                {
+                    Codigo = "X",
+                    
+
+                });
+            }
+            
+        }
+
+        private void dataGridRegistrarDespesas_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void dataGridRegistrarDespesas_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+
+        }
+
+        private void dataGridRegistrarDespesas_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

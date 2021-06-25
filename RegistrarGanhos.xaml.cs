@@ -118,5 +118,10 @@ namespace IogoSistem_vs1
             menu.ShowDialog();
             
         }
+
+        private void dataGridProdutosVenda_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -86,7 +86,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="3">
-            <DataGrid  Margin="10 10 10 10" ItemsSource="{Binding}" x:Name="dataGridProdutosVenda"   IsReadOnly="True" AutoGenerateColumns="False" AlternatingRowBackground="#FF03A9F4" AlternationCount="2" Height="103" >
+            <DataGrid  Margin="10 10 10 10" ItemsSource="{Binding}" x:Name="dataGridProdutosVenda"   IsReadOnly="True" AutoGenerateColumns="False" AlternatingRowBackground="#FF03A9F4" AlternationCount="2" Height="103" SelectionChanged="dataGridProdutosVenda_SelectionChanged" >
                 <DataGrid.Columns>
 
                     <DataGridCheckBoxColumn Header="" IsThreeState="False" Binding="{Binding checkbox}"/>

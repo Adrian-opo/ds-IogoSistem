@@ -48,5 +48,10 @@ namespace IogoSistem_vs1
             }
             dataGridConsultarProd.ItemsSource = ListaConsultarProd;
         }
+
+        private void dataGridConsultarProd_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

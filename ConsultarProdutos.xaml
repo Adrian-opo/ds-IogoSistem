@@ -62,7 +62,7 @@
 
             <DataGrid  Margin="10 0 10 0" CanUserAddRows="False" CanUserDeleteRows="False"  
                        x:Name="dataGridConsultarProd"  AutoGenerateColumns="False" 
-                       AlternatingRowBackground="LightBlue" AlternationCount="2" >
+                       AlternatingRowBackground="LightBlue" AlternationCount="2" SelectionChanged="dataGridConsultarProd_SelectionChanged" >
                 <DataGrid.Columns>
 
 
