@@ -27,6 +27,7 @@ namespace IogoSistem_vs1
         }
         private void Agenda_Loaded(object sender, RoutedEventArgs e)
         {
+            Cmbconsultarpor.SelectedIndex = 1;
             List<Util> ListaConsultarProd = new List<Util>();
 
             for (int i = 1; i <= 24; i++)
@@ -41,21 +42,11 @@ namespace IogoSistem_vs1
                     Preco_Custo = "X",
                     Preco_Venda = "X",
                     Qtd_Estoque = "x",
-                    Descrição = "X",
-                    checkbox = false
+                    Descrição = "X"
 
                 });
-
-                
-
             }
-            
             dataGridConsultarProd.ItemsSource = ListaConsultarProd;
-        }
-
-        private void x(object sender, DataGridCellClipboardEventArgs e)
-        {
-            Content = true;
         }
     }
 }

@@ -14,47 +14,61 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="Agenda" Height="852" Width="1598" WindowStartupLocation="CenterOwner" WindowState="Maximized" ResizeMode="NoResize">
+        Title="Agenda"  WindowStartupLocation="CenterOwner" WindowState="Maximized" ResizeMode="CanResize" MinHeight="560" MinWidth="1100" Height="608" Width="1150">
 
     <DockPanel Background="#d3ecff">
+        <Grid DockPanel.Dock="Left" Width="300">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="250"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <StackPanel DockPanel.Dock="Left" Width="300" >
-            <Calendar  Language="pt-BR"  
-                       Width="237" Height="87" Margin="10 40 10 80" />
+            <Calendar  Language="pt-BR"  Grid.Row="0"
+                       Width="237" Height="87" Margin="0 0 0 0" />
 
-            <Calendar materialDesign:CalendarAssist.IsHeaderVisible="False"  Margin="0 0 0 95" HorizontalAlignment="Center" Language="pt-BR"/>
+            <Calendar materialDesign:CalendarAssist.IsHeaderVisible="False" Padding="100" Grid.Row="1" Margin="0 0 0 0" HorizontalAlignment="Center" Language="pt-BR"/>
 
             <Button x:Name="BtnExcluir" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                Height="80"  Width="230" BorderBrush="#FFFF4C4C"
-                   materialDesign:ButtonAssist.CornerRadius="30"
-               ToolTip="MaterialDesignRaisedLightButton with Round Corners"  Background="#FFFF4C4C" Grid.Column="1" Margin="0 0 0 70" >
+                Height="80"  Width="230" BorderBrush="#FFFF4C4C" Grid.Row="2"
+                   materialDesign:ButtonAssist.CornerRadius="30" 
+               ToolTip="MaterialDesignRaisedLightButton with Round Corners"  Background="#FFFF4C4C" Grid.Column="1" Margin="0 0 0 0" >
                 <TextBlock Text="Excluir" />
             </Button>
+
             <Button x:Name="Btnadicionarevento" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                Height="80"  Width="230"  BorderBrush="Lime"
+                Height="80"  Width="230"  BorderBrush="Lime" Grid.Row="3"
                    materialDesign:ButtonAssist.CornerRadius="25"     
                ToolTip="MaterialDesignRaisedLightButton with Round Corners"  Background="Lime" Grid.Column="1">
                 <TextBlock Text="Adicionar Evento"  />
             </Button>
-        </StackPanel>
 
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Center">
-
-            <Button x:Name="Btn_semana" Content="Semana" Margin="0 40 270 0" Width="200" Background="White" Height="80" FontSize="30" Click="Btn_Semana"  BorderThickness="3"/>
-            <Button x:Name="Btn_mes" Content="Mês" Margin="40 40 0 0" Width="200" Height="80" FontSize="30" Click="Btn_Mes" BorderThickness="3"/>
+        </Grid>
 
 
-        </StackPanel>
+        <Grid DockPanel.Dock="Top" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Btn_semana" Grid.Column="0" Content="Semana" Width="200" Margin="0 35 130 0" Height="80" Background="White"  FontSize="30" Click="Btn_Semana"  BorderThickness="3"/>
+
+            <Button x:Name="Btn_mes" Content="Mês"  Grid.Column="1" FontSize="30"  Height="80" Margin="130 35 0 0" Width="200" Click="Btn_Mes" BorderThickness="3"/>
+
+
+        </Grid>
 
         <Grid Margin="20">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="727*"/>
-                <ColumnDefinition Width="525*"/>
+
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="80" />
-                <RowDefinition Height="650"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="1" Text="Compromissos" FontSize="30" Margin="25 30 0 15" Grid.ColumnSpan="2"/>

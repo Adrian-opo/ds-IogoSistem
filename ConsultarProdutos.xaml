@@ -15,9 +15,9 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="Consultar Produtos" Height="550" Width="850" ResizeMode="NoResize" SizeToContent="Width" WindowStartupLocation="CenterScreen">
-    
+
     <Grid Background="#d3ecff">
-       
+
 
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
@@ -26,12 +26,12 @@
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
 
-        <StackPanel  Grid.Row="0" Orientation="Horizontal" Height="50" >
-            <TextBlock Text="Consultar por:"  Margin="10" FontSize="21"/>
-            <ComboBox x:Name="Cmbconsultarpor"  Width="671"
+        <StackPanel  Grid.Row="0" Orientation="Horizontal" Height="50" HorizontalAlignment="Center">
+            <TextBlock Text="Consultar por:"  Margin="0 10 10 0" FontSize="21"/>
+            <ComboBox x:Name="Cmbconsultarpor"   Width="670" 
                        Padding="5" FontSize="17"
-                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                      ItemsSource="{Binding ShortStringList}" >
+                      Style="{StaticResource MaterialDesignOutlinedComboBox}">
+
                 <ComboBoxItem Content="Código" />
                 <ComboBoxItem Content="Nome" />
                 <ComboBoxItem Content="Sabor" />
@@ -41,27 +41,34 @@
                 <ComboBoxItem Content="Preço Venda" />
                 <ComboBoxItem Content="Qtd Estoque" />
                 <ComboBoxItem Content="Descrição" />
+
             </ComboBox>
         </StackPanel>
-        
+
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            
-            <TextBox  x:Name="nameuser" Margin="0 17 20 15" Width="740"  Padding="5" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="{x:Null}" />
+
+            <TextBox  x:Name="nameuser" Margin="0 17 20 15" Width="740" materialDesign:HintAssist.Hint="Item a ser pesquisado" 
+                      materialDesign:HintAssist.Background="#d3ecff" Padding="5" FontSize="17" 
+                      Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="{x:Null}" />
 
             <Button Height="35">
                 <materialDesign:PackIcon Kind="Magnify" />
             </Button>
-            
+
         </StackPanel>
 
 
-                <Grid Grid.Row="2"  Width="830" HorizontalAlignment="Left" >
+        <Grid Grid.Row="2"  HorizontalAlignment="Center" >
 
-            <DataGrid  Margin="10 0 10 0"  ItemsSource="{Binding}" x:Name="dataGridConsultarProd"   IsReadOnly="True" AutoGenerateColumns="False" AlternatingRowBackground="#FF03A9F4" AlternationCount="2" >
+            <DataGrid  Margin="10 0 10 0" CanUserAddRows="False" CanUserDeleteRows="False"  
+                       x:Name="dataGridConsultarProd"  AutoGenerateColumns="False" 
+                       AlternatingRowBackground="LightBlue" AlternationCount="2" >
                 <DataGrid.Columns>
 
-                    <DataGridCheckBoxColumn Header="" IsThreeState="False" Binding="{Binding checkbox}" CopyingCellClipboardContent="x"  />
-                    
+
+                    <DataGridCheckBoxColumn IsThreeState="False"
+                                            ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}"
+                                            EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}" />
 
 
 
@@ -75,12 +82,12 @@
                     <DataGridTextColumn Header="Qtd Estoque" Binding="{Binding Qtd_Estoque}" />
                     <DataGridTextColumn Header="Descrição" Binding="{Binding Descrição}" />
                 </DataGrid.Columns>
-                
-                
+
+
             </DataGrid>
 
 
-        </Grid> 
+        </Grid>
 
 
 
