@@ -60,5 +60,12 @@ namespace IogoSistem_vs1
             RegistrarDespesas registrarDespesas = new RegistrarDespesas();
             registrarDespesas.ShowDialog();
         }
+
+        private void BtnRegistrarGastos(object sender, RoutedEventArgs e)
+        {
+
+            RegistrarGanhos registrarGastos = new RegistrarGanhos();
+            registrarGastos.ShowDialog();
+        }
     }
 }

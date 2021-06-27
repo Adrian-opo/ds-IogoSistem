@@ -53,5 +53,15 @@ namespace IogoSistem_vs1
         {
 
         }
+
+        private void BtnEditar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnExcluir_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

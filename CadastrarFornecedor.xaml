@@ -9,7 +9,7 @@
     
         mc:Ignorable="d"
     
-        Title="Cadastrar Fornecedor" Height="650" Width="800" ResizeMode="NoResize">
+        Title="Cadastrar Fornecedor" Height="650" Width="800" ResizeMode="NoResize" SizeToContent="Width" WindowStartupLocation="CenterScreen">
     <Grid Background="#d3ecff">
         <Grid.RowDefinitions>
             <RowDefinition Height="150"/>
@@ -123,7 +123,7 @@
                 
                 Height="50" Margin="0 10 20 10" Width="130"
                 materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red">
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red" Click="btn_excluir_Click">
                 <TextBlock Text="EXCLUIR" />
             </Button>
 

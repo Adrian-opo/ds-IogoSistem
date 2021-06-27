@@ -135,5 +135,10 @@ namespace IogoSistem_vs1
             Menu menu = new Menu();
             menu.ShowDialog();
         }
+
+        private void btn_excluir_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

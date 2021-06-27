@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="RegistrarDespesas" Height="620" Width="800" ResizeMode="NoResize">
+        Title="RegistrarDespesas" Height="620" Width="800" ResizeMode="NoResize" SizeToContent="Width" WindowStartupLocation="CenterScreen">
     <Grid Background="#d3ecff" >
         <Grid.RowDefinitions>
             <RowDefinition Height="16.8"/>
@@ -44,7 +44,7 @@
                 ItemsSource="{Binding ShortStringList}" Height="29" Width="350"/>
             <wpftool:MaskedTextBox  Mask="00/00/0000" x:Name="recebe_data" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" HorizontalAlignment="Left" Margin="10,32,0,10" Height="29" Width="99"/>
 
-            <TextBox x:Name="TxtRecebe_Fornecedor" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,35,10,10" HorizontalAlignment="Left" Height="29" Width="350"/>
+            <TextBox x:Name="TxtRecebe_Fornecedor" materialDesign:HintAssist.Hint="Ex: Plastic LTDA" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,35,10,10" HorizontalAlignment="Left" Height="29" Width="350"/>
 
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1" Margin="0,0.2,0.2,0" Grid.ColumnSpan="2">
@@ -60,8 +60,7 @@
             <Button x:Name="btnAdd_Categoria" Style="{StaticResource MaterialDesignRaisedLightButton}"
                 
                 Height="50" Margin="0 10 20 10" Width="130"
-                materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Blue" BorderBrush="Cyan">
+                materialDesign:ButtonAssist.CornerRadius="25" Click="btnAdd_Categoria_Click"               ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Blue" BorderBrush="Cyan">
                 <TextBlock Height="34" Width="85" ><Run Text="ADICIONAR"/><LineBreak/><Run Text="CATEGORIA"/></TextBlock>
             </Button>
 
@@ -69,7 +68,7 @@
                 
                 Height="50" Margin="0 10 20 10" Width="130"
                 materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red">
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red" Click="btn_excluir_Click">
                 <TextBlock Text="EXCLUIR" />
             </Button>
 
@@ -77,18 +76,18 @@
                 
                 Height="50" Margin="0 10 20 10" Width="130"
                 materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange">
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange" Click="btn_editar_Click">
                 <TextBlock Text="EDITAR" />
             </Button>
 
-            <Button x:Name="btn_Resetar" Style="{StaticResource MaterialDesignRaisedLightButton}"
+            <Button x:Name="btn_Cancelar" Style="{StaticResource MaterialDesignRaisedLightButton}"
                 
-                Height="50" Margin="0 10 20 10" Width="130"
+                Height="50" Margin="0,0,20,13.8" Width="130"
                 materialDesign:ButtonAssist.CornerRadius="25"
                     
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Gray" BorderBrush="Gray">
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Gray" BorderBrush="Gray" Click="btn_Cancelar_Click" VerticalAlignment="Bottom">
 
-                <TextBlock Text="Resetar" />
+                <TextBlock Text="Cancelar" />
             </Button>
 
         </StackPanel>
@@ -117,7 +116,7 @@
             <Button x:Name="BtnSalvar"  Style="{StaticResource MaterialDesignRaisedAccentButton}" 
                      Height="76" Margin="10,130,9.6,10" FontSize="23"
                      ToolTip="Resource name: MaterialDesignRaisedAccentButton"
-                     Content="Salvar" Background="Lime" BorderBrush="Lime" />
+                     Content="Salvar" Background="Lime" BorderBrush="Lime" Click="BtnSalvar_Click" />
 
         </StackPanel>
     </Grid>

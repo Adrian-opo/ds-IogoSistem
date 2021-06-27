@@ -55,5 +55,45 @@ namespace IogoSistem_vs1
         {
 
         }
+
+        private void btn_Resetar_Click(object sender, RoutedEventArgs e)
+        {
+
+            RegistrarGanhos registrarganhos = new RegistrarGanhos();
+            registrarganhos.Close();
+            Menu menu = new Menu();
+            menu.ShowDialog();
+
+        }
+
+        private void BtnSalvar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_editar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_Cancelar_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrarDespesas registrardespesas = new RegistrarDespesas();
+            registrardespesas.Close();
+            Menu menu = new Menu();
+            menu.ShowDialog();
+        }
+
+        private void btnAdd_Categoria_Click(object sender, RoutedEventArgs e)
+        {
+
+            RegistrarDespesas1 editar = new RegistrarDespesas1();
+            editar.ShowDialog();
+        }
+
+        private void btn_excluir_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

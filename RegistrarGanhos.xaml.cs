@@ -123,5 +123,15 @@ namespace IogoSistem_vs1
         {
 
         }
+
+        private void recebe_cliente_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btn_excluir_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
