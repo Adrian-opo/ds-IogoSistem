@@ -37,7 +37,16 @@
                       Padding="1" FontSize="17"
                       Style="{StaticResource MaterialDesignOutlinedComboBox}"
                       ItemsSource="{Binding ShortStringList}"
-                      Width="212" RenderTransformOrigin="0.5,0.481" Margin="0,12" />
+                      Width="157" RenderTransformOrigin="0.5,0.481" Margin="0,1,10,0" />
+
+            <Button x:Name="add_cliente" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="Auto" Margin="0,12,0,10" Width="40"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="#FF00FF17" BorderBrush="#FF00FF17" Click="add_cliente_Click">
+                <TextBlock Text="+" />
+            </Button>
+
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,10,0,90" >
@@ -61,28 +70,56 @@
 
         </StackPanel>
 
+        <StackPanel Grid.Row="2" Orientation="Horizontal"  >
+
+            <Button x:Name="acrescentar_produto" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="Auto" Margin="10,92,0,78" Width="40"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="#FF0051FF" BorderBrush="#FF0051FF">
+                <TextBlock Text="+" />
+            </Button>
+
+            <Button x:Name="excluir_produto" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="Auto" Margin="50,92,0,78" Width="40"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="#FFFF0C00" BorderBrush="#FFFF0C00">
+                <TextBlock Text="-" />
+            </Button>
+        </StackPanel>
+
         <StackPanel Grid.Row="2" Orientation="Horizontal" >
-            <TextBlock Text="Nome do Produto:" Height="30" Margin="10,141,10,29" FontSize="15"/>
+            <TextBlock Text="Nome do Produto:" Height="30" Margin="10,127,10,43" FontSize="15"/>
             <ComboBox x:Name="recebe_nomedoproduto"
                       Padding="1" FontSize="17"
                       Style="{StaticResource MaterialDesignOutlinedComboBox}"
                       ItemsSource="{Binding ShortStringList}"
-                      Width="337" RenderTransformOrigin="0.495,0.462" Margin="10,141,10,29" Height="30"/>
+                      Width="337" RenderTransformOrigin="0.495,0.462" Margin="10,127,10,43" Height="30"/>
 
-            <TextBlock Text="ID do Produto:" Height="30" Margin="10,141,10,29" FontSize="15"/>
+            <TextBlock Text="ID do Produto:" Height="30" Margin="10,127,10,43" FontSize="15"/>
             <ComboBox x:Name="recebe_iddoproduto"
                       Padding="1" FontSize="17"
                       Style="{StaticResource MaterialDesignOutlinedComboBox}"
                       ItemsSource="{Binding ShortStringList}"
-                      Width="143" RenderTransformOrigin="0.495,0.462" Margin="10,141,10,29"  Height="30"/>
+                      Width="86" RenderTransformOrigin="0.495,0.462" Margin="10,127,10,43"  Height="30"/>
+
+            <Button x:Name="add_produto" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="Auto" Margin="0,127,0,43" Width="40"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="#FF00FF17" BorderBrush="#FF00FF17">
+                <TextBlock Text="+" />
+            </Button>
+
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <TextBlock Text="Quantidade:" Margin="10,100,10,70" FontSize="15" Height="30"/>
-            <TextBox x:Name="recebe_quantidade" Margin="10,100,10,70" Height="30" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="316" KeyDown="recebe_quantidade_KeyDown"/>
+            <TextBlock Text="Quantidade:" Margin="10,167,10,3" FontSize="15" Height="30"/>
+            <TextBox x:Name="recebe_quantidade" Margin="10,167,10,3" Height="30" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="316" KeyDown="recebe_quantidade_KeyDown"/>
 
-            <TextBlock Text="Valor (R$):" Margin="10,100,10,70" FontSize="15" Height="30"/>
-            <TextBox x:Name="recebe_valor" Margin="10,100,10,70" Height="30" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="236" KeyDown="recebe_valor_KeyDown"/>
+            <TextBlock Text="Valor (R$):" Margin="10,167,10,3" FontSize="15" Height="30"/>
+            <TextBox x:Name="recebe_valor" Margin="10,167,10,3" Height="30" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="236" KeyDown="recebe_valor_KeyDown"/>
         </StackPanel>
 
         <StackPanel Grid.Row="3">
