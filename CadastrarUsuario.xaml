@@ -35,11 +35,7 @@
             <TextBox  x:Name="nameuser" Margin="45 0 45 0"  Padding="5" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" />
 
             <TextBlock Text="E-mail:"  Margin="45 23 0 0"   FontSize="17"/>
-<<<<<<< HEAD
             <TextBox  x:Name="txtemail" Margin="45 0 45 0" Padding="5" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" LostFocus="txtemail_lostFocus" />
-=======
-            <TextBox  x:Name="txtemail" Margin="45 0 45 0" Padding="5" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" LostFocus="txtemail_lostFocus" TextChanged="txtemail_TextChanged" />
->>>>>>> main
 
             <TextBlock x:Name="tbemail_error"  Margin="45 0 0 0"  Text="E-mail inválido " Foreground=  "Red"  Visibility="Collapsed"   />
 

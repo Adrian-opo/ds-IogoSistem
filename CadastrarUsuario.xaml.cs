@@ -135,10 +135,5 @@ namespace IogoSistem_vs1
 
 
         }
-
-        private void txtemail_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

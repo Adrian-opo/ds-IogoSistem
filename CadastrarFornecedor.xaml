@@ -130,7 +130,7 @@
                 
                 Height="50" Margin="0 10 20 10" Width="130"
                 materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red" Click="btn_excluir_Click">
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red">
                 <TextBlock Text="EXCLUIR" />
             </Button>
 

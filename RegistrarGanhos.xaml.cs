@@ -119,22 +119,5 @@ namespace IogoSistem_vs1
             
         }
 
-<<<<<<< HEAD
-=======
-        private void dataGridProdutosVenda_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void recebe_cliente_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void btn_excluir_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
->>>>>>> main
     }
 }

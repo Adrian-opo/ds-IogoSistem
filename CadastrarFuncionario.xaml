@@ -15,7 +15,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="Cadastrar Funcionario" Height="650" Width="800" BorderThickness="0" ForceCursor="True" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid Background="#d3ecff" Margin="-6,0,5.6,0" >
+    <Grid Background="#d3ecff" >
         <Grid.RowDefinitions>
             <RowDefinition Height="56"/>
             <RowDefinition Height="444"/>
@@ -23,13 +23,14 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="111.2"/>
-            <ColumnDefinition Width="248"/>
-            <ColumnDefinition Width="63.2"/>
+            <ColumnDefinition Width="240.8"/>
+            <ColumnDefinition Width="70.4"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <Button Content="Pessoal" HorizontalAlignment="Left" Margin="15,27,0,0" VerticalAlignment="Top" Width="98" Height="28" Background="#FFA6A4A4" Grid.ColumnSpan="2"/>
+        <Button Content="Profissional" HorizontalAlignment="Left" Margin="1.8,28,0,0" Width="104" Height="Auto" BorderBrush="#FFC3BFBF" Background="#FFE8E4E4" Grid.Column="1"/>
 
-
-        <StackPanel  Grid.Column="0" Margin="-2,-2,5.2,26" Grid.RowSpan="2">
+        <StackPanel  Grid.Column="0" Grid.Row="1" Margin="0,0,3.2,0">
             <TextBlock Text="Nome:" Margin="10,40,10,10" FontSize="20" HorizontalAlignment="Right"/>
             <TextBlock Text="CPF:" Margin="0,10,9.8,10" FontSize="20" HorizontalAlignment="Right"/>
             <TextBlock Text="E-mail:" Margin="10,10,10,10" FontSize="20" HorizontalAlignment="Right"/>
@@ -38,75 +39,54 @@
             <TextBlock Text="UF:" Margin="10,10,10,10" FontSize="20" HorizontalAlignment="Right"/>
             <TextBlock Text="Bairro:" Margin="10,10,10,10" FontSize="20" HorizontalAlignment="Right"/>
             <TextBlock Text="Cidade:" Margin="0,10" FontSize="20" HorizontalAlignment="Right" RenderTransformOrigin="0.471,2.379"/>
-            <TextBlock Text="Data Nasc.:" Margin="0,10,-12,10" FontSize="20" HorizontalAlignment="Right" RenderTransformOrigin="0.471,2.379" Width="106"/>
-            <TextBlock Text="Função:" Margin="0,10" FontSize="20" HorizontalAlignment="Right" RenderTransformOrigin="0.471,2.379"/>
 
         </StackPanel>
-        <StackPanel Grid.Column="2" Grid.Row="1" Margin="11.8,15,-1.6,12" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="425">
-            <TextBlock Text="RG:" Margin="0,10" FontSize="20" HorizontalAlignment="Left" RenderTransformOrigin="0.471,2.379"/>
-            <TextBlock Text="Sexo:" Margin="0,10" FontSize="20" HorizontalAlignment="Left" RenderTransformOrigin="0.471,2.379"/>
-            <TextBlock Text="CEP:" Margin="0,10" FontSize="20" HorizontalAlignment="Left" RenderTransformOrigin="0.471,2.379"/>
+        <StackPanel Grid.Column="2" Grid.Row="1" Margin="0,75,3.4,36">
+            <TextBlock Text="ID:" Margin="0,10" FontSize="20" HorizontalAlignment="Right" RenderTransformOrigin="0.471,2.379"/>
+            <TextBlock Text="RG:" Margin="0,10" FontSize="20" HorizontalAlignment="Right" RenderTransformOrigin="0.471,2.379"/>
+            <TextBlock Text="Sexo:" Margin="0,10" FontSize="20" HorizontalAlignment="Right" RenderTransformOrigin="0.471,2.379"/>
+            <TextBlock Text="CEP:" Margin="0,10" FontSize="20" HorizontalAlignment="Right" RenderTransformOrigin="0.471,2.379"/>
 
-            <TextBlock Text="PCD:" Margin="0,10" FontSize="20" HorizontalAlignment="Left" RenderTransformOrigin="0.471,2.379"/>
-            <TextBlock Text="N° da Carteira:" Grid.ColumnSpan="3"  Margin="0,10" FontSize="20" HorizontalAlignment="Left" RenderTransformOrigin="0.471,2.379"/>
-            <TextBlock Text="Tipo de Salário:" Margin="0,10" FontSize="20" HorizontalAlignment="Left" RenderTransformOrigin="0.471,2.379"/>
-
-            <TextBlock Text="Data Adimissão:" Margin="0,10" FontSize="20" HorizontalAlignment="Left" RenderTransformOrigin="0.471,2.379"/>
-            <TextBlock Text="Setor Trabalho:" Margin="0,10" FontSize="20" HorizontalAlignment="Left" RenderTransformOrigin="0.471,2.379" Width="165"/>
-            <TextBlock Text="Carga Horaria:"  Margin="0,10" FontSize="20" HorizontalAlignment="Left" RenderTransformOrigin="0.471,2.379"/>
 
         </StackPanel>
 
-        <StackPanel Margin="2.8,2,4.2,26" Grid.RowSpan="3" Grid.Column="1" RenderTransformOrigin="0.481,0.569" >
-            <TextBox x:Name="recebe_nome" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,35,-240.2,10"/>
-            <wpftool:MaskedTextBox  Mask="000\.000\.000-00" x:Name="TxtBox_RecebeCPF"  Margin="10,8,10,10"  Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" LostFocus="TxtBox_RecebeCPF_LostFocus" />
+        <StackPanel  Grid.Column="1" Grid.Row="1" Margin="4.8,4,2,116" Grid.RowSpan="2" >
+            <TextBox x:Name="recebe_nom" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,40,-220.6,10"/>
+            <wpftool:MaskedTextBox  Mask="000\.000\.000-00" x:Name="TxtBox_RecebeCPF"  Margin="10,3,10,10"  Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" LostFocus="TxtBox_RecebeCPF_LostFocus" />
 
-            <TextBox x:Name="recebe_email" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,15,10.2,10"/>
+            <TextBox x:Name="recebe_email" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,10,10.2,10"/>
             <wpftool:MaskedTextBox  Mask="(00) 0 0000-0000" x:Name="recebe_telefone" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,10,10.2,10"/>
-            <TextBox x:Name="recebe_Endereco" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="8,6,16.4,10" Width="210"/>
+            <TextBox x:Name="recebe_Endereco" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="8,10,16.4,10" Width="210"/>
             <ComboBox x:Name="recebe_uf"
-                      Margin="8,7,176.4,10" Padding="1" FontSize="17"
+                      Margin="8,10,176.4,10" Padding="1" FontSize="17"
                       Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                      Width="50" RenderTransformOrigin="0.504,0.5" SelectionChanged="recebe_uf_SelectionChanged"/>
-            <TextBox x:Name="recebe_bairro" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="9,11,76.4,10" Width="149"/>
+                      Width="50">
+
+            </ComboBox>
+            <TextBox x:Name="recebe_bairro" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="9,10,76.4,10" Width="149"/>
             <ComboBox x:Name="recebe_cidade"
                       Margin="8,10,16.4,10" Padding="1" FontSize="17"
                       Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                      ItemsSource="{Binding ShortStringList}" Height="25"/>
-
-            <TextBox x:Name="recebe_DataNasc" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="7,11,18.4,10"/>
-            <TextBox x:Name="recebe_Função" Padding="1" materialDesign:HintAssist.Hint="Ex: Vender Produtos" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="7,11,18.4,10"/>
-
+                      ItemsSource="{Binding ShortStringList}" Height="29"/>
         </StackPanel>
-        <StackPanel Grid.Column="2" Grid.Row="1" Margin="46.8,17,6.4,32" Grid.ColumnSpan="2">
-            <TextBox x:Name="recebe_rg" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="20,3,177.4,10" Height="25"/>
+        <StackPanel Grid.Column="3" Grid.Row="1" Margin="9.6,73,2.6,16">
+            <TextBox x:Name="recebe_id" Text="00" Margin="10,10,307.4,10" FontSize="15" IsEnabled="False"/>
+            <TextBox x:Name="recebe_rg" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="0,3,220.2,10" Height="25"/>
+
             <ComboBox x:Name="recebe_sexo"
-                      Margin="21,10,287.4,10" Padding="1" FontSize="17"
+                      Margin="1,10,307.2,10" Padding="1" FontSize="17"
                       Style="{StaticResource MaterialDesignOutlinedComboBox}"
                       ItemsSource="{Binding ShortStringList}"/>
-            <wpftool:MaskedTextBox  Mask="00000-000" x:Name="recebe_cep" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="20,18,177.4,10" Height="25"/>
-            <ComboBox x:Name="recebe_PCD"
-                      Margin="20,10,177.4,10" Padding="1" FontSize="17"
-                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                      ItemsSource="{Binding ShortStringList}" Height="25"/>
-            <TextBox x:Name="recebe_NCarteira" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="114,3,90.4,10" Height="25"/>
-            <ComboBox x:Name="recebe_Tipo_Salario"
-                      Margin="114,10,90.4,10" Padding="1" FontSize="17"
-                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                      ItemsSource="{Binding ShortStringList}" Height="25"/>
+            <wpftool:MaskedTextBox  Mask="00000-000" x:Name="recebe_cep" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="-2,10,220.2,10" Height="22"/>
 
-            <wpftool:MaskedTextBox  Mask="00/00/0000" x:Name="recebe_DataAdim" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="116,10,179.4,60"/>
-            <TextBox x:Name="recebe_SetorTrabalho" materialDesign:HintAssist.Hint="Ex: Vendas" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="116,-50,90.4,10" Height="25"/>
-            <TextBox x:Name="recebe_CargaHoraria" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="116,0,90.4,10" Height="25"/>
 
         </StackPanel>
 
 
-        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" Margin="10,4,8.4,-25">
-
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" Margin="10,10,10,10">
             <Button x:Name="btn_novo" Style="{StaticResource MaterialDesignRaisedLightButton}"
                 
-                Height="50" Margin="0,29,20,37" Width="130"
+                Height="50" Margin="0 10 20 10" Width="130"
                 materialDesign:ButtonAssist.CornerRadius="25"
                 ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Cyan" BorderBrush="Cyan">
                 <TextBlock Text="NOVO" />
@@ -114,15 +94,15 @@
 
             <Button x:Name="btn_excluir" Style="{StaticResource MaterialDesignRaisedLightButton}"
                 
-                Height="50" Margin="0,23,20,27" Width="130"
+                Height="50" Margin="0 10 20 10" Width="130"
                 materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red" Click="btn_excluir_Click_1">
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red">
                 <TextBlock Text="EXCLUIR" />
             </Button>
 
             <Button x:Name="btn_editar" Style="{StaticResource MaterialDesignRaisedLightButton}"
                 
-                Height="50" Margin="0,23,20,27" Width="130"
+                Height="50" Margin="0 10 20 10" Width="130"
                 materialDesign:ButtonAssist.CornerRadius="25"
                 ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange">
                 <TextBlock Text="EDITAR" />
@@ -130,25 +110,25 @@
 
             <Button x:Name="btn_cancelar" Style="{StaticResource MaterialDesignRaisedLightButton}"
                 
-                Height="50" Margin="0,23,20,27" Width="130"
+                Height="50" Margin="0 10 20 10" Width="130"
                 materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Gray" BorderBrush="Gray" Click="btn_cancelar_Click_1">
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Gray" BorderBrush="Gray">
                 <TextBlock Text="CANCELAR" />
             </Button>
 
             <Button x:Name="BtnSalvar"  Style="{StaticResource MaterialDesignRaisedAccentButton}" 
                      
-                     Height="Auto" Margin="20,10,20,37.8" FontSize="23"
+                     Height="Auto" Margin="20,10" FontSize="23"
                      ToolTip="Resource name: MaterialDesignRaisedAccentButton"
                      Content="SALVAR" Background="Lime" BorderBrush="Lime" Width="150"
             />
         </StackPanel>
-        <materialDesign:PackIcon HorizontalAlignment="Center" BorderBrush="Black" Kind="Account" Width="171" Height="124" Grid.Column="3" Margin="200.6,13,0.4,0" Grid.Row="1"/>
+        <materialDesign:PackIcon HorizontalAlignment="Center" BorderBrush="Black" Kind="Account" Width="209" Height="189" Grid.Column="3" Margin="152.6,0,9.6,0" Grid.Row="1"/>
 
         <Button x:Name="Btnadicionar_fotos" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                     Margin="222.6,139,18.4,273"
+                     Margin="192.6,195,48.6,217"
                      ToolTip="MaterialDesignRaisedLightButton with Round Corners"
-                     Content="Adicionar Foto" Click="BtnAdicionarFoto_Click" BorderBrush="White" Grid.Column="3" Grid.Row="1" Height="Auto" >
+                     Content="Adicionar Foto" Click="BtnAdicionarFoto_Click" BorderBrush="White" Grid.Column="3" Grid.Row="1" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFAAAAAA" Offset="1"/>
@@ -156,8 +136,6 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <TextBlock Text="ID:" Margin="0,38,157.4,426" FontSize="20" HorizontalAlignment="Right" RenderTransformOrigin="0.471,2.379" Grid.Column="3" Width="24" Grid.RowSpan="2"/>
-        <TextBox x:Name="recebe_id" Text="00" Margin="225.6,36,114.4,438" FontSize="15" IsEnabled="False" Grid.Column="3" Grid.RowSpan="2"/>
 
     </Grid>
 </Window>

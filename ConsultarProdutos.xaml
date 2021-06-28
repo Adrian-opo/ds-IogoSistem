@@ -62,7 +62,7 @@
 
             <DataGrid  Margin="10 0 10 0" CanUserAddRows="False" CanUserDeleteRows="False"  
                        x:Name="dataGridConsultarProd"  AutoGenerateColumns="False" 
-                       AlternatingRowBackground="LightBlue" AlternationCount="2" SelectionChanged="dataGridConsultarProd_SelectionChanged" >
+                       AlternatingRowBackground="LightBlue" AlternationCount="2" >
                 <DataGrid.Columns>
 
 
@@ -95,15 +95,15 @@
             <Button x:Name="BtnExcluir" Style="{StaticResource MaterialDesignRaisedLightButton}"
                 Height="50" Margin="20,5,250,5" Width="150" BorderBrush="#FFFF4C4C"
                     materialDesign:ButtonAssist.CornerRadius="25"
-               ToolTip="MaterialDesignRaisedLightButton with Round Corners"  Background="#FFFF4C4C" Click="BtnExcluir_Click">
+               ToolTip="MaterialDesignRaisedLightButton with Round Corners"  Background="#FFFF4C4C">
                 <TextBlock Text="Excluir" />
             </Button>
 
             <Button x:Name="BtnEditar" Style="{StaticResource MaterialDesignRaisedLightButton}"
                 
-                Height="50" Margin="0,11,20,0" Width="150"
+                Height="50" Margin="0 5 20 5" Width="150"
                 materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange" VerticalAlignment="Top" Click="BtnEditar_Click">
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange">
                 <TextBlock Text="Editar" />
             </Button>
         </StackPanel>

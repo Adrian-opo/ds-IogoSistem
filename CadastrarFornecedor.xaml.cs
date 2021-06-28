@@ -132,10 +132,5 @@ namespace IogoSistem_vs1
 
             this.Close();
         }
-
-        private void btn_excluir_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

@@ -61,7 +61,6 @@ namespace IogoSistem_vs1
             registrarDespesas.ShowDialog();
         }
 
-<<<<<<< HEAD
         private void registrar_ganhos_Click(object sender, RoutedEventArgs e)
         {
             RegistrarGanhos registrarganhos = new RegistrarGanhos();
@@ -72,13 +71,6 @@ namespace IogoSistem_vs1
         {
             ConsultarClientes consultarclientes = new ConsultarClientes();
             consultarclientes.ShowDialog();
-=======
-        private void BtnRegistrarGastos(object sender, RoutedEventArgs e)
-        {
-
-            RegistrarGanhos registrarGastos = new RegistrarGanhos();
-            registrarGastos.ShowDialog();
->>>>>>> main
         }
     }
 }
