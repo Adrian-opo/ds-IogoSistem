@@ -87,13 +87,21 @@
     <Compile Include="CadastrarFuncionario.xaml.cs">
       <DependentUpon>CadastrarFuncionario.xaml</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="ConsultarClientes.xaml.cs">
       <DependentUpon>ConsultarClientes.xaml</DependentUpon>
+=======
+    <Compile Include="ConsultarFornecedor.xaml.cs">
+      <DependentUpon>ConsultarFornecedor.xaml</DependentUpon>
+>>>>>>> main
     </Compile>
     <Compile Include="ConsultarProdutos.xaml.cs">
       <DependentUpon>ConsultarProdutos.xaml</DependentUpon>
     </Compile>
     <Compile Include="Evento.cs" />
+    <Compile Include="ExcluirFuncionario.xaml.cs">
+      <DependentUpon>ExcluirFuncionario.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -103,6 +111,12 @@
     <Compile Include="RegistrarDespesas.xaml.cs">
       <DependentUpon>RegistrarDespesas.xaml</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="RegistrarDespesas1.xaml.cs">
+      <DependentUpon>RegistrarDespesas1.xaml</DependentUpon>
+    </Compile>
+>>>>>>> main
     <Compile Include="RegistrarGanhos.xaml.cs">
       <DependentUpon>RegistrarGanhos.xaml</DependentUpon>
     </Compile>
@@ -119,7 +133,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+<<<<<<< HEAD
     <Page Include="ConsultarClientes.xaml">
+=======
+    <Page Include="ConsultarFornecedor.xaml">
+>>>>>>> main
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,6 +146,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EditarUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExcluirFuncionario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,6 +187,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+<<<<<<< HEAD
+=======
+    <Page Include="RegistrarDespesas1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+>>>>>>> main
     <Page Include="RegistrarGanhos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

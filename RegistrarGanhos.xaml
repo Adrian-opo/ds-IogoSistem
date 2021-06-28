@@ -30,7 +30,7 @@
                       Padding="1" FontSize="17"
                       Style="{StaticResource MaterialDesignOutlinedComboBox}"
                       ItemsSource="{Binding ShortStringList}"
-                      Width="400" RenderTransformOrigin="0.5,0.481" />
+                      Width="400" RenderTransformOrigin="0.5,0.481" SelectionChanged="recebe_cliente_SelectionChanged" />
 
             <TextBlock x:Name="id_cliente" Text="ID Cliente:" Margin="10,10,10,10" FontSize="15"/>
             <ComboBox x:Name="recebe_idcliente"
@@ -123,7 +123,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="3">
-            <DataGrid  Margin="10 10 10 10" ItemsSource="{Binding}" x:Name="dataGridProdutosVenda"   IsReadOnly="True" AutoGenerateColumns="False" AlternatingRowBackground="#FF03A9F4" AlternationCount="2" Height="103" >
+            <DataGrid  Margin="10 10 10 10" ItemsSource="{Binding}" x:Name="dataGridProdutosVenda"   IsReadOnly="True" AutoGenerateColumns="False" AlternatingRowBackground="#FF03A9F4" AlternationCount="2" Height="103" SelectionChanged="dataGridProdutosVenda_SelectionChanged" >
                 <DataGrid.Columns>
 
                     <DataGridCheckBoxColumn Header="" IsThreeState="False" Binding="{Binding checkbox}"/>
@@ -159,7 +159,7 @@
                 
                 Height="50" Margin="0 10 20 10" Width="130"
                 materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red">
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red" Click="btn_excluir_Click">
                 <TextBlock Text="EXCLUIR" />
             </Button>
 
