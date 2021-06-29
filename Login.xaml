@@ -24,7 +24,7 @@
         <Image 
         Source="Imagens\logo.png" Margin="32,-87,518,44" Grid.RowSpan="2"/>
         <materialDesign:PackIcon Kind="Account" Margin="10,25,0,0" Height="62" Width="56" Grid.Row="1" />
-        <TextBox  x:Name="usuario" materialDesign:HintAssist.Hint="Usuario"  Margin="88,49,556,103"  Padding="5" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Grid.Row="1" />
+        <TextBox  x:Name="usuario" materialDesign:HintAssist.Background="#d3ecff" materialDesign:HintAssist.Hint="Usuario"  Margin="88,49,556,103"  Padding="5" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Grid.Row="1" />
 
         <materialDesign:PackIcon Kind="Lock" RenderTransformOrigin="4.798,12.832" Margin="10,115,0,0" Width="56" Height="52" Grid.Row="1" />
 
@@ -33,9 +33,9 @@
         <StackPanel Orientation="Horizontal" Margin="16,25,496,170" Grid.RowSpan="2">
 
         </StackPanel>
-        <TextBox x:Name="revelar"  materialDesign:HintAssist.Hint="Senha" Padding="5" FontSize="17" Margin="
+        <TextBox x:Name="revelar" materialDesign:HintAssist.Background="#d3ecff"  materialDesign:HintAssist.Hint="Senha" Padding="5" FontSize="17" Margin="
                  88,123,556,28" Style="{StaticResource MaterialDesignOutlinedTextBox}" Visibility="Collapsed"  RenderTransformOrigin="1.56,0.383" Grid.Row="1"/>
-        <PasswordBox  x:Name="senhauser"  Padding="5" materialDesign:HintAssist.Hint="Senha" Margin="88,123,556,28" Style="{StaticResource MaterialDesignOutlinedPasswordBox}" FontSize="17" RenderTransformOrigin="1.56,0.383" Grid.Row="1" />
+        <PasswordBox  x:Name="senhauser"   KeyDown="darenter" Padding="5"  materialDesign:HintAssist.Background="#d3ecff" materialDesign:HintAssist.Hint="Senha" Margin="88,123,556,28" Style="{StaticResource MaterialDesignOutlinedPasswordBox}" FontSize="17" RenderTransformOrigin="1.56,0.383" Grid.Row="1" />
         <Button
   Style="{StaticResource MaterialDesignFlatAccentBgButton}"
   ToolTip="MaterialDesignFlatAccentBackgroundButton"

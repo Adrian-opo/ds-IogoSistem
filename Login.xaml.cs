@@ -53,10 +53,9 @@ namespace IogoSistem_vs1
 
         private void Btn_Salvar(object sender, RoutedEventArgs e)
         {
-            string senha = senhauser.Password;
-            string user = usuario.Text;
+            
 
-            if (senha == "1234"|| user == "teste")
+            if (senhauser.Password == "1234" || usuario.Text == "teste")
             {
                
                 Menu menu = new Menu();
@@ -69,6 +68,30 @@ namespace IogoSistem_vs1
             else
             {
                 MessageBox.Show("Campo(s) em branco e/ou invalido(s)!");
+            }
+        
+        
+        
+        }
+
+        private void darenter(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                if (senhauser.Password == "1234" || usuario.Text == "teste")
+                {
+
+                    Menu menu = new Menu();
+                    this.Close();
+                    menu.ShowDialog();
+
+
+                }
+
+                else
+                {
+                    MessageBox.Show("Campo(s) em branco e/ou invalido(s)!");
+                }
             }
         }
     }

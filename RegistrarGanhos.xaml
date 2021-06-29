@@ -43,11 +43,11 @@
                 
                 Height="Auto" Margin="0,12,0,10" Width="40"
                 materialDesign:ButtonAssist.CornerRadius="25"
-<<<<<<< Updated upstream
+
                 ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="#FF00FF17" BorderBrush="#FF00FF17">
-=======
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="#FF00FF17" BorderBrush="#FF00FF17" >
->>>>>>> Stashed changes
+
+                
+
                 <TextBlock Text="+" />
             </Button>
 

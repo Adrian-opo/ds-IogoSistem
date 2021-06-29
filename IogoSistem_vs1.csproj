@@ -109,6 +109,9 @@
     <Compile Include="RegistrarGanhos.xaml.cs">
       <DependentUpon>RegistrarGanhos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SuporteUsuario.xaml.cs">
+      <DependentUpon>SuporteUsuario.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Util.cs" />
     <Page Include="Agenda.xaml">
       <SubType>Designer</SubType>
@@ -176,6 +179,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SuporteUsuario.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -205,7 +212,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagens\img.jpg" />
+    <Folder Include="Imagens\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />
