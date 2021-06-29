@@ -1,0 +1,93 @@
+﻿<Window x:Class="IogoSistem_vs1.CadastrarProdutos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IogoSistem_vs1"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="CadastrarProdutos" Height="457" Width="800">
+    <Grid Background="#d3ecff">
+
+
+        <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="10,319,10,1">
+            <Button x:Name="btn_novo" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="0,34,20,14" Width="130"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Cyan" BorderBrush="Cyan">
+                <TextBlock Text="NOVO" />
+            </Button>
+            <Button x:Name="btn_excluir" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="0,36,20,12" Width="130"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red">
+                <TextBlock Text="EXCLUIR" />
+            </Button>
+            <Button x:Name="btn_editar" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="0,34,20,14" Width="130"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange">
+                <TextBlock Text="EDITAR" />
+            </Button>
+
+            <Button x:Name="btn_cancelar" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="0,34,20,14" Width="130"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Gray" BorderBrush="Gray">
+                <TextBlock Text="CANCELAR" />
+            </Button>
+
+            <Button x:Name="BtnSalvar"  Style="{StaticResource MaterialDesignRaisedAccentButton}" 
+                     
+                     Height="Auto" Margin="20,10" FontSize="23"
+                     ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                     Content="SALVAR" Background="Lime" BorderBrush="Lime" Width="150"
+            />
+        </StackPanel>
+
+        <TextBlock Margin="10,19,722,370" FontSize="15"><Run Text="Nome"/><Run Text=" "/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="Nome" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="72,10,412,370"/>
+        <TextBlock Margin="10,75,722,314" FontSize="15"><Run Text="Codigo"/><Run Text=":"/><Run Text="    "/></TextBlock>
+        <TextBox x:Name="Codigo" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="72,65,412,314"/>
+        <TextBlock Margin="10,125,722,264" FontSize="15" Text="Medida:"/>
+        <TextBox x:Name="Medida" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="72,115,412,264"/>
+        <RadioButton Content="KG" HorizontalAlignment="Left" Margin="72,165,0,0" VerticalAlignment="Top" />
+        <RadioButton Content="Litros" HorizontalAlignment="Left" Margin="142,165,0,0" VerticalAlignment="Top" />
+        <TextBlock Margin="12,208,720,181" FontSize="15"><Run Text="Sabor"/><Run Text=" "/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="Sabor" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="74,195,410,184"/>
+        <TextBlock Margin="12,254,707,135" FontSize="15"><Run Text="Categoria"/><Run Text=":"/></TextBlock>
+        <ComboBox x:Name="produtos" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                  Width="291" Margin="92,245,0,0"
+                  Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                  ItemsSource="{Binding ShortStringList}" Height="36"
+                  Padding="0" FontSize="20"/>
+
+
+        <TextBlock Margin="12,300,692,89" FontSize="15" Text="Valor Custo:"/>
+        <TextBox x:Name="Sabor_Copy" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="105,290,527,92"/>
+        <TextBlock Margin="317,300,387,89" FontSize="15"><Run Text="Valor "/><Run Text="Venda"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="Sabor_Copy1" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="410,290,222,92"/>
+        <Button x:Name="BtnPesquisar"  Style="{StaticResource MaterialDesignRaisedAccentButton}" 
+                     
+                     Height="Auto" Margin="630,225,10,124" FontSize="20"
+                     ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                     Content="PESQUISAR" Background="#363636" BorderBrush="#363636" Width="Auto"
+            />
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="111" Margin="462,57,0,0" Stroke="Black" VerticalAlignment="Top" Width="158"/>
+        <TextBlock Margin="480,31,212,358" FontSize="15" Text="DESCRIÇÃO"/>
+        <TextBlock Margin="672,28,20,361" FontSize="15"><Run Text="FOT"/><Run Text="O"/></TextBlock>
+        <materialDesign:PackIcon Kind="BottleWine" RenderTransformOrigin="43.125,7.5" Margin="630,57,0,0" Width="130" Height="111" />
+    </Grid>
+
+</Window>

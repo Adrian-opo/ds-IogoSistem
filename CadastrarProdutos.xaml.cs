@@ -15,18 +15,15 @@ using System.Windows.Shapes;
 namespace IogoSistem_vs1
 {
     /// <summary>
-    /// Lógica interna para SuporteUsuario.xaml
+    /// Lógica interna para CadastrarProdutos.xaml
     /// </summary>
-    public partial class SuporteUsuario : Window
+    public partial class CadastrarProdutos : Window
     {
-        public SuporteUsuario()
+        public CadastrarProdutos()
         {
             InitializeComponent();
         }
 
-        private void BtnManual(object sender, RoutedEventArgs e)
-        {
-            System.Diagnostics.Process.Start(@"C:\Users\adria\OneDrive\Área de Trabalho\teste.docx");
-        }
+       
     }
 }

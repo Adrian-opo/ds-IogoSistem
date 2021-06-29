@@ -13,8 +13,8 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="Login" Height="474" Width="371 " WindowStartupLocation="CenterScreen">
-    <Grid Margin="10,0,0,-31" Height="419" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="842"  >
+        Title="Login" Height="474" Width="371 " WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="0,0,-489,-3" Height="446" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="852"  Background="#d3ecff" >
         <Grid.RowDefinitions>
             <RowDefinition Height="194*"/>
             <RowDefinition Height="183*"/>
@@ -22,23 +22,24 @@
         </Grid.RowDefinitions>
 
         <Image 
-        Source="Imagens\logo.png" Margin="10,-133,539,90" Grid.RowSpan="2"/>
-        <materialDesign:PackIcon Kind="Account" Margin="-6,185,0,0" Height="62" Width="56" Grid.RowSpan="2" />
-        <TextBox  x:Name="usuario" materialDesign:HintAssist.Hint="Usuario"  Margin="72,3,571,140"  Padding="5" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Grid.Row="1" />
+        Source="Imagens\logo.png" Margin="32,-87,518,44" Grid.RowSpan="2"/>
+        <materialDesign:PackIcon Kind="Account" Margin="10,25,0,0" Height="62" Width="56" Grid.Row="1" />
+        <TextBox  x:Name="usuario" materialDesign:HintAssist.Hint="Usuario"  Margin="88,49,556,103"  Padding="5" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Grid.Row="1" />
 
-        <materialDesign:PackIcon Kind="Lock" RenderTransformOrigin="4.798,12.832" Margin="-6,69,0,0" Width="56" Height="52" Grid.Row="1" />
+        <materialDesign:PackIcon Kind="Lock" RenderTransformOrigin="4.798,12.832" Margin="10,115,0,0" Width="56" Height="52" Grid.Row="1" />
 
-        <CheckBox   x:Name="ver" Padding="5"  Content=""  Style="{StaticResource MaterialDesignCheckBox}" Checked="Visualizar" Unchecked="Visualizar" Margin="276,0,512,31" Grid.Row="1" Grid.RowSpan="2" />
+        <CheckBox   x:Name="ver" Padding="5"  Style="{StaticResource MaterialDesignCheckBox}" Checked="Visualizar" Unchecked="Visualizar" Margin="302,139,531,40" RenderTransformOrigin="0.625,3.533" Grid.Row="1" />
 
-        <StackPanel Orientation="Horizontal" Margin="0,-21,512,21">
+        <StackPanel Orientation="Horizontal" Margin="16,25,496,170" Grid.RowSpan="2">
 
         </StackPanel>
-        <TextBox x:Name="revelar"  materialDesign:HintAssist.Hint="Senha" Padding="5" FontSize="17" Margin="72,77,571,67" Style="{StaticResource MaterialDesignOutlinedTextBox}" Visibility="Collapsed"  RenderTransformOrigin="1.56,0.383" Grid.Row="1"/>
-        <PasswordBox  x:Name="senhauser"  Padding="5" materialDesign:HintAssist.Hint="Senha" Margin="72,77,571,67" Style="{StaticResource MaterialDesignOutlinedPasswordBox}" FontSize="17" RenderTransformOrigin="1.56,0.383" Grid.Row="1" />
+        <TextBox x:Name="revelar"  materialDesign:HintAssist.Hint="Senha" Padding="5" FontSize="17" Margin="
+                 88,123,556,28" Style="{StaticResource MaterialDesignOutlinedTextBox}" Visibility="Collapsed"  RenderTransformOrigin="1.56,0.383" Grid.Row="1"/>
+        <PasswordBox  x:Name="senhauser"  Padding="5" materialDesign:HintAssist.Hint="Senha" Margin="88,123,556,28" Style="{StaticResource MaterialDesignOutlinedPasswordBox}" FontSize="17" RenderTransformOrigin="1.56,0.383" Grid.Row="1" />
         <Button
   Style="{StaticResource MaterialDesignFlatAccentBgButton}"
   ToolTip="MaterialDesignFlatAccentBackgroundButton"
-   Content="Entrar" Click="Btn_Salvar" Background="Lime" BorderBrush="Lime" Margin="103,145,623,6" Grid.Row="1" />
+   Content="Entrar" Click="Btn_Salvar" Background="Lime" BorderBrush="Lime" Margin="126,191,600,17" Grid.Row="1" Grid.RowSpan="2" />
 
     </Grid>
 </Window>

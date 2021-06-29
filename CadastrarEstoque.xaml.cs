@@ -15,18 +15,25 @@ using System.Windows.Shapes;
 namespace IogoSistem_vs1
 {
     /// <summary>
-    /// Lógica interna para SuporteUsuario.xaml
+    /// Lógica interna para CadastrarEstoque.xaml
     /// </summary>
-    public partial class SuporteUsuario : Window
+    public partial class CadastrarEstoque : Window
     {
-        public SuporteUsuario()
+        public CadastrarEstoque()
         {
             InitializeComponent();
+
+
+            produtos.Items.Add("Iogurte de Morango");
+            produtos.Items.Add("Iogurte de Ameixa");
+            produtos.Items.Add("Iogurte de Abacaxi");
         }
 
-        private void BtnManual(object sender, RoutedEventArgs e)
+        private void BtnSalvar_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start(@"C:\Users\adria\OneDrive\Área de Trabalho\teste.docx");
+
         }
+
+        
     }
 }

@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IogoSistem_vs1"
         mc:Ignorable="d"
-        Title="SuporteUsuario" Height="450" Width="800">
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="SuporteUsuario" Height="450" Width="800" WindowStartupLocation="CenterScreen" >
     <Grid>
-        
+        <Button x:Name="Manual" Content="Manual" Height="Auto"  Click="BtnManual" Margin="42,182,486,183"/>
+        <Button x:Name="EnviarEmail" Content="Enviar Email" Height="50" Margin="454,182,74,187" />
+        <Button x:Name="AssistenciaRemota" Content="Assistencia Remota" Height="50" Margin="225,302,262,67"  />
+
     </Grid>
 </Window>

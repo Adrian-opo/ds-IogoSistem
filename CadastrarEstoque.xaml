@@ -1,0 +1,61 @@
+﻿<Window x:Class="IogoSistem_vs1.CadastrarEstoque"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IogoSistem_vs1"
+        xmlns:wpftool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        
+        Title="CadastrarEstoque" Height="450" Width="631" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+    <Grid Background="#d3ecff" Margin="0,0,2,-5">
+
+
+
+
+        <TextBlock x:Name="cliente" Margin="10,75,433,311" FontSize="20"><Run Text="Pesquisar Produto:"/><Span Foreground="Black"><Run Text="            "/></Span><Span Foreground="Blue"><Run Text="&lt;"/></Span><Span Foreground="#FFA31515"><Run Text="TextBox"/></Span><Span Foreground="Red"><Run Text=" x"/></Span><Span Foreground="Blue"><Run Text=":"/></Span><Span Foreground="Red"><Run Text="Name"/></Span><Span Foreground="Blue"><Run Text="=&quot;TxtRecebe_Fornecedor&quot;"/></Span><Span Foreground="Red"><Run Text=" Padding"/></Span><Span Foreground="Blue"><Run Text="=&quot;1&quot;"/></Span><Span Foreground="Red"><Run Text=" FontSize"/></Span><Span Foreground="Blue"><Run Text="=&quot;17&quot;"/></Span><Span Foreground="Black"><Run Text=" "/></Span><Span Foreground="Red"><Run Text=" Style"/></Span><Span Foreground="Blue"><Run Text="=&quot;{"/></Span><Span Foreground="#FFA31515"><Run Text="StaticResource"/></Span><Span Foreground="Red"><Run Text=" MaterialDesignOutlinedTextBox"/></Span><Span Foreground="Blue"><Run Text="}&quot;"/></Span><Span Foreground="Red"><Run Text=" Margin"/></Span><Span Foreground="Blue"><Run Text="=&quot;10,35,10,10&quot;"/></Span><Span Foreground="Red"><Run Text=" HorizontalAlignment"/></Span><Span Foreground="Blue"><Run Text="=&quot;Left&quot;"/></Span><Span Foreground="Red"><Run Text=" Height"/></Span><Span Foreground="Blue"><Run Text="=&quot;29&quot;"/></Span><Span Foreground="Red"><Run Text=" Width"/></Span><Span Foreground="Blue"><Run Text="=&quot;350&quot;/&gt;"/></Span><LineBreak/><Run/></TextBlock>
+        <StackPanel Orientation="Horizontal" Margin="74,285,-384,10">
+            <Button x:Name="btn_novo" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="0,55,20,19" Width="130"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Cyan" BorderBrush="Cyan">
+                <TextBlock Text="NOVO" />
+            </Button>
+
+            <Button x:Name="btn_cancelar" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="0,55,20,19" Width="130"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Gray" BorderBrush="Gray" >
+                <TextBlock Text="CANCELAR" />
+            </Button>
+            <Button x:Name="BtnSalvar"  Style="{StaticResource MaterialDesignRaisedAccentButton}" 
+                     
+                      Margin="20,0,20,13" FontSize="23"
+                     ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                     Content="SALVAR" Background="Lime" BorderBrush="Lime" Width="148" Click="BtnSalvar_Click" Height="74" VerticalAlignment="Bottom"
+            />
+        </StackPanel>
+        <RadioButton Content="Retirar Produto" HorizontalAlignment="Left" Margin="221,164,0,0" VerticalAlignment="Top" />
+        <RadioButton Content="Adicionar Produto" HorizontalAlignment="Left" Margin="404,166,0,0" VerticalAlignment="Top" />
+        <TextBlock x:Name="Datavalidade" Margin="10,218,445,168" FontSize="20"><Run Text="Data de Validade"/><Run Text=":"/><Span Foreground="Black"><Run Text="            "/></Span><Span Foreground="Blue"><Run Text="&lt;"/></Span><Span Foreground="#FFA31515"><Run Text="TextBox"/></Span><Span Foreground="Red"><Run Text=" x"/></Span><Span Foreground="Blue"><Run Text=":"/></Span><Span Foreground="Red"><Run Text="Name"/></Span><Span Foreground="Blue"><Run Text="=&quot;TxtRecebe_Fornecedor&quot;"/></Span><Span Foreground="Red"><Run Text=" Padding"/></Span><Span Foreground="Blue"><Run Text="=&quot;1&quot;"/></Span><Span Foreground="Red"><Run Text=" FontSize"/></Span><Span Foreground="Blue"><Run Text="=&quot;17&quot;"/></Span><Span Foreground="Black"><Run Text=" "/></Span><Span Foreground="Red"><Run Text=" Style"/></Span><Span Foreground="Blue"><Run Text="=&quot;{"/></Span><Span Foreground="#FFA31515"><Run Text="StaticResource"/></Span><Span Foreground="Red"><Run Text=" MaterialDesignOutlinedTextBox"/></Span><Span Foreground="Blue"><Run Text="}&quot;"/></Span><Span Foreground="Red"><Run Text=" Margin"/></Span><Span Foreground="Blue"><Run Text="=&quot;10,35,10,10&quot;"/></Span><Span Foreground="Red"><Run Text=" HorizontalAlignment"/></Span><Span Foreground="Blue"><Run Text="=&quot;Left&quot;"/></Span><Span Foreground="Red"><Run Text=" Height"/></Span><Span Foreground="Blue"><Run Text="=&quot;29&quot;"/></Span><Span Foreground="Red"><Run Text=" Width"/></Span><Span Foreground="Blue"><Run Foreground="Blue" Text="=&quot;350&quot;/&gt;"/></Span><LineBreak/><Run/></TextBlock>
+        <wpftool:MaskedTextBox  Mask="00/00/0000" x:Name="Datadevalidade" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="180,213,273,173"/>
+        <TextBlock x:Name="Quantidade" Margin="10,267,445,119" FontSize="20"><Run Text="Quantidade"/><Run Text=":"/><Span Foreground="Black"><Run Text="            "/></Span><Span Foreground="Blue"><Run Text="&lt;"/></Span><Span Foreground="#FFA31515"><Run Text="TextBox"/></Span><Span Foreground="Red"><Run Text=" x"/></Span><Span Foreground="Blue"><Run Text=":"/></Span><Span Foreground="Red"><Run Text="Name"/></Span><Span Foreground="Blue"><Run Text="=&quot;TxtRecebe_Fornecedor&quot;"/></Span><Span Foreground="Red"><Run Text=" Padding"/></Span><Span Foreground="Blue"><Run Text="=&quot;1&quot;"/></Span><Span Foreground="Red"><Run Text=" FontSize"/></Span><Span Foreground="Blue"><Run Text="=&quot;17&quot;"/></Span><Span Foreground="Black"><Run Text=" "/></Span><Span Foreground="Red"><Run Text=" Style"/></Span><Span Foreground="Blue"><Run Text="=&quot;{"/></Span><Span Foreground="#FFA31515"><Run Text="StaticResource"/></Span><Span Foreground="Red"><Run Text=" MaterialDesignOutlinedTextBox"/></Span><Span Foreground="Blue"><Run Text="}&quot;"/></Span><Span Foreground="Red"><Run Text=" Margin"/></Span><Span Foreground="Blue"><Run Text="=&quot;10,35,10,10&quot;"/></Span><Span Foreground="Red"><Run Text=" HorizontalAlignment"/></Span><Span Foreground="Blue"><Run Text="=&quot;Left&quot;"/></Span><Span Foreground="Red"><Run Text=" Height"/></Span><Span Foreground="Blue"><Run Text="=&quot;29&quot;"/></Span><Span Foreground="Red"><Run Text=" Width"/></Span><Span Foreground="Blue"><Run Foreground="Blue" Text="=&quot;350&quot;/&gt;"/></Span><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="TBquantidade" Margin="183,267,273,123" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+        <ComboBox x:Name="produtos" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                  Width="291" Margin="211,73,0,0"
+                  Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                  ItemsSource="{Binding ShortStringList}" Height="31"
+                  Padding="0" FontSize="20"/>
+
+    </Grid>
+</Window>
