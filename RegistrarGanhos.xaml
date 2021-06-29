@@ -43,7 +43,7 @@
                 
                 Height="Auto" Margin="0,12,0,10" Width="40"
                 materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="#FF00FF17" BorderBrush="#FF00FF17" Click="add_cliente_Click">
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="#FF00FF17" BorderBrush="#FF00FF17">
                 <TextBlock Text="+" />
             </Button>
 
