@@ -15,21 +15,13 @@ using System.Windows.Shapes;
 namespace IogoSistem_vs1
 {
     /// <summary>
-    /// Lógica interna para Menu.xaml
+    /// Lógica interna para EditarCliente.xaml
     /// </summary>
-    public partial class Menu : Window
+    public partial class EditarCliente : Window
     {
-        public Menu()
+        public EditarCliente()
         {
             InitializeComponent();
-        }
-
-
-
-        private void bttAge_Click(object sender, RoutedEventArgs e)
-        {
-            Agenda agenda = new Agenda();
-            agenda.ShowDialog();
         }
     }
 }
