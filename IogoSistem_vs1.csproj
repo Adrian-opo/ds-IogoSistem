@@ -81,6 +81,9 @@
     <Compile Include="Agenda.xaml.cs">
       <DependentUpon>Agenda.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CadastrarCliente.xaml.cs">
+      <DependentUpon>CadastrarCliente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CadastrarEstoque.xaml.cs">
       <DependentUpon>CadastrarEstoque.xaml</DependentUpon>
     </Compile>
@@ -99,10 +102,19 @@
     <Compile Include="ConsultarProdutos.xaml.cs">
       <DependentUpon>ConsultarProdutos.xaml</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
     <Compile Include="Evento.cs" />
     <Compile Include="ExcluirFuncionario.xaml.cs">
       <DependentUpon>ExcluirFuncionario.xaml</DependentUpon>
     </Compile>
+=======
+    <Compile Include="ExcluirFuncionario.xaml.cs">
+      <DependentUpon>ExcluirFuncionario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos.xaml.cs">
+      <DependentUpon>Eventos.xaml</DependentUpon>
+    </Compile>
+>>>>>>> Stashed changes
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -121,10 +133,21 @@
     <Compile Include="SuporteUsuario.xaml.cs">
       <DependentUpon>SuporteUsuario.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditarCliente.xaml.cs">
+      <DependentUpon>EditarCliente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Util.cs" />
     <Page Include="Agenda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CadastrarCliente.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Eventos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="CadastrarFornecedor.xaml">
       <SubType>Designer</SubType>
@@ -185,6 +208,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditarCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

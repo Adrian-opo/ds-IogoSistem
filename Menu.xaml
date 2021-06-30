@@ -14,6 +14,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"  
+<<<<<<< Updated upstream
         Title="Menu" Height="594" Width="1148" WindowState="Maximized" ResizeMode="NoResize"><Grid>
     <Button x:Name="Agenda" Content="Agenda" Height="50" Margin="150,0,150,0" Click="BtnAgenda"/>
     <Button x:Name="CadastrarUsuario" Content="Cadastrar Usuario" Height="50" Margin="150,200,150,0" Click="BtnCadastrarUsuario"/>
@@ -26,5 +27,145 @@
         <Button x:Name="consultar_fornecedor" Content="Consultar Fornecedor" Height="50" Margin="479,8,478.6,506" Click="consultar_fornecedor_Click"/>
 
 
+=======
+        Title="Menu" Height="700" Width="900" ResizeMode="NoResize">
+    <Grid Background="#d3ecff"  >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="309*"/>
+            <RowDefinition Height="275*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="63*"/>
+            <ColumnDefinition Width="62*"/>
+            <ColumnDefinition Width="125*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="BEM VINDO(A)!!" FontSize="46" Grid.Column="2" HorizontalAlignment="Left" Margin="179,219,0,0" VerticalAlignment="Top" Height="85" Width="452" RenderTransformOrigin="0.122,0.3" FontFamily="Lucida Calligraphy" Grid.ColumnSpan="2"/>
+
+
+
+        <Menu 
+        Height="48"
+        Margin="0,0,0,0" 
+        VerticalAlignment="Top"
+        Background="#d3ecff"
+         
+        BorderThickness="1" Grid.ColumnSpan="4">
+
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+
+
+            <MenuItem Header="CADASTROS" FontSize=" 21">
+                <MenuItem x:Name="itCadCli" Header="Cadastrar Cliente" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itCadCi" Header="Cadastrar Cidade" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itCadForn" Header="Cadastrar Fornecedor" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itCadFunc" Header="Cadastrar Funcionário" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itCadNovUsu" Header="Cadastrar Usuário" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itCadGanh" Header="Cadastrar Ganhos" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itCadProd" Header="Cadastrar Produtos" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itCadEven" Header="Cadastrar Eventos" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itCadAgen" Header="Cadastrar Agenda" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itCadEsto" Header="Cadastrar Estoque" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itCadDes" Header="Cadastrar Despesas" FontSize="20" FontFamily="Arial" Margin="3"/>
+
+            </MenuItem>
+
+            <Separator/>
+
+
+            <MenuItem Header="CONSULTAS" FontSize=" 21" >
+                <MenuItem x:Name="itConCli" Header="Consultar Cliente" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itConForn" Header="Consultar Fornecedor" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itConFunc" Header="Consultar Funcionário" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itConUsu" Header="Consultar Usuário" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itConPro" Header="Consultar Ganhos" FontSize="20" FontFamily="Arial" Margin="3"/>
+            </MenuItem>
+
+
+            <Separator/>
+
+            <MenuItem Header="FINANCEIRO" FontSize=" 21">
+                <MenuItem x:Name="iRegisGanho" Header="Registrar Ganhos" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itContCaix" Header="Controle de Caixa" FontSize="20" FontFamily="Arial" Margin="3"/>
+
+            </MenuItem>
+
+            <Separator/>
+
+            <MenuItem Header="RELATÓRIOS" FontSize=" 21">
+                <MenuItem x:Name="itRelCli" Header="Relatório Cliente" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itReldCi" Header="Relatório Cidade" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itRelForn" Header="Relatório Fornecedor" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itRelFunc" Header="Relatório  Funcionário" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itRelUsu" Header="Relatório  Usuário" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itRelPro" Header="Relatório Produto" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itRelGanh" Header="Relatório Ganhos" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itRelDesp" Header="Relatório Despesa" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itRelEst" Header="Relatório Estoque" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itRelGeralFin" Header="Relatório Geral do Finaceiro" FontSize="20" FontFamily="Arial" Margin="3"/>
+            </MenuItem>
+
+            <Separator/>
+
+            <MenuItem Header="AJUDA AO USUÁRIO" FontSize=" 21" >
+
+            </MenuItem>
+        </Menu>
+
+        <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            
+        Height="100" Margin="50,0,0,139"
+        x:Name="bttUsu"
+        materialDesign:ButtonAssist.CornerRadius="25"
+        ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Grid.ColumnSpan="3" Grid.Row="1" Background = "#063099"  BorderBrush = "#063099 " Cursor="Hand" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="230">
+            <TextBlock Text="Usuário" FontSize="40" />
+        </Button>
+
+        <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            
+        Height="100" Margin="50,0,0,27" 
+        x:Name="bttAge"
+        materialDesign:ButtonAssist.CornerRadius="25"
+        ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Grid.ColumnSpan="3" Grid.Row="1" Cursor="Hand" Background = "#063099"  BorderBrush = "#063099 " VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="236" Click="bttAge_Click">
+            <TextBlock Text="Agenda" FontSize="40" />
+        </Button>
+
+        <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            
+        Height="100" Margin="0,0,38,25"
+                x:Name="bttCai"
+        materialDesign:ButtonAssist.CornerRadius="25"
+        ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Grid.Row="1" Grid.Column="3" Background = "#063099"  BorderBrush = "#063099 " HorizontalAlignment="Right" Width="234" VerticalAlignment="Bottom" >
+            <TextBlock Text="Caixa" FontSize="40" />
+        </Button>
+
+        <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            
+        Height="100" Margin="102,110,314,89" 
+                x:Name="bttCal"
+        materialDesign:ButtonAssist.CornerRadius="25"
+        ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Background = "#063099"  BorderBrush = "#063099 ">
+            <TextBlock Text="Calculadora" FontSize="40" Width="227" />
+        </Button>
+
+        <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            
+        Height="100" Margin="0,0,40,139" 
+                x:Name="bttPro"
+        materialDesign:ButtonAssist.CornerRadius="25"
+        ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Grid.Row="1" Grid.Column="3" Background = "#063099"  BorderBrush = "#063099 " Cursor="Hand" HorizontalAlignment="Right" Width="234" VerticalAlignment="Bottom">
+            <TextBlock Text="Produtos" FontSize="40" Width="170" />
+        </Button>
+
+        <Image Source="Imagens/logo.png" Margin="0,53,10,0" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+
+>>>>>>> Stashed changes
     </Grid>
 </Window>
