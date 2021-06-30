@@ -29,12 +29,12 @@ namespace IogoSistem_vs1
 
         private void Agenda_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Evento> listaAgenda = new List<Evento>();
-            List<Evento> listaAgendames = new List<Evento>();
+            List<Util> listaAgenda = new List<Util>();
+            List<Util> listaAgendames = new List<Util>();
 
             for(int i=1; i<=24; i++)
             {
-                listaAgenda.Add(new Evento()
+                listaAgenda.Add(new Util()
                 {
                     Horas = i+":00",
                     Domingo = "x",
@@ -47,7 +47,7 @@ namespace IogoSistem_vs1
                     
                 });
 
-                listaAgendames.Add(new Evento()
+                listaAgendames.Add(new Util()
                 {
                     Semana1="abc",
                     Semana2="abc",

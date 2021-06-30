@@ -1,0 +1,103 @@
+﻿<Window x:Class="IogoSistem_vs1.EditarCliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IogoSistem_vs1"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+       Title="Editar Cliente" Height="629.474" Width="800" >
+
+
+
+    <Grid Background="#d3ecff" Margin="-2,4,2,-23">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="350"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="236"/>
+            <ColumnDefinition Width="164"/>
+            <ColumnDefinition Width="184"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+        <TextBlock Text="Cliente a ser editado"  FontSize="23" Margin="16,28,148,82" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="combobox_editar_cli"
+                      Margin="11,27,7,91" Padding="5" FontSize="23"
+                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                      ItemsSource="{Binding ShortStringList}" Grid.Column="1" />
+
+        <TextBlock Text="Nome:" Margin="20,94,120,24" FontSize="23"/>
+        <TextBox x:Name="recebe_nome" Padding="1" FontSize="23"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="138,88,46,26" Grid.ColumnSpan="2" />
+
+        <TextBlock Text="CPF/CNPJ:" Margin="18,4,84,318" FontSize="23" Grid.Row="1"/>
+        <TextBox x:Name="recebe_cpf_cnpj" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="140,148,100,316" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+
+        <TextBlock Text="ID:" Margin="164,122,190,318" FontSize="23" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+
+        <TextBox x:Name="recebe_id" Text="00" Margin="40,110,132,342" FontSize="23" IsEnabled="False" Grid.Column="3" Grid.RowSpan="2"/>
+
+        <TextBlock Text="Endereço:" Margin="16,196,114,116" FontSize="23" Grid.Row="1"/>
+
+        <TextBox x:Name="recebe_endereco" Padding="1" FontSize="23"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="133,188,151,126" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <TextBlock Text="Bairro:" Margin="16,324,138,105" FontSize="23" Grid.Row="1" Grid.RowSpan="2"/>
+        <TextBox x:Name="recebe_bairro" Padding="1" FontSize="23"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="98,320,92,111"  Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2"/>
+
+
+
+        <TextBlock Text="Cidade:" Margin="16,262,124,52" FontSize="23" Grid.Row="1"/>
+        <ComboBox x:Name="recebe_cidade" 
+                      Margin="124,259,66,0" Padding="1" FontSize="23" 
+                      Style="{StaticResource MaterialDesignOutlinedComboBox}" 
+                      ItemsSource="{Binding ShortStringList}" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top" Height="36"/>
+        <TextBlock Text="UF:" Margin="164,110,192,196" FontSize="23" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="recebe_uf" 
+                      Margin="41,111,115,0" Padding="1" FontSize="23" 
+                      Style="{StaticResource MaterialDesignOutlinedComboBox}" 
+                      ItemsSource="{Binding ShortStringList}"  Grid.Column="3" Grid.Row="1" VerticalAlignment="Top"/>
+
+        <TextBlock Text="E-Mail:" Margin="22,66,134,240" FontSize="23" Grid.Row="1"/>
+        <TextBox x:Name="recebe_email" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="108,62,66,252" Grid.ColumnSpan="2" Grid.Row="1"/>
+
+
+        <TextBlock Text="Telefone:" Margin="16,134,110,184" FontSize="23" Grid.Row="1"/>
+        <TextBox x:Name="recebe_telefone" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="134,126,72,188" Grid.ColumnSpan="2" Grid.Row="1"/>
+
+
+
+        <TextBlock Text="CEP:" Margin="162,174,174,142" FontSize="23" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="recebe_cep" Padding="1" FontSize="23" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="36,166,55,146" Grid.Row="1" Grid.Column="3"/>
+
+
+        <TextBlock Text="RG:" Margin="164,44,186,276" FontSize="23" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <TextBox x:Name="recebe_rg" Padding="1" FontSize="23" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="40,36,17,276" Grid.Column="3" Grid.Row="1"/>
+
+        <Button x:Name="btn_excluir" Style="{StaticResource MaterialDesignRaisedLightButton}" 
+                 
+                Height="50" Margin="46,33,60,34" Width="130" 
+                materialDesign:ButtonAssist.CornerRadius="25" 
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red" Grid.Row="2">
+            <TextBlock Text="EXCLUIR" FontSize="20"/>
+        </Button>
+
+        <Button x:Name="BtnSalvar"  Style="{StaticResource MaterialDesignRaisedAccentButton}"  
+                      
+                     Height="Auto" Margin="23,16,35,16" FontSize="23" 
+                     ToolTip="Resource name: MaterialDesignRaisedAccentButton" 
+                     Content="SALVAR" Background="Lime" BorderBrush="Lime" Width="150" Grid.Column="3" Grid.Row="2"  
+        />
+
+
+    </Grid>
+
+</Window>

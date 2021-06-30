@@ -24,17 +24,14 @@ namespace IogoSistem_vs1
             InitializeComponent();
         }
 
-        private void BtnCadastrarUsuario(object sender, RoutedEventArgs e)
-        {
-            MainWindow abrir = new MainWindow();
-            abrir.ShowDialog();
-        }
 
-        private void BtnAgenda(object sender, RoutedEventArgs e)
+
+        private void bttAge_Click(object sender, RoutedEventArgs e)
         {
             Agenda agenda = new Agenda();
             agenda.ShowDialog();
         }
+<<<<<<< Updated upstream
 
         private void BtnCadastrarFornecedor(object sender, RoutedEventArgs e)
         {
@@ -80,5 +77,7 @@ namespace IogoSistem_vs1
         }
 
         
+=======
+>>>>>>> Stashed changes
     }
 }
