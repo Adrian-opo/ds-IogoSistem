@@ -23,6 +23,7 @@
     <Button x:Name="CadastrarRegistrarDespesas" Content="Registrar despesas" Height="50" Margin="150,502,149.6,12" Click="BtnRegistrarDespesas"/>
         <Button x:Name="registrar_ganhos" Content="Registrar Ganhos" Height="50" Margin="150,8,825,507" Click="registrar_ganhos_Click"/>
         <Button x:Name="consultar_clientes" Content="Consultar Clientes" Height="50" Margin="806,8,156,507" Click="consultar_clientes_Click"/>
+        <Button x:Name="consultar_fornecedor" Content="Consultar Fornecedor" Height="50" Margin="479,8,478.6,506" Click="consultar_fornecedor_Click"/>
 
 
     </Grid>

@@ -72,5 +72,13 @@ namespace IogoSistem_vs1
             ConsultarClientes consultarclientes = new ConsultarClientes();
             consultarclientes.ShowDialog();
         }
+
+        private void consultar_fornecedor_Click(object sender, RoutedEventArgs e)
+        {
+            ConsultarFornecedor consultarFornecedor = new ConsultarFornecedor();
+            consultarFornecedor.ShowDialog();
+        }
+
+        
     }
 }

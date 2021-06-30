@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IogoSistem_vs1"
         xmlns:wpftool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
  TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="RegistrarDespesas" Height="620" Width="800" ResizeMode="NoResize">
+        Title="RegistrarDespesas" Height="620" Width="800" ResizeMode="NoResize" SizeToContent="Width" WindowStartupLocation="CenterScreen">
     <Grid Background="#d3ecff" >
         <Grid.RowDefinitions>
             <RowDefinition Height="16.8"/>
@@ -23,38 +23,101 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="132"/>
-            <ColumnDefinition Width="375.2"/>
+            <ColumnDefinition Width="109.2"/>
+            <ColumnDefinition Width="266"/>
             <ColumnDefinition Width="116.8"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <TextBox Height="23" TextWrapping="Wrap" Text="00" Margin="83.8,41.2,4,419" Grid.Column="3" Grid.Row="1" IsEnabled="False"/>
+        <TextBox x:Name="TxtRecebe_Valor" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="0,111.2,15.2,343" HorizontalAlignment="Right" Height="29" Width="100" Grid.Column="2" Grid.Row="1"/>
         <StackPanel Grid.Column="0" Grid.Row="1" Margin="0,1.2,4,0" >
             <TextBlock Text="Categoria:" Margin="10,40,10,10" FontSize="20" HorizontalAlignment="Right"/>
             <TextBlock Text="Data:" Margin="10,40,10,10" FontSize="20" HorizontalAlignment="Right"/>
             <TextBlock Text="Fornecedor:" Margin="10,40,10,10" FontSize="20" HorizontalAlignment="Right"/>
 
         </StackPanel>
-
-        <StackPanel Grid.Column="1" Grid.Row="1" Margin="0,1.2,3.2,0" >
+        <StackPanel Grid.Column="1" Grid.Row="1" Margin="0,1.2,3.2,0" Grid.ColumnSpan="2" >
             <ComboBox x:Name="CbxRecebe_categoria"
-                      HorizontalAlignment="Left"
-                      Margin="10,40,10,10" Padding="1" FontSize="17"
-                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                      ItemsSource="{Binding ShortStringList}" Height="29" Width="350"/>
-            <TextBox x:Name="TxtRecebe_Data" HorizontalAlignment="Left" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,32,10,10" Height="29" Width="200"/>
-            <TextBox x:Name="TxtRecebe_Fornecedor" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,35,10,10" HorizontalAlignment="Left" Height="29" Width="350"/>
+                HorizontalAlignment="Left"
+                Margin="10,40,10,10" Padding="1" FontSize="17"
+                Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                ItemsSource="{Binding ShortStringList}" Height="29" Width="350"/>
+            <wpftool:MaskedTextBox  Mask="00/00/0000" x:Name="recebe_data" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" HorizontalAlignment="Left" Margin="10,32,0,10" Height="29" Width="99"/>
+
+            <TextBox x:Name="TxtRecebe_Fornecedor" materialDesign:HintAssist.Hint="Ex: Plastic LTDA" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,35,10,10" HorizontalAlignment="Left" Height="29" Width="350"/>
 
         </StackPanel>
-
-        <StackPanel Grid.Column="1" Grid.Row="1" Margin="0,0.2,0.2,0">
-            <TextBlock Text="Valor:" Margin="10,120,15,10" FontSize="20" HorizontalAlignment="Right"/>
-
-        </StackPanel>
-        <StackPanel Grid.Column="2" Grid.Row="1">
-            <TextBlock Text="ID:" Margin="10,45,10,10" FontSize="20" HorizontalAlignment="Left" RenderTransformOrigin="0.471,2.379"/>
-            <TextBox x:Name="TxtRecebe_Valor" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="0,34,0,0" HorizontalAlignment="Left" Height="29" Width="100"/>
+        <StackPanel Grid.Column="1" Grid.Row="1" Margin="0,0.2,0.2,0" Grid.ColumnSpan="2">
+            <TextBlock Text="Valor:" Margin="194,117,132.2,10" FontSize="20" HorizontalAlignment="Center"/>
 
         </StackPanel>
-        <TextBox Height="23" TextWrapping="Wrap" Text="00" Margin="43.8,45.2,44,415" Grid.Column="2" Grid.Row="1" IsEnabled="False"/>
+        <StackPanel Grid.Column="3" Grid.Row="1" Margin="0.2,0.2,0,0">
+            <TextBlock Text="ID:" Margin="46,45,0,10" FontSize="20" HorizontalAlignment="Left" RenderTransformOrigin="0.471,2.379"/>
 
+        </StackPanel>
+        <StackPanel Grid.Column="4" Grid.Row="1" Margin="0,0.2,-0.4,0"/>
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="5" Orientation="Horizontal" Margin="95,480.2,78.6,0.4" Grid.Row="1" Grid.RowSpan="2">
+            <Button x:Name="btnAdd_Categoria" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="0 10 20 10" Width="130"
+                materialDesign:ButtonAssist.CornerRadius="25" Click="btnAdd_Categoria_Click"               ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Blue" BorderBrush="Cyan">
+                <TextBlock Height="34" Width="85" ><Run Text="ADICIONAR"/><LineBreak/><Run Text="CATEGORIA"/></TextBlock>
+            </Button>
+
+            <Button x:Name="btn_excluir" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="0 10 20 10" Width="130"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red" Click="btn_excluir_Click">
+                <TextBlock Text="EXCLUIR" />
+            </Button>
+
+            <Button x:Name="btn_editar" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="0 10 20 10" Width="130"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange" Click="btn_editar_Click">
+                <TextBlock Text="EDITAR" />
+            </Button>
+
+            <Button x:Name="btn_Cancelar" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="0,0,20,19.8" Width="130"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                    
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Gray" BorderBrush="Gray" Click="btn_Cancelar_Click" VerticalAlignment="Bottom">
+
+                <TextBlock Text="Cancelar" />
+            </Button>
+
+        </StackPanel>
+        <DataGrid  Margin="10,233.2,9.6,10" ItemsSource="{Binding}"
+                   x:Name="dataGridRegistrarDespesas" 
+                   IsReadOnly="True" 
+                   AutoGenerateColumns="False" 
+                   AlternatingRowBackground="#FF03A9F4" 
+                   AlternationCount="2"
+                   
+                   Grid.ColumnSpan="5" Grid.Row="1" SelectionChanged="dataGridRegistrarDespesas_SelectionChanged">
+            <DataGrid.Columns>
+
+                <DataGridCheckBoxColumn Header="" IsThreeState="False" Binding="{Binding checkbox}"/>
+
+                <DataGridTextColumn Header="Codigo" Binding="{Binding Codigo}"  Width="100"/>
+                <DataGridTextColumn Header="Categoria" Binding="{Binding Categoria}" Width="200" />
+                <DataGridTextColumn Header="Data" Binding="{Binding Data}" Width="120"/>
+                <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="100"/>
+                <DataGridTextColumn Header="Fornecedor" Binding="{Binding Fornecedor}" Width="200"/>
+            </DataGrid.Columns>
+
+
+        </DataGrid>
+        <StackPanel Grid.Row="1" Grid.Column="4">
+            <Button x:Name="BtnSalvar"  Style="{StaticResource MaterialDesignRaisedAccentButton}" 
+                     Height="76" Margin="10,130,9.6,10" FontSize="23"
+                     ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                     Content="Salvar" Background="Lime" BorderBrush="Lime" Click="BtnSalvar_Click" />
+
+        </StackPanel>
     </Grid>
 </Window>
