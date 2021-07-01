@@ -1,0 +1,120 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IogoSistem_vs1"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Name="Cadastrar_Cidade" x:Class="IogoSistem_vs1.CadastrarCidade"
+        xmlns:wpftool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+    
+        mc:Ignorable="d"
+    
+        Title="Cadastrar Cidade" Height="650" Width="800" ResizeMode="NoResize">
+    <Grid Background="#d3ecff">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="350"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Margin="50,25,200,325" Grid.RowSpan="2" Width="0"/>
+
+        <StackPanel Grid.Column="3" HorizontalAlignment="Center" Margin="8,0,156,0" Width="0"/>
+
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" Margin="0,52,0,248" Grid.Row="1">
+            <TextBlock x:Name="labelcidade" Text="Cidade:" Margin="10,10,10,10" FontSize="20"/>
+
+            <ComboBox x:Name="comboboxcidade" HorizontalAlignment="Left" Width="178" Margin="10,10,10,10" Padding="1" FontSize="20" Style="{StaticResource MaterialDesignOutlinedComboBox}">
+                <ComboBoxItem Content="Item 1"/>
+                <ComboBoxItem Content="Item 2"/>
+                <ComboBoxItem Content="Item 3"/>
+                <ComboBoxItem Content="Item 4"/>
+                <ComboBoxItem Content="Item 5"/>
+            </ComboBox>
+
+            <TextBlock x:Name="labelUf" Text="UF:" Margin="10,10,10,10" FontSize="20"/>
+
+
+            <ComboBox x:Name="comboboxuf" HorizontalAlignment="Left" Width="178" Margin="10,10,10,10" Padding="1" FontSize="20" Style="{StaticResource MaterialDesignOutlinedComboBox}">
+                <ComboBoxItem Content="Item 1"/>
+                <ComboBoxItem Content="Item 2"/>
+                <ComboBoxItem Content="Item 3"/>
+                <ComboBoxItem Content="Item 4"/>
+                <ComboBoxItem Content="Item 5"/>
+            </ComboBox>
+            
+            <TextBlock x:Name="labelcep" Text="CEP:" Margin="10,10,10,10" FontSize="20" RenderTransformOrigin="1.016,0.468"/>
+            <wpftool:MaskedTextBox  Mask="00000-000" x:Name="wpftoolCPf" Padding="1" FontSize="20"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10" Width="116" RenderTransformOrigin="1.662,0.594"/>
+        </StackPanel>
+        <Grid/>
+        <TextBox x:Name="recebe_idfornecedor" Text="00" Margin="41,25,708,95" FontSize="20" IsEnabled="False"/>
+        <Label Content="ID:" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" FontSize="20" Height="28" Width="51"/>
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" Margin="0,74,0,26">
+            <TextBlock x:Name="labelpais" Text="País:" Margin="10,10,10,10" FontSize="20"/>
+            <ComboBox x:Name="comboboxpais"
+                Margin="10,12,10,10" Padding="1" FontSize="20"
+                Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                ItemsSource="{Binding ShortStringList}"
+                Width="171" Height="28" />
+        </StackPanel>
+        <Button x:Name="Btn_pesquisarcidade" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                     Margin="634,282,20,25"
+           
+                     ToolTip="MaterialDesignRaisedLightButton with Round Corners"
+                     Content="Pesquisar" Click="Btnpesquisar" BorderBrush="White" Grid.Row="1" Height="Auto" FontSize="20" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFAAAAAA" Offset="1"/>
+                    <GradientStop Color="White" Offset="0.225"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="labelestado" Text="Estado:" Margin="11,3,61,317" FontSize="20" Grid.Row="1"/>
+        <TextBox x:Name="textboxEstado" Padding="1" FontSize="20" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="362,3,297,317" Grid.Row="1"/>
+        <TextBlock x:Name="labelDDD" Text="DDD:" Margin="286,84,426,36" FontSize="20" RenderTransformOrigin="0.469,-0.491"/>
+
+        <TextBox x:Name="textboxDDD" Padding="1" FontSize="20" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="362,84,295,36" RenderTransformOrigin="0.569,0.216"/>
+        <TextBlock x:Name="labelregião" Text="Região:" Margin="286,1,445,319" FontSize="20" Grid.Row="1" RenderTransformOrigin="1.33,-3.851"/>
+
+        <ComboBox x:Name="comboboxestado" HorizontalAlignment="Left" Margin="82,1,0,0"  Padding="1" FontSize="20"
+                Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                ItemsSource="{Binding ShortStringList}"
+                 VerticalAlignment="Top" Width="156" Height="32" Grid.Row="1"/>
+        <Button x:Name="botaonovacidade" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="16,36,648,35"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Cyan" BorderBrush="Cyan" Grid.Row="2">
+            <TextBlock Text="NOVO" FontSize="20" />
+        </Button>
+        <Button x:Name="btn_excluir" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="163,36,501,35"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red" FontSize="20" Click="btn_excluir_Click" Grid.Row="2">
+            <TextBlock Text="EXCLUIR" />
+        </Button>
+        <Button x:Name="btn_editar" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="322,36,342,35"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange" FontSize="20" Click="btn_editar_Click" Grid.Row="2">
+            <TextBlock Text="EDITAR" />
+        </Button>
+        <Button x:Name="BtnSalvarcidade"  Style="{StaticResource MaterialDesignRaisedAccentButton}" 
+                     
+                     Height="Auto" Margin="634,21,10,19" FontSize="20"
+                     ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                     Content="SALVAR" Background="Lime" BorderBrush="Lime" Click="BtnSalvarcidade_Click"
+            Grid.Row="2"
+            />
+        <Button x:Name="btn_cancelarcidade" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="475,36,189,35"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Gray" BorderBrush="Gray" Click="btn_cancelar" Grid.Row="2">
+            <TextBlock Text="CANCELAR" FontSize="20" />
+        </Button>
+
+    </Grid>
+
+</Window>

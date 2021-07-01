@@ -55,7 +55,7 @@ namespace IogoSistem_vs1
         {
             
 
-            if (senhauser.Password == "1234" || usuario.Text == "teste" || revelar.Text == "1234")
+            if ((senhauser.Password == "1234" || revelar.Text == "1234") && (usuario.Text == "teste" ))
             {
                
                 Menu menu = new Menu();
@@ -78,7 +78,7 @@ namespace IogoSistem_vs1
         {
             if (e.Key == Key.Return)
             {
-                if (senhauser.Password == "1234" || usuario.Text == "teste" || revelar.Text=="1234" )
+                if ((senhauser.Password == "1234" || revelar.Text == "1234") && (usuario.Text == "teste"))
                 {
 
                     Menu menu = new Menu();

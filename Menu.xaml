@@ -48,17 +48,16 @@
 
 
             <MenuItem Header="CADASTROS" FontSize=" 21">
-                <MenuItem x:Name="itCadCli" Header="Cadastrar Cliente" FontSize="20" FontFamily="Arial" Margin="3"/>
-                <MenuItem x:Name="itCadCi" Header="Cadastrar Cidade" FontSize="20" FontFamily="Arial" Margin="3"/>
-                <MenuItem x:Name="itCadForn" Header="Cadastrar Fornecedor" FontSize="20" FontFamily="Arial" Margin="3"/>
-                <MenuItem x:Name="itCadFunc" Header="Cadastrar Funcionário" FontSize="20" FontFamily="Arial" Margin="3"/>
-                <MenuItem x:Name="itCadNovUsu" Header="Cadastrar Usuário" FontSize="20" FontFamily="Arial" Margin="3"/>
-                <MenuItem x:Name="itCadGanh" Header="Cadastrar Ganhos" FontSize="20" FontFamily="Arial" Margin="3"/>
-                <MenuItem x:Name="itCadProd" Header="Cadastrar Produtos" FontSize="20" FontFamily="Arial" Margin="3"/>
-                <MenuItem x:Name="itCadEven" Header="Cadastrar Eventos" FontSize="20" FontFamily="Arial" Margin="3"/>
-                <MenuItem x:Name="itCadAgen" Header="Cadastrar Agenda" FontSize="20" FontFamily="Arial" Margin="3"/>
-                <MenuItem x:Name="itCadEsto" Header="Cadastrar Estoque" FontSize="20" FontFamily="Arial" Margin="3"/>
-                <MenuItem x:Name="itCadDes" Header="Cadastrar Despesas" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itCadCli" Header="Cadastrar Cliente" FontSize="20" FontFamily="Arial" Margin="3" Click="Cadastrarcliente" />
+                <MenuItem x:Name="itCadCi" Header="Cadastrar Cidade" FontSize="20" FontFamily="Arial" Margin="3" Click="CadastrarCidade"/>
+                <MenuItem x:Name="itCadForn" Header="Cadastrar Fornecedor" FontSize="20" FontFamily="Arial" Margin="3" Click="CadastrarFornecedor" />
+                <MenuItem x:Name="itCadFunc" Header="Cadastrar Funcionário" FontSize="20" FontFamily="Arial" Margin="3" Click="CadastrarFuncionario" />
+                <MenuItem x:Name="itCadNovUsu" Header="Cadastrar Usuário" FontSize="20" FontFamily="Arial" Margin="3" Click="CadastrarUsuario" />
+                <MenuItem x:Name="itCadGanh" Header="Cadastrar Ganhos" FontSize="20" FontFamily="Arial" Margin="3" Click="Cadastrarganhos" />
+                <MenuItem x:Name="itCadProd" Header="Cadastrar Produtos" FontSize="20" FontFamily="Arial" Margin="3" Click="CadastrarProdutos"/>
+                <MenuItem x:Name="itCadEven" Header="Cadastrar Eventos" FontSize="20" FontFamily="Arial" Margin="3" Click="CadastrarEventos" />
+                <MenuItem x:Name="itCadEsto" Header="Cadastrar Estoque" FontSize="20" FontFamily="Arial" Margin="3" Click="CadastrarEstoque"/>
+                <MenuItem x:Name="itCadDes" Header="Cadastrar Despesas" FontSize="20" FontFamily="Arial" Margin="3" Click="CadastrarDespesas"/>
 
             </MenuItem>
 
@@ -66,19 +65,18 @@
 
 
             <MenuItem Header="CONSULTAS" FontSize=" 21" >
-                <MenuItem x:Name="itConCli" Header="Consultar Cliente" FontSize="20" FontFamily="Arial" Margin="3"/>
-                <MenuItem x:Name="itConForn" Header="Consultar Fornecedor" FontSize="20" FontFamily="Arial" Margin="3"/>
-                <MenuItem x:Name="itConFunc" Header="Consultar Funcionário" FontSize="20" FontFamily="Arial" Margin="3"/>
-                <MenuItem x:Name="itConUsu" Header="Consultar Usuário" FontSize="20" FontFamily="Arial" Margin="3"/>
-                <MenuItem x:Name="itConPro" Header="Consultar Ganhos" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="itConCli" Header="Consultar Cliente" FontSize="20" FontFamily="Arial" Margin="3" Click="AbrirConsultCliente"/>
+                <MenuItem x:Name="itConForn" Header="Consultar Fornecedor" FontSize="20" FontFamily="Arial" Margin="3" Click="AbrirConsultfornecedor" />
+                <MenuItem x:Name="itConUsu" Header="Consultar Usuário" FontSize="20" FontFamily="Arial" Margin="3" Click="AbrirConsultUsuario"/>
+                <MenuItem x:Name="itConPro" Header="Consultar Produtos" FontSize="20" FontFamily="Arial" Margin="3" Click="AbrirConsultProdutos"/>
             </MenuItem>
 
 
             <Separator/>
 
             <MenuItem Header="FINANCEIRO" FontSize=" 21">
-                <MenuItem x:Name="iRegisGanho" Header="Registrar Ganhos" FontSize="20" FontFamily="Arial" Margin="3"/>
-                <MenuItem x:Name="itContCaix" Header="Controle de Caixa" FontSize="20" FontFamily="Arial" Margin="3"/>
+                <MenuItem x:Name="iRegisGanho" Header="Registrar Ganhos" FontSize="20" FontFamily="Arial" Margin="3" Click="Registrarganhos" />
+                <MenuItem x:Name="itContCaix" Header="Controle de Caixa" FontSize="20" FontFamily="Arial" Margin="3" Click="Controlecaixa" />
 
             </MenuItem>
 
@@ -99,7 +97,7 @@
 
             <Separator/>
 
-            <MenuItem Header="AJUDA AO USUÁRIO" FontSize=" 21" >
+            <MenuItem Header="AJUDA AO USUÁRIO" FontSize=" 21" Click="AbrirAjudaaoUsuario" >
 
             </MenuItem>
         </Menu>
@@ -109,7 +107,7 @@
         Height="100" Margin="50,0,0,139"
         x:Name="bttUsu"
         materialDesign:ButtonAssist.CornerRadius="25"
-        ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Grid.ColumnSpan="3" Grid.Row="1" Background = "#063099"  BorderBrush = "#063099 " Cursor="Hand" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="230">
+        ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Grid.ColumnSpan="3" Grid.Row="1" Background = "#063099"  BorderBrush = "#063099 " Cursor="Hand" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="230" Click="bttUsu_Click">
             <TextBlock Text="Usuário" FontSize="40" />
         </Button>
 
@@ -127,7 +125,7 @@
         Height="100" Margin="0,0,38,25"
                 x:Name="bttCai"
         materialDesign:ButtonAssist.CornerRadius="25"
-        ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Grid.Row="1" Grid.Column="3" Background = "#063099"  BorderBrush = "#063099 " HorizontalAlignment="Right" Width="234" VerticalAlignment="Bottom" >
+        ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Grid.Row="1" Grid.Column="3" Background = "#063099"  BorderBrush = "#063099 " HorizontalAlignment="Right" Width="234" VerticalAlignment="Bottom" Click="bttCai_Click" >
             <TextBlock Text="Caixa" FontSize="40" />
         </Button>
 
@@ -136,7 +134,7 @@
         Height="100" Margin="102,110,314,89" 
                 x:Name="bttCal"
         materialDesign:ButtonAssist.CornerRadius="25"
-        ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Background = "#063099"  BorderBrush = "#063099 ">
+        ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Background = "#063099"  BorderBrush = "#063099 " Click="bttCal_Click" >
             <TextBlock Text="Calculadora" FontSize="40" Width="227" />
         </Button>
 
@@ -145,7 +143,7 @@
         Height="100" Margin="0,0,40,139" 
                 x:Name="bttPro"
         materialDesign:ButtonAssist.CornerRadius="25"
-        ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Grid.Row="1" Grid.Column="3" Background = "#063099"  BorderBrush = "#063099 " Cursor="Hand" HorizontalAlignment="Right" Width="234" VerticalAlignment="Bottom">
+        ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Grid.Row="1" Grid.Column="3" Background = "#063099"  BorderBrush = "#063099 " Cursor="Hand" HorizontalAlignment="Right" Width="234" VerticalAlignment="Bottom" Click="bttPro_Click">
             <TextBlock Text="Produtos" FontSize="40" Width="170" />
         </Button>
 

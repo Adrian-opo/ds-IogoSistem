@@ -108,11 +108,20 @@
     <Compile Include="Eventos.xaml.cs">
       <DependentUpon>Eventos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CadastrarProdutos.xaml.cs">
+      <DependentUpon>CadastrarProdutos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ConsultarUsuario.xaml.cs">
+      <DependentUpon>ConsultarUsuario.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+        <Compile Include="CadastrarCidade.xaml.cs">
+      <DependentUpon>CadastrarCidade.xaml</DependentUpon>
     </Compile>
     <Compile Include="RegistrarDespesas.xaml.cs">
       <DependentUpon>RegistrarDespesas.xaml</DependentUpon>
@@ -123,18 +132,58 @@
     <Compile Include="RegistrarGanhos.xaml.cs">
       <DependentUpon>RegistrarGanhos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditarCidade.xaml.cs">
+      <DependentUpon>EditarCidade.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Caixa.xaml.cs">
+      <DependentUpon>Caixa.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SuporteUsuario.xaml.cs">
       <DependentUpon>SuporteUsuario.xaml</DependentUpon>
     </Compile>
+        <Compile Include="EditarObservacoes.xaml.cs">
+      <DependentUpon>EditarObservacoes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EditarCliente.xaml.cs">
       <DependentUpon>EditarCliente.xaml</DependentUpon>
+    </Compile>
+        <Compile Include="ExcluirCidade.xaml.cs">
+      <DependentUpon>ExcluirCidade.xaml</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
     <Page Include="Agenda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+        <Page Include="ExcluirCidade.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditarObservacoes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+        <Page Include="CadastrarProdutos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditarCidade.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConsultarUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CadastrarCidade.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CadastrarCliente.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+        <Page Include="Caixa.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
