@@ -155,7 +155,7 @@
                      
                      Height="Auto" Margin="20,10" FontSize="23"
                      ToolTip="Resource name: MaterialDesignRaisedAccentButton"
-                     Content="SALVAR" Background="Lime" BorderBrush="Lime" Width="150"
+                     Content="SALVAR" Background="Lime" BorderBrush="Lime" Width="150" Click="BtnSalvar_Click"
             />
         </StackPanel>
 

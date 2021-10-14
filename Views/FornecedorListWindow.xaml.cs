@@ -18,7 +18,7 @@ namespace IogoSistem.Views
     /// <summary>
     /// Interação lógica para FornecedorListWindow.xam
     /// </summary>
-    public partial class FornecedorListWindow : Page
+    public partial class FornecedorListWindow : Window
     {
         public FornecedorListWindow()
         {
