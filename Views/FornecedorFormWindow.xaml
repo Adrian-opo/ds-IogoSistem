@@ -42,7 +42,7 @@
 
         <StackPanel Grid.Column="1" Grid.Row="0" >
             <TextBox x:Name="recebe_nome" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,40,10,10"/>
-            <wpftool:MaskedTextBox  Mask="000\.000\.000-00" x:Name="recebe_cpf"  Margin="10,3,10,10"  Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" LostFocus="recebe_cpf_LostFocus" />
+            <wpftool:MaskedTextBox  Mask="000\.000\.000-00" x:Name="recebe_cpf"  Margin="10,3,10,10"  Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" />
 
             <TextBox x:Name="recebe_rg" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,3,10,10"/>
         </StackPanel>
@@ -57,7 +57,7 @@
 
             <TextBox x:Name="recebe_nomefantasia" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,40,10,10"/>
             <TextBox x:Name="recebe_razaosocial" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,3,10,10"/>
-            <wpftool:MaskedTextBox  Mask="00\.000\.000/0000-00" x:Name="recebe_cnpj" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,3,10,10" LostFocus="recebe_cnpj_LostFocus"/>
+            <wpftool:MaskedTextBox  Mask="00\.000\.000/0000-00" x:Name="recebe_cnpj" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,3,10,10"/>
         </StackPanel>
 
         <StackPanel Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" Height="50" Margin="0,4,0,296" Grid.Row="1">
@@ -147,7 +147,7 @@
                 
                 Height="50" Margin="0 10 20 10" Width="130"
                 materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Gray" BorderBrush="Gray" Click="btn_cancelar_Click">
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Gray" BorderBrush="Gray">
                 <TextBlock Text="CANCELAR" />
             </Button>
 

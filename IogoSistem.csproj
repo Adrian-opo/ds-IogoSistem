@@ -122,7 +122,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Interfaces\IDAO.cs" />
-    <Compile Include="Interfaces\Util.cs" />
     <Compile Include="Models\Fornecedor.cs" />
     <Compile Include="Models\FornecedorDAO.cs" />
     <Compile Include="Views\FornecedorFormWindow.xaml.cs">
