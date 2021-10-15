@@ -122,8 +122,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Interfaces\IDAO.cs" />
+    <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\Fornecedor.cs" />
     <Compile Include="Models\FornecedorDAO.cs" />
+    <Compile Include="Views\EventoFormWindow.xaml.cs">
+      <DependentUpon>EventoFormWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FornecedorFormWindow.xaml.cs">
       <DependentUpon>FornecedorFormWindow.xaml</DependentUpon>
     </Compile>
@@ -149,6 +153,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\EventoFormWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\FornecedorFormWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

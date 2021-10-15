@@ -210,54 +210,14 @@ namespace IogoSistem.Views
 
         private void recebe_cpf_LostFocus(object sender, RoutedEventArgs e)
         {
-            string cpf = recebe_cpf.Text;
-            cpf = cpf.Replace('_', '0');
 
-            if ((cpf == "___.___.___-__"))
-            {
-                MessageBox.Show("Digite um CPF valido");
-            }
-
-            else
-            {
-                if (Util.IsCpf(cpf))
-                {
-                    recebe_cpf.Foreground = Brushes.Green;
-
-                }
-                else
-                {
-                    recebe_cpf.Foreground = Brushes.Red;
-                }
-
-            }
         }
 
         private void recebe_cnpj_LostFocus(object sender, RoutedEventArgs e)
         {
-            string cnpj = recebe_cnpj.Text;
-            cnpj = cnpj.Replace('_', '0');
 
-            if ((cnpj == "__.___.___/____-__"))
-            {
-                MessageBox.Show("Digite um CPF valido");
-            }
-
-            else
-            {
-                if (Util.IsCnpj(cnpj))
-                {
-                    recebe_cnpj.Foreground = Brushes.Green;
-
-                }
-                else
-                {
-                    recebe_cnpj.Foreground = Brushes.Red;
-                }
-
-            }
-        }
-
+        } 
+            
         private void recebe_numero_KeyDown(object sender, KeyEventArgs e)
         {
             KeyConverter key = new KeyConverter();
