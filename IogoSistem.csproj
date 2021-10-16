@@ -123,6 +123,7 @@
     </ApplicationDefinition>
     <Compile Include="Interfaces\IDAO.cs" />
     <Compile Include="Models\Evento.cs" />
+    <Compile Include="Models\EventoDAO.cs" />
     <Compile Include="Models\Fornecedor.cs" />
     <Compile Include="Models\FornecedorDAO.cs" />
     <Compile Include="Views\EventoFormWindow.xaml.cs">

@@ -14,102 +14,105 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="Eventos" Height="620" Width="850" ResizeMode="NoResize">
+        Title="Eventos" Height="600" Width="800" ResizeMode="NoResize" BorderThickness="0" ForceCursor="True" WindowStartupLocation="CenterScreen">
     <Grid Background="#d3ecff" >
         <Grid.RowDefinitions>
-            <RowDefinition Height="16.8"/>
-            <RowDefinition Height="483.2"/>
+            <RowDefinition Height="240"/>
+            <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="132"/>
-            <ColumnDefinition Width="109.2"/>
-            <ColumnDefinition Width="266"/>
-            <ColumnDefinition Width="116.8"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBox x:Name="TxtObs" Padding="1" FontSize="20" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="41,128,63,199" RenderTransformOrigin="0.569,0.216" Background="White" Grid.ColumnSpan="2" Grid.Column="3" Grid.Row="1">
-            <TextBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleY="-1" ScaleX="-1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBox.RenderTransform>
-        </TextBox>
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <StackPanel Margin="10 20 10 0">
+                <StackPanel Orientation="Horizontal" Height="40">
+                    <Label Content="Tipo de evento:" FontSize="20" VerticalAlignment="Center"/>
+                    <TextBox  Padding="10" x:Name="txt_Tipo" Margin="10 0 0 0" Width="265" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" />
 
-        <Label Content="Tipo de evento:" FontSize="20" HorizontalAlignment="Left" Margin="50,58,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="26" Width="146"/>
-        <TextBox x:Name="TxtRecebe_TipoEvento" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="73,56,0,398" HorizontalAlignment="Left" Height="29" Width="177" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
+                </StackPanel>
 
-        <Label Content="Inicio:" FontSize="20" HorizontalAlignment="Left" Margin="49,121,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <wpftool:MaskedTextBox  Mask="00/00/0000" x:Name="recebe_dataInicio" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" HorizontalAlignment="Left" Margin="122,118,0,336" Width="99" Grid.Row="1" RenderTransformOrigin="0.506,0.6" Grid.ColumnSpan="2"/>
+                <StackPanel Orientation="Horizontal" Margin="0 70 0 0" Height="50" HorizontalAlignment="Left">
+                    <Label Content="Inicio:" VerticalAlignment="Center" FontSize="20"/>
+                    <DatePicker x:Name="dtPickerDataInicio" materialDesign:HintAssist.Hint="Inicio do Evento"   materialDesign:HintAssist.Background="#d3ecff" 
+                    Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
+                    
+                   <Label Content="Fim:" VerticalAlignment="Center" Margin="18 0 0 0" FontSize="20"/>
+                    <DatePicker x:Name="dtPickerDataFim" materialDesign:HintAssist.Hint="Fim do Evento" materialDesign:HintAssist.Background="#d3ecff" 
+                    Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
 
-        <Label Content="Fim:" FontSize="20" HorizontalAlignment="Left" Margin="47,178,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <wpftool:MaskedTextBox  Mask="00/00/0000" x:Name="recebe_dataFim" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" HorizontalAlignment="Left" Margin="121,179,0,275" Width="99" Grid.Row="1" RenderTransformOrigin="0.506,0.6" Grid.ColumnSpan="2"/>
+        <StackPanel Grid.Row="0" Grid.Column="1" >
+            <TextBox x:Name="txt_observacao" Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="White" Margin="20 20 20 0" Height="160">
+            </TextBox>
+            <Label Content="Observação" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
 
-        <DataGrid  Margin="4,283,23,6" ItemsSource="{Binding}"
-                   x:Name="dataGridEventos" 
-                   IsReadOnly="True" 
-                   AutoGenerateColumns="False" 
-                   AlternatingRowBackground="#FF03A9F4" 
-                   AlternationCount="2"
-                   
-                   Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="2">
-            <DataGrid.Columns>
+        </StackPanel>
 
-                <DataGridCheckBoxColumn Header="" IsThreeState="False" Binding="{Binding checkbox}"/>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="Btn_limpar" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Background="#FFB2B2B2" BorderBrush="Gray" Height="50" 
+                        materialDesign:ButtonAssist.CornerRadius="25"
+                        ToolTip="MaterialDesignRaisedLightButton with Round Corners">
+                    <TextBlock Text="Limpar" FontSize="17" />
+                </Button>
 
-                <DataGridTextColumn Header="Tipo de evento" Binding="{Binding Codigo}"  Width="130"/>
-                <DataGridTextColumn Header="Inicio" Binding="{Binding Categoria}" Width="80" />
-                <DataGridTextColumn Header="Fim" Binding="{Binding Data}" Width="80"/>
-                <DataGridTextColumn Header="Observação" Binding="{Binding Valor}" Width="1300"/>
-            </DataGrid.Columns>
+                <Button x:Name="Btn_Cancelar" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Background="Gray" BorderBrush="Gray" Height="auto"  
+                        materialDesign:ButtonAssist.CornerRadius="25" Margin="110 0 0 0"
+                        ToolTip="MaterialDesignRaisedLightButton with Round Corners">
+                    <TextBlock Text="Cancelar" FontSize="17" />
+                </Button>
+            </StackPanel>
+        </StackPanel>
 
-        </DataGrid>
-        <Button x:Name="btn_novo" Style="{StaticResource MaterialDesignRaisedLightButton}" 
-                 
-                Height="Auto" Margin="20,298,20,135" Width="130" 
-                materialDesign:ButtonAssist.CornerRadius="25" 
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Cyan" BorderBrush="Cyan" Grid.Column="4" Grid.Row="1" >
-            <TextBlock Text="NOVO" FontSize="20" />
-        </Button>
-        <Button x:Name="btn_excluir" Style="{StaticResource MaterialDesignRaisedLightButton}" 
-                 
-                Height="Auto" Margin="18,393,22,40" Width="130" 
-                materialDesign:ButtonAssist.CornerRadius="25" 
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red" Grid.Column="4" Grid.Row="1">
-            <TextBlock Text="EXCLUIR" FontSize="20"/>
-        </Button>
-        <Button x:Name="btn_editar" Style="{StaticResource MaterialDesignRaisedLightButton}" 
-                 
-                Height="Auto" Margin="16,207,24,226" Width="130" 
-                materialDesign:ButtonAssist.CornerRadius="25" 
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange" Grid.Column="4" Grid.Row="1" >
-            <TextBlock Text="EDITAR" FontSize="20"/>
-        </Button>
-        <Button x:Name="btn_cancelar" Style="{StaticResource MaterialDesignRaisedLightButton}" 
-                 
-                Height="Auto" Margin="251,210,2,223" Width="130" 
-                materialDesign:ButtonAssist.CornerRadius="25" 
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Gray" BorderBrush="Gray" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" >
-            <TextBlock Text="CANCELAR" FontSize="20"/>
-        </Button>
-        <Button x:Name="btn_limpar" Style="{StaticResource MaterialDesignRaisedLightButton}" 
-                 
-                Height="Auto" Margin="107,209,29,224" Width="130" 
-                materialDesign:ButtonAssist.CornerRadius="25" 
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="#FFB2B2B2" BorderBrush="Gray" Grid.Column="2" Grid.Row="1" Click="btn_limpar_Click" >
-            <TextBlock Text="LIMPAR" FontSize="20"/>
-        </Button>
-        <Button x:Name="BtnSalvar"  Style="{StaticResource MaterialDesignRaisedAccentButton}"  
-                      
-                     Height="Auto" Margin="24,1,16,20" FontSize="23" 
-                     ToolTip="Resource name: MaterialDesignRaisedAccentButton" 
-                     Content="SALVAR" Background="Lime" BorderBrush="Lime" Grid.Column="4" Grid.Row="2"   
-            />
-        <Label Content="Observação:" FontSize="20" Grid.Column="2" HorizontalAlignment="Left" Margin="197,39,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Button x:Name="Btn_Salvar" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Background="Lime" BorderBrush="Lime" Height="50" HorizontalAlignment="Center"
+                        materialDesign:ButtonAssist.CornerRadius="25" Width="150"
+                        ToolTip="MaterialDesignRaisedLightButton with Round Corners" Click="Btn_salvar">
+                <TextBlock Text="Salvar" FontSize="17" />
+            </Button>
+        </StackPanel>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" >
+
+            <DataGrid  CanUserAddRows="False" CanUserDeleteRows="False" Margin="20 15"
+                       x:Name="dataGridEvento"  AutoGenerateColumns="False" ColumnWidth="*"
+                       AlternatingRowBackground="LightBlue" AlternationCount="2" >
+                <DataGrid.Columns>
+
+
+                    <DataGridTextColumn Header="Tipo de Evento" Binding="{Binding Tipo}" />
+                    <DataGridTextColumn Header="Inicio" Binding="{Binding Inicio}" />
+                    <DataGridTextColumn Header="Fim" Binding="{Binding Fim}" />
+                    <DataGridTextColumn Header="Observação" Binding="{Binding Descricao}" />
+
+                    <DataGridTemplateColumn Header="Ações">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                        Content="{materialDesign:PackIcon Eye}" ToolTip="Visualizar Registro" Margin="0 0 5 0" />
+                                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}" 
+                                        Content="{materialDesign:PackIcon Delete}"
+                                        ToolTip="Excluir Registro" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+
+
+            </DataGrid>
+
+
+        </Grid>
 
     </Grid>
 </Window>
