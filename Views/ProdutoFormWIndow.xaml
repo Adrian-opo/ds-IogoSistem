@@ -1,0 +1,84 @@
+﻿<Window x:Class="IogoSistem.Views.ProdutoFormWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IogoSistem.Views"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="CadastrarProdutos" Height="457" Width="800">
+    <Grid Background="#d3ecff">
+
+
+        <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="10,319,10,1">
+            <Button x:Name="btn_novo" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="0,34,20,14" Width="130"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Cyan" BorderBrush="Cyan">
+                <TextBlock Text="NOVO" />
+            </Button>
+            <Button x:Name="btn_excluir" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="0,36,20,12" Width="130"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red">
+                <TextBlock Text="EXCLUIR" />
+            </Button>
+            <Button x:Name="btn_editar" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="0,34,20,14" Width="130"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange" Click="btn_editar_Click">
+                <TextBlock Text="EDITAR" />
+            </Button>
+
+            <Button x:Name="btn_cancelar" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                
+                Height="50" Margin="0,34,20,14" Width="130"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Gray" BorderBrush="Gray">
+                <TextBlock Text="CANCELAR" />
+            </Button>
+
+            <Button x:Name="BtnSalvar"  Style="{StaticResource MaterialDesignRaisedAccentButton}" 
+                     
+                     Height="Auto" Margin="20,10" FontSize="23"
+                     ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                     Content="SALVAR" Background="Lime" BorderBrush="Lime" Width="150" Click="BtnSalvar_Click"
+            />
+        </StackPanel>
+
+        <TextBlock Margin="10,65,722,324" FontSize="15"><Run Text="Nome"/><Run Text=" "/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="Nome" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="72,57,412,332"/>
+        <TextBlock Margin="12,18,720,371" FontSize="15" Text="ID"/>
+        <TextBox x:Name="Id" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="74,10,672,381" IsEnabled="False" />
+        <TextBlock Margin="10,133,722,256" FontSize="15" Text="Medida:"/>
+        <TextBox x:Name="Medida" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="72,131,412,262"/>
+        <TextBlock Margin="12,220,720,169" FontSize="15"><Run Text="Sabor"/><Run Text=" "/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="Sabor" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="74,214,412,178"/>
+        <TextBlock Margin="14,296,690,94" FontSize="15"><Run Text="Valor "/><Run Text="Venda"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="Valor" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="115,282,517,100"/>
+        <Button x:Name="BtnPesquisar"  Style="{StaticResource MaterialDesignRaisedAccentButton}" 
+                     
+                     Height="Auto" Margin="630,225,10,124" FontSize="20"
+                     ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                     Content="PESQUISAR" Background="#363636" BorderBrush="#363636" Width="Auto"
+             Click="Abrir_Pesquisa"
+                />
+        <TextBlock Margin="480,31,212,358" FontSize="15" Text="DESCRIÇÃO"/>
+        <TextBlock Margin="672,28,20,361" FontSize="15"><Run Text="FOT"/><Run Text="O"/></TextBlock>
+        <materialDesign:PackIcon Kind="BottleWine" RenderTransformOrigin="43.125,7.5" Margin="630,57,0,0" Width="130" Height="111" />
+        <TextBox x:Name="Descrição" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="437,65,192,264"/>
+        <TextBlock Margin="304,302,400,88" FontSize="15"><Run Text="Quantidade"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="Estoque" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="405,288,227,94"/>
+    </Grid>
+
+</Window>
