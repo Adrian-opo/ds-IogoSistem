@@ -208,16 +208,6 @@ namespace IogoSistem.Views
             }
         }
 
-        private void recebe_cpf_LostFocus(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void recebe_cnpj_LostFocus(object sender, RoutedEventArgs e)
-        {
-
-        } 
-            
         private void recebe_numero_KeyDown(object sender, KeyEventArgs e)
         {
             KeyConverter key = new KeyConverter();

@@ -46,12 +46,6 @@ namespace IogoSistem
             window.ShowDialog();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var window = new FornecedorFormWindow();
-            window.ShowDialog();
-        }
-
         private void Abrir_Evento(object sender, RoutedEventArgs e)
         {
             var window = new EventoFormWindow();
@@ -61,6 +55,18 @@ namespace IogoSistem
         private void produtos(object sender, RoutedEventArgs e)
         {
             var window = new ProdutoFormWindow();
+            window.ShowDialog();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new FornecedorFormWindow();
+            window.ShowDialog();
+        }
+
+        private void BtnConsultarFor_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new FornecedorListWindow();
             window.ShowDialog();
         }
     }
