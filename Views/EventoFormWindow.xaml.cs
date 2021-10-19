@@ -133,6 +133,36 @@ namespace IogoSistem.Views
             dtPickerDataInicio.SelectedDate = null;
         }
 
+        private void BtnDeleta_Click(object sender, RoutedEventArgs e)
+        {
+            var eventoselect = dataGridEvento.SelectedItem as Evento;
+            var result = MessageBox.Show($"Deseja remover o funcionario {eventoselect.Tipo}?", "Confirmação de exclusão", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            try
+            {
+                if (result == MessageBoxResult.Yes)
+                {
+                    var dao = new EventoDAO();
+                    dao.Delete(eventoselect);
+                    LoadDataGrid();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Exeção", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void BtnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            var userselected = dataGridEvento.SelectedItem as Evento;
+
+
+
+            new EventoFormWindow(userselected.Id);
+
+            LoadDataGrid();
+        }
     }
 
 

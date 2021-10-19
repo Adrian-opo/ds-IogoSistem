@@ -24,17 +24,35 @@ namespace IogoSistem.Models
 
         public void Delete(Evento t)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var query = conn.Query();
+                query.CommandText = "DELETE FROM evento WHERE id_evento=@id";
+
+                query.Parameters.AddWithValue("@id", t.Id);
+
+                var result = query.ExecuteNonQuery();
+
+                if (result == 0)
+                    throw new Exception("Não foi removido da sua casa amém");
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         public Evento GetById(int id)
         {
-            throw new NotImplementedException();
-            /*
             try
             {
                 var query = conn.Query();
-                query.CommandText = "SELECT * FROM usuario WHERE id_usuario= @id";
+                query.CommandText = "SELECT * FROM evento WHERE id_evento= @id";
 
 
                 query.Parameters.AddWithValue("@id", id);
@@ -44,18 +62,18 @@ namespace IogoSistem.Models
                 if (!reader.HasRows)
                     throw new Exception("nenhum registro foi encontrado");
 
-                var usuario = new Usuario();
+                var evento = new Evento();
 
                 while (reader.Read())
                 {
-                    usuario.Id = reader.GetInt32("id_usuario");
-                    usuario.Nome = reader.GetString("nomeUsuario");
-                    usuario.CPF = reader.GetString("cpf_usu");
-                    usuario.Email = reader.GetString("email_usu");
-                    usuario.Senha = reader.GetString("senha_usu");
+                    evento.Id = reader.GetInt32("id_evento");
+                    evento.Tipo = reader.GetString("tipo_even");
+                    evento.Descricao = reader.GetString("descricao_even");
+                    evento.Inicio = reader.GetDateTime("inicioEvento");
+                    evento.Fim = reader.GetDateTime("fimEvento");
 
                 }
-                return usuario;
+                return evento;
             }
             catch (Exception e)
             {
@@ -65,7 +83,7 @@ namespace IogoSistem.Models
             {
                 conn.Query();
             }
-            */
+            
         }
 
         public void Insert(Evento t)
@@ -161,7 +179,33 @@ namespace IogoSistem.Models
 
         public void Update(Evento t)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var query = conn.Query();
+                query.CommandText = "UPDATE evento SET tipo_even=@tipo,inicioEvento=@inicio,fimEvento=@fim,descricao_even=@descricao WHERE id_evento=@id";
+
+                query.Parameters.AddWithValue("@tipo", t.Tipo);
+                query.Parameters.AddWithValue("@inicio", t.Inicio);
+                query.Parameters.AddWithValue("@fim", t.Fim);
+                query.Parameters.AddWithValue("@descricao", t.Descricao);
+
+                query.Parameters.AddWithValue("@id", t.Id);
+
+
+                var result = query.ExecuteNonQuery();
+
+                if (result == 0)
+                    throw new Exception("Atualização nao realizada");
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }
