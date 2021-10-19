@@ -56,7 +56,7 @@ namespace IogoSistem.Views
 
         private void BtnUpdate_Click(object sender, RoutedEventArgs e)
         {
-            var userselected = dataGridConsultarFornecedor.SelectedItem as Usuario;
+            var userselected = dataGridConsultarFornecedor.SelectedItem as Fornecedor;
 
             var window = new FornecedorFormWindow(userselected.Id);
             window.ShowDialog();
@@ -100,7 +100,7 @@ namespace IogoSistem.Views
 
         }
 
-        private void Comboboxconsultarusuario_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Cmbconsultarfor_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

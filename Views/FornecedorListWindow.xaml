@@ -24,7 +24,7 @@
         </Grid.RowDefinitions>
         <StackPanel  Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="16,20,16.2,19.6" Width="811">
             <TextBlock Text="Consultar por:"  Margin="0 10 10 0" FontSize="21"/>
-            <ComboBox x:Name="Cmbconsultarpor"   Width="670" 
+            <ComboBox x:Name="Cmbconsultarfor"   Width="670" 
                        Padding="5" FontSize="17"
                       Style="{StaticResource MaterialDesignOutlinedComboBox}">
 
