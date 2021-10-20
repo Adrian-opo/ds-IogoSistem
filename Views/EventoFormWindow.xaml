@@ -36,11 +36,11 @@
 
                 <StackPanel Orientation="Horizontal" Margin="0 70 0 0" Height="50" HorizontalAlignment="Left">
                     <Label Content="Inicio:" VerticalAlignment="Center" FontSize="20"/>
-                    <DatePicker x:Name="dtPickerDataInicio" materialDesign:HintAssist.Hint="Inicio do Evento"   materialDesign:HintAssist.Background="#d3ecff" 
+                    <DatePicker x:Name="dtPickerDataInicio" Width="150"
                     Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
                     
                    <Label Content="Fim:" VerticalAlignment="Center" Margin="18 0 0 0" FontSize="20"/>
-                    <DatePicker x:Name="dtPickerDataFim" materialDesign:HintAssist.Hint="Fim do Evento" materialDesign:HintAssist.Background="#d3ecff" 
+                    <DatePicker x:Name="dtPickerDataFim" Width="150"
                     Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
                 </StackPanel>
             </StackPanel>
@@ -55,7 +55,7 @@
 
         <StackPanel Grid.Row="1" Grid.Column="0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="Btn_limpar" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                <Button x:Name="Btn_limpar" Click="Limpar_campos" Style="{StaticResource MaterialDesignRaisedLightButton}"
                         Background="#FFB2B2B2" BorderBrush="Gray" Height="50" 
                         materialDesign:ButtonAssist.CornerRadius="25"
                         ToolTip="MaterialDesignRaisedLightButton with Round Corners">
@@ -65,7 +65,7 @@
                 <Button x:Name="Btn_Cancelar" Style="{StaticResource MaterialDesignRaisedLightButton}"
                         Background="Gray" BorderBrush="Gray" Height="auto"  
                         materialDesign:ButtonAssist.CornerRadius="25" Margin="110 0 0 0"
-                        ToolTip="MaterialDesignRaisedLightButton with Round Corners">
+                        ToolTip="MaterialDesignRaisedLightButton with Round Corners" Click="BtnCancelar_Click">
                     <TextBlock Text="Cancelar" FontSize="17" />
                 </Button>
             </StackPanel>

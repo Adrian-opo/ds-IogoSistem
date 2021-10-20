@@ -69,5 +69,12 @@ namespace IogoSistem
             var window = new FornecedorListWindow();
             window.ShowDialog();
         }
+
+        private void Abrir_Agenda(object sender, RoutedEventArgs e)
+        {
+            var window = new AgendaWindow();
+            window.ShowDialog();
+
+        }
     }
 }

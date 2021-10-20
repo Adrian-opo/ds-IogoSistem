@@ -54,18 +54,18 @@
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="0">
 
-            <Button x:Name="BtnExcluir" Style="{StaticResource MaterialDesignRaisedLightButton}"
+            <Button x:Name="BtnCancelar" Style="{StaticResource MaterialDesignRaisedLightButton}"
                 Height="50" Margin="20,20,80,20" Width="150" BorderBrush="#FFFF4C4C"
                     materialDesign:ButtonAssist.CornerRadius="25"
-               ToolTip="MaterialDesignRaisedLightButton with Round Corners" Click="BtnExcluir_Click" Background="#FFFF4C4C">
-                <TextBlock Text="Excluir" />
+               ToolTip="MaterialDesignRaisedLightButton with Round Corners" Click="BtnCancelar_Click" Background="#FFFF4C4C">
+                <TextBlock Text="Cancelar" />
             </Button>
-            <Button x:Name="BtnEditar" Style="{StaticResource MaterialDesignRaisedLightButton}"
+            <Button x:Name="BtnLimpar" Style="{StaticResource MaterialDesignRaisedLightButton}"
                 
                 Height="50" Margin="0 10 20 10" Width="150"
                 materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Click="Btneditar" Background="Orange" BorderBrush="Orange">
-                <TextBlock Text="Editar" />
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Click="BtnLimpar_Click" Background="Orange" BorderBrush="Orange">
+                <TextBlock Text="Limpar" />
             </Button>
         </StackPanel>
 

@@ -31,20 +31,11 @@ namespace IogoSistem.Views
             Loaded += EventoFormWindow_Loaded;
         }
 
-        public EventoFormWindow(int id)
-        {
-            _id = id;
-            InitializeComponent();
-            Loaded += EventoFormWindow_Loaded;
-
-        }
 
         private void EventoFormWindow_Loaded(object sender, RoutedEventArgs e)
         {
             _evento = new Evento();
             LoadDataGrid();
-            if (_id > 0)
-                fillForm();
 
         }
 
@@ -62,23 +53,7 @@ namespace IogoSistem.Views
                 MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        private void fillForm()
-        {
-            try
-            {
-                var dao = new EventoDAO();
-                _evento = dao.GetById(_id);
 
-                txt_Tipo.Text = _evento.Tipo;
-                txt_observacao.Text = _evento.Descricao;
-                dtPickerDataInicio.SelectedDate = _evento.Inicio;
-                dtPickerDataFim.SelectedDate = _evento.Fim;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
 
         private void Btn_salvar(object sender, RoutedEventArgs e)
         {
@@ -105,9 +80,19 @@ namespace IogoSistem.Views
                     CloseFormVerify();
                 }
                 else
+                {
+
+                    
                     dao.Update(_evento);
                     MessageBox.Show($"O funcionario foi {text}", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
-               
+                    ClearInputs();
+                    _evento.Id = 0;
+
+                }
+
+
+
+                LoadDataGrid();
             }
             catch (Exception ex)
             {
@@ -156,12 +141,35 @@ namespace IogoSistem.Views
         private void BtnUpdate_Click(object sender, RoutedEventArgs e)
         {
             var userselected = dataGridEvento.SelectedItem as Evento;
+            _id = userselected.Id;
+
+            try
+            {
+                var dao = new EventoDAO();
+                _evento = dao.GetById(_id);
+
+                txt_Tipo.Text = _evento.Tipo;
+                txt_observacao.Text = _evento.Descricao;
+                dtPickerDataInicio.SelectedDate = _evento.Inicio;
+                dtPickerDataFim.SelectedDate = _evento.Fim;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
 
 
-            new EventoFormWindow(userselected.Id);
+        }
 
-            LoadDataGrid();
+        private void Limpar_campos(object sender, RoutedEventArgs e)
+        {
+            ClearInputs();
+        }
+
+        private void BtnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using IogoSistem.Interfaces;
 using IogoSistem.Database;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace IogoSistem.Models
 {
@@ -86,6 +87,18 @@ namespace IogoSistem.Models
             try
             {
                 var query = conn.Query();
+
+                query.CommandText = "cadastrarUsuario";
+                query.CommandType = CommandType.StoredProcedure;
+
+                query.Parameters.AddWithValue("@nomeUser", t.Nome);
+                query.Parameters.AddWithValue("@cpf_user", t.CPF);
+                query.Parameters.AddWithValue("@email", t.Senha);
+                query.Parameters.AddWithValue("@senha", t.Email);
+
+                
+                /*
+                var query = conn.Query();
                 query.CommandText = "INSERT INTO usuario (nomeUsuario,cpf_usu,senha_usu,email_usu) " +
                     "VALUES (@nome,@cpf,@senha,@email)";
 
@@ -98,8 +111,21 @@ namespace IogoSistem.Models
 
                 if(result == 0)
                     throw new Exception("O registro não foi inserido, troxa");
-                  
-            }catch(Exception e)
+                  */
+
+
+
+                MySqlDataReader reader = query.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (reader.GetName(0).Equals("Alerta"))
+                    {
+                        throw new Exception(reader.GetString("Alerta"));
+                    }
+                }
+            }
+            catch (Exception e)
             {
                 throw e;
             }

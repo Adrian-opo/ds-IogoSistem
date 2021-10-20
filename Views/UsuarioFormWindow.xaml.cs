@@ -82,12 +82,15 @@ namespace IogoSistem.Views
                     CloseFormVerify();
                 }
                 else
+                { 
                     dao.Update(_usuario);
+                    this.Close();
+                }
 
 
-                 
-                MessageBox.Show($"O funcionario foi {text}", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
-                this.Close();
+
+                MessageBox.Show($"O usuario foi {text}", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
+
             }
             catch (Exception ex)
             {
@@ -164,32 +167,29 @@ namespace IogoSistem.Views
 
         }
 
-        private void BtnExcluir_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-
-        private void Btneditar(object sender, RoutedEventArgs e)
-        {
-        }
-
 
         private void txtemail_lostFocus(object sender, RoutedEventArgs e)
         {
-
-
             string email = txtemail.Text.Trim();
-
         }
 
         private void txtcpf_lostFocus(object sender, RoutedEventArgs e)
         {
             string cpf = txtcpf.Text;
-            cpf = cpf.Replace('_', '0');
+            cpf.Replace('_', '0');
+            
 
         }
 
+        private void BtnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnLimpar_Click(object sender, RoutedEventArgs e)
+        {
+            ClearInputs();
+
+        }
     }
 }
