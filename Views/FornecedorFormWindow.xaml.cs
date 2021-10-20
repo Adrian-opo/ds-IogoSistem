@@ -47,13 +47,13 @@ namespace IogoSistem.Views
         {
             if (pessoajuridica.IsChecked == true)
             {
-                if (recebe_nomefantasia == null && recebe_razaosocial == null && recebe_cnpj == null && recebe_produtofornecido == null)
+                if (recebe_nome == null && recebe_razaosocial == null && recebe_cnpj == null && recebe_produtofornecido == null)
                 {
                     MessageBox.Show($"Há Campos Vazios!", "Erro", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
-                    _fornecedor.NomeFantasia = recebe_nomefantasia.Text;
+                    _fornecedor.Nome = recebe_nome.Text;
                     _fornecedor.RazaoSocial = recebe_razaosocial.Text;
                     _fornecedor.CNPJ = recebe_cnpj.Text;
 
@@ -128,8 +128,7 @@ namespace IogoSistem.Views
                 var dao = new FornecedorDAO();
                 _fornecedor = dao.GetById(_id);
 
-                recebe_nomefantasia.Text = _fornecedor.NomeFantasia;
-                recebe_razaosocial.Text = _fornecedor.NomeFantasia;
+                recebe_razaosocial.Text = _fornecedor.RazaoSocial;
                 recebe_cnpj.Text = _fornecedor.CNPJ;
 
                 recebe_nome.Text = _fornecedor.Nome;
@@ -160,7 +159,6 @@ namespace IogoSistem.Views
 
         private void ClearInputs()
         {
-            recebe_nomefantasia.Text = "";
             recebe_razaosocial.Text = "";
             recebe_cnpj.Text = "";
 
@@ -182,13 +180,12 @@ namespace IogoSistem.Views
             if (pessoafisica.IsChecked == true)
             {
 
-                recebe_nomefantasia.Visibility = Visibility.Hidden;
-                recebe_razaosocial.Visibility = Visibility.Hidden;
-                recebe_cnpj.Visibility = Visibility.Hidden;
+                recebe_razaosocial.IsEnabled = false;
+                recebe_cnpj.IsEnabled = false;
 
-                recebe_nome.Visibility = Visibility.Visible;
-                recebe_cpf.Visibility = Visibility.Visible;
-                recebe_rg.Visibility = Visibility.Visible;
+                recebe_nome.IsEnabled = true;
+                recebe_cpf.IsEnabled = true;
+                recebe_rg.IsEnabled = true;
             }
         }
 
@@ -198,13 +195,12 @@ namespace IogoSistem.Views
 
             if (pessoajuridica.IsChecked == true)
             {
-                recebe_nome.Visibility = Visibility.Hidden;
-                recebe_cpf.Visibility = Visibility.Hidden;
-                recebe_rg.Visibility = Visibility.Hidden;
+                recebe_cpf.IsEnabled=false;
+                recebe_rg.IsEnabled = false;
 
-                recebe_nomefantasia.Visibility = Visibility.Visible;
-                recebe_razaosocial.Visibility = Visibility.Visible;
-                recebe_cnpj.Visibility = Visibility.Visible;
+                recebe_nome.IsEnabled = true;
+                recebe_razaosocial.IsEnabled = true;
+                recebe_cnpj.IsEnabled = true;
             }
         }
 

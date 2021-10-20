@@ -32,6 +32,11 @@
             <RadioButton x:Name="pessoajuridica" GroupName="tipo_pessoa" Content="Pessoa Jurídica" Margin="30,10,0,10" Checked="pessoajuridica_Checked"/>
         </StackPanel>
 
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="3">
+            <TextBox x:Name="recebe_nome" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,40,10,10" Height="25"/>
+
+        </StackPanel>
+
         <StackPanel Grid.Column="0" Grid.Row="0" >
 
             <TextBlock Text="Nome:" Margin="10,40,10,10" FontSize="15"/>
@@ -40,22 +45,18 @@
 
         </StackPanel>
 
-        <StackPanel Grid.Column="1" Grid.Row="0" >
-            <TextBox x:Name="recebe_nome" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,40,10,10"/>
+        <StackPanel Grid.Column="1" Grid.Row="0" Margin="0,68,0,0" >
             <wpftool:MaskedTextBox  Mask="000\.000\.000-00" x:Name="recebe_cpf"  Margin="10,3,10,10"  Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" />
 
             <TextBox x:Name="recebe_rg" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,3,10,10"/>
         </StackPanel>
 
-        <StackPanel Grid.Column="2" Grid.Row="0" >
-            <TextBlock Text="Nome Fantasia:" Margin="10,40,10,10" FontSize="15"/>
+        <StackPanel Grid.Column="2" Grid.Row="0" Margin="0,68,0,0" >
             <TextBlock Text="Razão Social:" Margin="10,10,10,10" FontSize="15"/>
             <TextBlock Text="CNPJ:" Margin="10,10,10,10" FontSize="15"/>
         </StackPanel>
 
-        <StackPanel Grid.Column="3" Grid.Row="0" >
-
-            <TextBox x:Name="recebe_nomefantasia" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,40,10,10"/>
+        <StackPanel Grid.Column="3" Grid.Row="0" Margin="0,68,0,0" >
             <TextBox x:Name="recebe_razaosocial" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,3,10,10"/>
             <wpftool:MaskedTextBox  Mask="00\.000\.000/0000-00" x:Name="recebe_cnpj" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,3,10,10"/>
         </StackPanel>

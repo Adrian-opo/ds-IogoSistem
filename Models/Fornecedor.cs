@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace IogoSistem.Models
 {
     class Fornecedor
@@ -16,10 +17,10 @@ namespace IogoSistem.Models
         public string RG { get; set; }
         public string Email { get; set; }
         public string ProdutoFornecido { get; set; }
-        public string NomeFantasia { get; set; }
         public string RazaoSocial { get; set; }
         public string CNPJ { get; set; }
         public string Complemento { get; set; }
         public string id_endereco { get; set; }
+
     }
 }

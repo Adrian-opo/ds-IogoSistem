@@ -62,8 +62,22 @@
 
 
 
-                    <DataGridTextColumn Header="Código" Binding="{Binding Codigo}"  Width="150" />
-                    <DataGridTextColumn Header="Fornecedor" Binding="{Binding Nome}"  Width="650"/>
+                    <DataGridTextColumn Header="Código" Binding="{Binding Id}"  Width="150" />
+                    <DataGridTextColumn Header="Fornecedor" Binding="{Binding Nome}"  Width="500"/>
+
+                    <DataGridTemplateColumn Header="Ações">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                        Content="{materialDesign:PackIcon Eye}" ToolTip="Visualizar Registro" Margin="0 0 5 0" Click="BtnUpdate_Click"/>
+                                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}" 
+                                        Content="{materialDesign:PackIcon Delete}"
+                                        ToolTip="Excluir Registro" Click="BtnDelete_Click"  />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
 
                 </DataGrid.Columns>
 
@@ -73,19 +87,19 @@
         </StackPanel>
 
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="126,0,126.2,94.2">
-            <Button x:Name="BtnExcluir" Style="{StaticResource MaterialDesignRaisedLightButton}"
+            <Button x:Name="BtnSair" Style="{StaticResource MaterialDesignRaisedLightButton}"
                 Height="50" Margin="20,5,250,5" Width="150" BorderBrush="#FFFF4C4C"
                     materialDesign:ButtonAssist.CornerRadius="25"
-               ToolTip="MaterialDesignRaisedLightButton with Round Corners"  Background="#FFFF4C4C">
-                <TextBlock Text="Excluir" />
+               ToolTip="MaterialDesignRaisedLightButton with Round Corners"  Background="#FFFF4C4C" Click="BtnSair_Click">
+                <TextBlock Text="Sair" />
             </Button>
 
-            <Button x:Name="BtnEditar" Style="{StaticResource MaterialDesignRaisedLightButton}"
+            <Button x:Name="BtnNovo" Style="{StaticResource MaterialDesignRaisedLightButton}"
                 
                 Height="50" Margin="0 5 20 5" Width="150"
                 materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange">
-                <TextBlock Text="Editar" />
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange" Click="BtnNovo_Click_1">
+                <TextBlock Text="Novo" />
             </Button>
         </StackPanel>
 

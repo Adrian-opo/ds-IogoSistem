@@ -128,6 +128,8 @@
     <Compile Include="Models\FornecedorDAO.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\ProdutoDAO.cs" />
+    <Compile Include="Models\Venda.cs" />
+    <Compile Include="Models\VendaDAO.cs" />
     <Compile Include="Views\CadastrarestoqueFormWindow.xaml.cs">
       <DependentUpon>CadastrarestoqueFormWindow.xaml</DependentUpon>
     </Compile>
@@ -151,6 +153,9 @@
     </Compile>
     <Compile Include="Views\UsuarioListWindow.xaml.cs">
       <DependentUpon>UsuarioListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Venda.xaml.cs">
+      <DependentUpon>Venda.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -194,6 +199,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UsuarioListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Venda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

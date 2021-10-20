@@ -8,23 +8,22 @@ using IogoSistem.Database;
 using MySql.Data.MySqlClient;
 
 namespace IogoSistem.Models
-{
-    class FornecedorDAO : IDAO<Fornecedor>
+{/*
+    class VendaDAO : IDAO<Venda>
     {
-
         private static Conexao conn;
 
-        public FornecedorDAO()
+        public VendaDAO()
         {
             conn = new Conexao();
         }
 
-        public void Delete(Fornecedor t)
+        public void Delete(Venda t)
         {
             try
             {
                 var query = conn.Query();
-                query.CommandText = "DELETE FROM fornecedor WHERE id_fornecedor=@id";
+                query.CommandText = "DELETE FROM venda WHERE id_venda=@id";
 
                 query.Parameters.AddWithValue("@id", t.Id);
 
@@ -44,12 +43,12 @@ namespace IogoSistem.Models
             }
         }
 
-        public Fornecedor GetById(int id)
+        public Venda GetById(int id)
         {
             try
             {
                 var query = conn.Query();
-                query.CommandText = "SELECT * FROM fornecedor WHERE id_fornecedor= @id";
+                query.CommandText = "SELECT * FROM venda WHERE id_venda= @id";
 
 
                 query.Parameters.AddWithValue("@id", id);
@@ -59,28 +58,29 @@ namespace IogoSistem.Models
                 if (!reader.HasRows)
                     throw new Exception("nenhum registro foi encontrado");
 
-                var fornecedor = new Fornecedor();
+                var venda = new Venda();
 
                 while (reader.Read())
                 {
+                    venda.Id = reader.GetInt32("id_venda");
 
-                    fornecedor.Id =reader.GetInt32("id_fornecedor");
+                    venda.id_cliente = int.Parse(reader.GetString("id_cliente_fk"));
+                    venda.DataVenda = DateTime.Parse(reader.GetString("data_vend"));
+                    venda.DataVencimentoParcela = DateTime.Parse(reader.GetString("data_Vencimento_vend"));
+                    venda.CNPJ = reader.GetString("cnpj_for");
 
-                    fornecedor.RazaoSocial =reader.GetString("razaoSocial_for");
-                    fornecedor.CNPJ = reader.GetString("cnpj_for");
+                    venda.Nome = reader.GetString("nome_for");
+                    venda.CPF = reader.GetString("cpf_for");
+                    venda.RG = reader.GetString("rg_for");
 
-                    fornecedor.Nome = reader.GetString("nome_for");
-                    fornecedor.CPF = reader.GetString("cpf_for");
-                    fornecedor.RG = reader.GetString("rg_for");
-
-                    fornecedor.Telefone = reader.GetString("telefone_for");
-                    fornecedor.Celular = reader.GetString("celular_for");
-                    fornecedor.Email = reader.GetString("email_for");
-                    fornecedor.ProdutoFornecido = reader.GetString("produtofornecido_for");
-                    fornecedor.Complemento = reader.GetString("complento_for");
+                    venda.Telefone = reader.GetString("telefone_for");
+                    venda.Celular = reader.GetString("celular_for");
+                    venda.Email = reader.GetString("email_for");
+                    venda.ProdutoFornecido = reader.GetString("produtofornecido_for");
+                    venda.Complemento = reader.GetString("complento_for");
 
                 }
-                return fornecedor;
+                return venda;
             }
             catch (Exception e)
             {
@@ -92,15 +92,13 @@ namespace IogoSistem.Models
             }
         }
 
-        public void Insert(Fornecedor t)
+        public void Insert(Venda t)
         {
             try
             {
                 var query = conn.Query();
-                query.CommandText = "INSERT INTO fornecedor (nome_for ,telefone_for ,cpf_for ,rg_for, email_for, produtoFornecido_for, celular_for, razaoSocial_for, cnpj_for, complento_for, id_endereco_fk  ) " +
-                    "VALUES (@nome,@telefone,@cpf,@rg,@email,@produtoFornecido,@celular,@razaoSocial,@cnpj,@complemento, @id_endereço_fk )";
-
-                t.id_endereco = "1";
+                query.CommandText = "INSERT INTO fornecedor (nome_for ,telefone_for ,cpf_for ,rg_for, email_for, produtoFornecido_for, celular_for, nomeFantasia_for, razaoSocial_for, cnpj_for, complento_for ) " +
+                    "VALUES (@nome,@telefone,@cpf,@rg,@email,@produtoFornecido,@celular,@nomeFantasia,@razaoSocial,@cnpj,@complemento)";
 
                 query.Parameters.AddWithValue("@nome", t.Nome);
                 query.Parameters.AddWithValue("@telefone", t.Telefone);
@@ -109,10 +107,10 @@ namespace IogoSistem.Models
                 query.Parameters.AddWithValue("@email", t.Email);
                 query.Parameters.AddWithValue("@produtoFornecido", t.ProdutoFornecido);
                 query.Parameters.AddWithValue("@celular", t.Celular);
+                query.Parameters.AddWithValue("@nomeFantasia", t.NomeFantasia);
                 query.Parameters.AddWithValue("@razaoSocial", t.RazaoSocial);
                 query.Parameters.AddWithValue("@cnpj", t.CNPJ);
                 query.Parameters.AddWithValue("@complemento", t.Complemento);
-                query.Parameters.AddWithValue("@id_endereço_fk", t.id_endereco);
 
                 var result = query.ExecuteNonQuery();
 
@@ -129,22 +127,27 @@ namespace IogoSistem.Models
                 conn.Close();
             }
         }
-        public List<Fornecedor> List()
+        public List<Venda> List()
         {
             try
             {
-                List<Fornecedor> list = new List<Fornecedor>();
+                List<Venda> list = new List<Venda>();
                 var query = conn.Query();
-                query.CommandText = "Select * FROM Fornecedor";
+                query.CommandText = "Select * FROM Venda";
 
                 MySqlDataReader reader = query.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    list.Add(new Fornecedor()
+                    list.Add(new Venda()
                     {
-                        Id = reader.GetInt32("id_fornecedor"),
-                        Nome = reader.GetString("nome_for")
+                        Id = reader.GetInt32("id_usuario"),
+                        Nome = reader.GetString("nome_for"),
+                        NomeFantasia = reader.GetString("nomefantasia_for"),
+                        CPF = reader.GetString("cpf_for"),
+                        CNPJ = reader.GetString("cnpj_for"),
+                        Email = reader.GetString("email_for")
+
                     });
                 }
 
@@ -161,13 +164,14 @@ namespace IogoSistem.Models
             }
         }
 
-        public void Update(Fornecedor t)
+        public void Update(Venda t)
         {
             try
             {
                 var query = conn.Query();
-                query.CommandText = "UPDATE Fornecedor SET nome_for=@nome ,telefone_for=@telefone ,cpf_for=@cpf ,rg_for=@rg, email_for=@email, produtoFornecido_for=@produtoFornecido, celular_for=@celular, razaoSocial_for=@razaoSocial, cnpj_for=@cnpj, complento_for=@complemento WHERE id_fornecedor=@id";
+                query.CommandText = "UPDATE Venda SET nome_for=@nome ,telefone_for=@telefone ,cpf_for=@cpf ,rg_for=@rg, email_for=@email, produtoFornecido_for=@produtoFornecido, celular_for=@celular, nomeFantasia_for=@nomeFantasia, razaoSocial_for=@razaoSocial, cnpj_for=@cnpj, complento_for=@complemento WHERE id_fornecedor=@id";
 
+                query.Parameters.AddWithValue("@nomeFantasia", t.NomeFantasia);
                 query.Parameters.AddWithValue("@razaoSocial", t.RazaoSocial);
                 query.Parameters.AddWithValue("@cnpj", t.CNPJ);
 
@@ -200,4 +204,5 @@ namespace IogoSistem.Models
             }
         }
     }
+    */
 }

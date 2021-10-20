@@ -104,5 +104,21 @@ namespace IogoSistem.Views
         {
 
         }
+
+        private void BtnNovo_Click_1(object sender, RoutedEventArgs e)
+        {
+            var window = new FornecedorFormWindow();
+            window.ShowDialog();
+            LoadDataGrid();
+        }
+
+        private void BtnSair_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+
     }
+
+
 }
