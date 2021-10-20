@@ -45,52 +45,21 @@ namespace IogoSistem.Views
 
         private void BtnSalvar_Click(object sender, RoutedEventArgs e)
         {
-            if (pessoajuridica.IsChecked == true)
-            {
-                if (recebe_nome == null && recebe_razaosocial == null && recebe_cnpj == null && recebe_produtofornecido == null)
-                {
-                    MessageBox.Show($"Há Campos Vazios!", "Erro", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-                else
-                {
-                    _fornecedor.Nome = recebe_nome.Text;
-                    _fornecedor.RazaoSocial = recebe_razaosocial.Text;
-                    _fornecedor.CNPJ = recebe_cnpj.Text;
+            _fornecedor.Nome = recebe_nome.Text;
+            _fornecedor.RazaoSocial = recebe_razaosocial.Text;
+            _fornecedor.CNPJ = recebe_cnpj.Text;
 
-                    _fornecedor.Telefone = recebe_telefone.Text;
-                    _fornecedor.Celular = recebe_celular.Text;
-                    _fornecedor.Email = recebe_email.Text;
-                    _fornecedor.ProdutoFornecido = recebe_produtofornecido.Text;
-                    _fornecedor.Complemento = recebe_complemento.Text;
+            _fornecedor.CPF = recebe_cpf.Text;
+            _fornecedor.RG = recebe_rg.Text;
 
-                    SaveData();
-                }
-            }
-            else if (pessoafisica.IsChecked == true)
-            {
-                if (recebe_nome== null && recebe_cpf == null && recebe_rg == null && recebe_produtofornecido == null)
-                {
-                    MessageBox.Show($"Há Campos Vazios!", "Erro", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-                else
-                {
-                    _fornecedor.Nome = recebe_nome.Text;
-                    _fornecedor.CPF = recebe_cpf.Text;
-                    _fornecedor.RG = recebe_rg.Text;
+            _fornecedor.Telefone = recebe_telefone.Text;
+            _fornecedor.Celular = recebe_celular.Text;
+            _fornecedor.Email = recebe_email.Text;
+            _fornecedor.ProdutoFornecido = recebe_produtofornecido.Text;
+            _fornecedor.Complemento = recebe_complemento.Text;
 
-                    _fornecedor.Telefone = recebe_telefone.Text;
-                    _fornecedor.Celular = recebe_celular.Text;
-                    _fornecedor.Email = recebe_email.Text;
-                    _fornecedor.ProdutoFornecido = recebe_produtofornecido.Text;
-                    _fornecedor.Complemento = recebe_complemento.Text;
-
-                    SaveData();
-                }
-            }
-            else
-            {
-                MessageBox.Show($"Escolha o Tipo de Pessoa a Ser Cadastrado!", "Erro", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
+            SaveData();
+           
         }
 
 
@@ -171,37 +140,6 @@ namespace IogoSistem.Views
             recebe_email.Text = "";
             recebe_produtofornecido.Text = "";
             recebe_complemento.Text = "";
-        }
-
-        private void pessoafisica_Checked(object sender, RoutedEventArgs e)
-        {
-            pessoafisica.Checked += pessoafisica_Checked;
-
-            if (pessoafisica.IsChecked == true)
-            {
-
-                recebe_razaosocial.IsEnabled = false;
-                recebe_cnpj.IsEnabled = false;
-
-                recebe_nome.IsEnabled = true;
-                recebe_cpf.IsEnabled = true;
-                recebe_rg.IsEnabled = true;
-            }
-        }
-
-        private void pessoajuridica_Checked(object sender, RoutedEventArgs e)
-        {
-            pessoajuridica.Checked += pessoajuridica_Checked;
-
-            if (pessoajuridica.IsChecked == true)
-            {
-                recebe_cpf.IsEnabled=false;
-                recebe_rg.IsEnabled = false;
-
-                recebe_nome.IsEnabled = true;
-                recebe_razaosocial.IsEnabled = true;
-                recebe_cnpj.IsEnabled = true;
-            }
         }
 
         private void recebe_numero_KeyDown(object sender, KeyEventArgs e)

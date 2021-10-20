@@ -100,7 +100,7 @@ namespace IogoSistem.Models
                 query.CommandText = "INSERT INTO fornecedor (nome_for ,telefone_for ,cpf_for ,rg_for, email_for, produtoFornecido_for, celular_for, razaoSocial_for, cnpj_for, complento_for, id_endereco_fk  ) " +
                     "VALUES (@nome,@telefone,@cpf,@rg,@email,@produtoFornecido,@celular,@razaoSocial,@cnpj,@complemento, @id_endereço_fk )";
 
-                t.id_endereco = "1";
+                
 
                 query.Parameters.AddWithValue("@nome", t.Nome);
                 query.Parameters.AddWithValue("@telefone", t.Telefone);
@@ -112,7 +112,15 @@ namespace IogoSistem.Models
                 query.Parameters.AddWithValue("@razaoSocial", t.RazaoSocial);
                 query.Parameters.AddWithValue("@cnpj", t.CNPJ);
                 query.Parameters.AddWithValue("@complemento", t.Complemento);
-                query.Parameters.AddWithValue("@id_endereço_fk", t.id_endereco);
+
+                query.Parameters.AddWithValue("@id_endereço_fk", t.Lagradouro);
+                query.Parameters.AddWithValue("@id_endereço_fk", t.Numero);
+                query.Parameters.AddWithValue("@id_endereço_fk", t.Bairro);
+                query.Parameters.AddWithValue("@id_endereço_fk", t.Cidade);
+                query.Parameters.AddWithValue("@id_endereço_fk", t.UF);
+                query.Parameters.AddWithValue("@id_endereço_fk", t.CEP);
+
+
 
                 var result = query.ExecuteNonQuery();
 
