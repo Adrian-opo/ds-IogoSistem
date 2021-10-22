@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using IogoSistem.Models;
 using IogoSistem.Views;
 
-namespace IogoSistem
+namespace IogoSistem.Views
 {
     /// <summary>
     /// Interação lógica para MainWindow.xam

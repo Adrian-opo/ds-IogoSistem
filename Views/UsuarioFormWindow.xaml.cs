@@ -105,15 +105,17 @@ namespace IogoSistem.Views
             {
                 var dao = new UsuarioDAO();
                 _usuario = dao.GetById(_id);
-
+               
                 txtname.Text = _usuario.Nome;
                 txtcpf.Text = _usuario.CPF;
                 txtemail.Text = _usuario.Email;
                 txtsenha.Password = _usuario.Senha;
+                txtrevelar.Text = _usuario.Senha;
+               
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Execção", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

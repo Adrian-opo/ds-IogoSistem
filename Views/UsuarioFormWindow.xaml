@@ -76,20 +76,5 @@
                      Content="Salvar" Click="Btn_Salvar" Background="Lime" BorderBrush="Lime" />
         </StackPanel>
 
-        <StackPanel Grid.Column="1">
-            <materialDesign:PackIcon HorizontalAlignment="Center" BorderBrush="Black" Kind="Account" Width="250" Height="220"/>
-
-            <Button x:Name="Btnadicionar_fotos" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                     Margin="20 10"
-                     ToolTip="MaterialDesignRaisedLightButton with Round Corners"
-                     Content="Adicionar Foto" Click="Btnadicionar_foto" BorderBrush="White" >
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFAAAAAA" Offset="1"/>
-                        <GradientStop Color="White" Offset="0.225"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
-        </StackPanel>
     </Grid>
 </Window>

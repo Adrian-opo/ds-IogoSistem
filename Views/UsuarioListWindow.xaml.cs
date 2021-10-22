@@ -20,6 +20,8 @@ namespace IogoSistem.Views
     /// </summary>
     public partial class UsuarioListWindow : Window
     {
+        private List<Usuario> _userlist = new List<Usuario>();
+
         public UsuarioListWindow()
         {
             InitializeComponent();
@@ -83,25 +85,17 @@ namespace IogoSistem.Views
         }
 
 
-
-
-
-
-        private void BtnExcluir_Click(object sender, RoutedEventArgs e)
+        private void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
+            var text = txtSearch.Text;
 
+            var filterlist=_userlist.Where(i => i.Nome.ToLower().Contains(text));
+            dataGridConsultarusuario.ItemsSource = filterlist;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnCancelar_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
-
-        private void Comboboxconsultarusuario_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-
     }
 }
