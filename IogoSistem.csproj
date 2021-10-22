@@ -40,6 +40,9 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>packages\FluentValidation.10.3.4\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -122,6 +125,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DadosSistema.cs" />
+    <Compile Include="Helpers\DAOHelper.cs" />
     <Compile Include="Interfaces\IDAO.cs" />
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -133,6 +137,8 @@
     <Compile Include="Models\Fornecedor.cs" />
     <Compile Include="Models\FornecedorDAO.cs" />
     <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\funcionarioDAO.cs" />
+    <Compile Include="Models\FuncionarioValitador.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\ProdutoDAO.cs" />
     <Compile Include="Views\AgendaWindow.xaml.cs">
@@ -152,6 +158,12 @@
     <Compile Include="Views\FornecedorListWindow.xaml.cs">
       <DependentUpon>FornecedorListWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FuncionarioFormWindow.xaml.cs">
+      <DependentUpon>FuncionarioFormWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncionarioListWindow.xaml.cs">
+      <DependentUpon>FuncionarioListWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProdutoFormWIndow.xaml.cs">
       <DependentUpon>ProdutoFormWIndow.xaml</DependentUpon>
     </Compile>
@@ -168,6 +180,14 @@
       <DependentUpon>Venda.xaml</DependentUpon>
     </Compile>
     <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FuncionarioFormWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FuncionarioListWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

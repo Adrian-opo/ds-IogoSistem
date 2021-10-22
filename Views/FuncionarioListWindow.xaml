@@ -1,0 +1,120 @@
+﻿<Window x:Class="IogoSistem.Views.FuncionarioListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IogoSistem.Views"
+        xmlns:wpftool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Consultar Funcionario" Height="590" Width="890" ResizeMode="NoResize" SizeToContent="Width" WindowStartupLocation="CenterScreen">
+
+    <Grid Background="#d3ecff">
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="67"/>
+            <RowDefinition Height="343"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel  Grid.Row="0" Orientation="Horizontal" Height="50" HorizontalAlignment="Center">
+            <TextBlock Text="Consultar por:"  Margin="10 10 10 0" FontSize="21"/>
+            <ComboBox x:Name="comboboxConsultar"   Width="670" Margin="0 0 10 0"
+                       Padding="5" FontSize="17"
+                      Style="{StaticResource MaterialDesignOutlinedComboBox}" >
+
+
+                <DataGridTextColumn Header="Nome de Funcionario" Binding="{Binding Nome}" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+
+            <TextBox  x:Name="nameuser" Margin="0 17 20 15" Width="740" materialDesign:HintAssist.Hint="Pesquisar" 
+                      materialDesign:HintAssist.Background="#d3ecff" Padding="5" FontSize="17" 
+                      Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="{x:Null}" />
+
+            <Button Height="35" >
+                <materialDesign:PackIcon Kind="Magnify" />
+            </Button>
+
+        </StackPanel>
+
+
+        <Grid Grid.Row="2"  HorizontalAlignment="Center" >
+
+            <DataGrid  CanUserAddRows="False" CanUserDeleteRows="False"  
+                       x:Name="dataGridConsultarfuncionario"  AutoGenerateColumns="False" 
+                       AlternatingRowBackground="LightBlue" AlternationCount="2" >
+                <DataGrid.Columns>
+
+
+                    <DataGridTextColumn Header="Nome de funcionario" Binding="{Binding Nome}" />
+                    <DataGridTextColumn Header="CPF" Binding="{Binding CPF}" />
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
+                    <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}" />
+                    <DataGridTextColumn Header="Endereco" Binding="{Binding Endereco}" />
+                    <DataGridTextColumn Header="DataNascimento" Binding="{Binding DataNascimento}" />
+                    <DataGridTextColumn Header="RG" Binding="{Binding RG}" />
+                    <DataGridTextColumn Header="PCD" Binding="{Binding PCD}" />
+                    <DataGridTextColumn Header="NumeroCarteira" Binding="{Binding NumeroCarteira}" />
+                    <DataGridTextColumn Header="Salario" Binding="{Binding Salario}" />
+                    <DataGridTextColumn Header="DataAdimissao" Binding="{Binding DataAdimissao}" />
+                    <DataGridTextColumn Header="SetorTrabalho" Binding="{Binding SetorTrabalho}" />
+                    <DataGridTextColumn Header="CargaHoraria" Binding="{Binding CargaHoraria}" />
+
+
+
+                    <DataGridTemplateColumn Header="Ações">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                        Content="{materialDesign:PackIcon Eye}" ToolTip="Visualizar Registro funcionario" Margin="0 0 5 0" Click="BtnUpdate_fun_Click"/>
+
+
+                                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}" 
+                                        Content="{materialDesign:PackIcon Delete}" Click="BtnDelete_fun_Click"
+                                        ToolTip="Excluir Registro funcionario" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+
+
+            </DataGrid>
+
+
+        </Grid>
+
+
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="BtnExcluirPesquisa" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                Height="50" Margin="20,5,250,5" Width="150" BorderBrush="#FFFF4C4C"
+                    materialDesign:ButtonAssist.CornerRadius="25"
+               ToolTip="MaterialDesignRaisedLightButton with Round Corners"  Background="#FFFF4C4C" >
+                <TextBlock Text="Excluir" />
+            </Button>
+
+            <Button x:Name="BtnEditarFuncionario" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                Click="Add_novo_click"
+                Height="50" Margin="0,0,20,10.2" Width="150"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange" VerticalAlignment="Bottom" >
+                <TextBlock Text="virar novo" />
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

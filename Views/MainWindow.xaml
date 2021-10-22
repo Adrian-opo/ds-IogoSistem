@@ -10,8 +10,11 @@
         <Button x:Name="btn_funcionario" Content="Button" HorizontalAlignment="Left" Margin="73,30,0,0" VerticalAlignment="Top" Width="75" Click="Abrir_Usuario"/>
         <Button x:Name="btn_list" Content="Button" HorizontalAlignment="Left" Margin="73,114,0,0" VerticalAlignment="Top" Width="75" Click="Abrir_lista"/>
         <Button x:Name="btn_evento" Content="Button" HorizontalAlignment="Left" Margin="73,182,0,0" VerticalAlignment="Top" Width="75" Click="Abrir_Evento" RenderTransformOrigin="0.516,3.333"/>
+        <Button x:Name="btn_funcionario_Copy" Content="Button" HorizontalAlignment="Left" Margin="527,45,0,0" VerticalAlignment="Top" Width="75" Click="btn_funcionario_Copy_Click"/>
+        <Button x:Name="btn_list_funck" Content="Button" HorizontalAlignment="Left" Margin="651,45,0,0" VerticalAlignment="Top" Width="75" Click="btn_list_funck_Click"/>
+
         <Button x:Name="btn_agenda" Content="Button" HorizontalAlignment="Left" Margin="73,228,0,0" VerticalAlignment="Top" Width="75" Click="Abrir_Agenda" RenderTransformOrigin="0.516,3.333"/>
-        <Button x:Name="BtnCadastrarFor" Content="cadastrar Fornecedor" HorizontalAlignment="Left" Margin="578,33,0,0" VerticalAlignment="Top" Width="200" Height="82" RenderTransformOrigin="0.5,0.5" Click="Button_Click">
+        <Button x:Name="BtnCadastrarFor" Content="cadastrar Fornecedor" HorizontalAlignment="Left" Margin="304,281,0,0" VerticalAlignment="Top" Width="200" Height="82" RenderTransformOrigin="0.5,0.5" Click="Button_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="-1" ScaleX="-1"/>
@@ -22,7 +25,7 @@
             </Button.RenderTransform>
         </Button>
         <Button x:Name="btn_evento_Copy" Content="Button" HorizontalAlignment="Left" Margin="73,265,0,0" VerticalAlignment="Top" Width="75" Click="produtos" RenderTransformOrigin="0.516,3.333"/>
-        <Button x:Name="BtnConsultarFor" Content="consultar Fornecedor" HorizontalAlignment="Left" Margin="578,152,0,0" VerticalAlignment="Top" Width="200" Height="82" RenderTransformOrigin="0.5,0.5" Click="BtnConsultarFor_Click">
+        <Button x:Name="BtnConsultarFor" Content="consultar Fornecedor" HorizontalAlignment="Left" Margin="540,282,0,0" VerticalAlignment="Top" Width="200" Height="82" RenderTransformOrigin="0.5,0.5" Click="BtnConsultarFor_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="-1" ScaleX="-1"/>

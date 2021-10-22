@@ -76,5 +76,17 @@ namespace IogoSistem.Views
             window.ShowDialog();
 
         }
+        ///////////////
+
+        private void btn_list_funck_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new FuncionarioFormWindow();
+            window.ShowDialog();
+        }
+
+        private void btn_funcionario_Copy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
