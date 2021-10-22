@@ -44,7 +44,7 @@ namespace IogoSistem.Models
 
         }
 
-        public Usuario GetByUsuario(string usuarionome, string senha)
+        public Usuario Login(string usuarionome, string senha)
         {
             try
             {
@@ -61,7 +61,7 @@ namespace IogoSistem.Models
 
                 while (reader.Read())
                 {
-                    usuario = Usuario.GetInstance();
+                    usuario = new Usuario();
                     usuario.Id = reader.GetInt32("id_usuario");
                     usuario.Nome = reader.GetString("nomeUsuario");
                     usuario.Funcionario = new Funcionario() { Id = reader.GetInt32("id_funcionario"), Nome = reader.GetString("nome_fun") };
@@ -126,7 +126,7 @@ namespace IogoSistem.Models
 
                 while (reader.Read())
                 {
-                    usuario = Usuario.GetInstance();
+                    usuario = new Usuario();
                     usuario.Id = reader.GetInt32("id_usuario");
                     usuario.Nome = reader.GetString("nomeUsuario");
                     usuario.CPF = reader.GetString("cpf_usu");

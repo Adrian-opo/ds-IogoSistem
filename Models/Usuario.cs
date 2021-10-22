@@ -16,27 +16,6 @@ namespace IogoSistem.Models
         public int Ativo { get; set; }
         public Funcionario Funcionario { get; set; }
 
-        private static Usuario _instance;
-        public Usuario() { }
-
-        public static Usuario GetInstance()
-        {
-            if (_instance == null)
-            {
-                _instance = new Usuario();
-            }
-            return _instance;
-        }
-        public static bool Login(string usuario, string senha)
-        {
-            var user = new UsuarioDAO().GetByUsuario(usuario,senha);
-
-            if (user != null)
-                return true;
-            
-            
-            return false;
-        }
 
     }
    

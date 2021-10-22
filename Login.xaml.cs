@@ -37,8 +37,13 @@ namespace IogoSistem
             string usuario = txtUsuario.Text;
             string senha = pssBoxSenha.Password.ToString();
 
-            if (Usuario.Login(usuario, senha))
+            var user = new UsuarioDAO().Login(usuario,senha);
+
+            if (user!=null)
             {
+
+                DadosSistema.SetUser(user);
+
                 var main = new MainWindow();
                 main.Show();
                 this.Close();
@@ -84,12 +89,11 @@ namespace IogoSistem
             {
                 string usuario = txtUsuario.Text;
                 string senha = pssBoxSenha.Password.ToString();
-                
-                if (Usuario.Login(usuario, senha))
+
+                var user = new UsuarioDAO().Login(usuario, senha);
+
+                if (user != null)
                 {
-                    var dao = new UsuarioDAO();
-                    dao.AtivarUsuario(usuario, senha);
-                        
                     var main = new MainWindow();
                     main.Show();
                     this.Close();
@@ -98,6 +102,7 @@ namespace IogoSistem
                 {
                     MessageBox.Show("Usuario e/ou senha incorretos! Tente novamente", "Autorização Negada", MessageBoxButton.OK, MessageBoxImage.Warning);
                     _ = txtUsuario.Focus();
+
                 }
 
 

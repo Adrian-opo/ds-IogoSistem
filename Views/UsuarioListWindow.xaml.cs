@@ -37,9 +37,10 @@ namespace IogoSistem.Views
         {
             try
             {
-                var dao = new UsuarioDAO();
 
-                dataGridConsultarusuario.ItemsSource = dao.List();
+                _userlist = new UsuarioDAO().List();
+
+                dataGridConsultarusuario.ItemsSource = _userlist;
 
             }
             catch (Exception ex)
@@ -47,6 +48,7 @@ namespace IogoSistem.Views
                 MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
         private void BtnNovo_Click(object sender, RoutedEventArgs e)
         {
             var window = new UsuarioFormWindow();
