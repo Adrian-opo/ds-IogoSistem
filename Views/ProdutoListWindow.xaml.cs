@@ -19,7 +19,9 @@ namespace IogoSistem.Views
     /// Lógica interna para ProdutoListWindow.xaml
     /// </summary>
     public partial class ProdutoListWindow : Window
+        
     {
+        private List<Produto> _produto = new List<Produto>();
         public ProdutoListWindow()
         {
             InitializeComponent();
@@ -35,9 +37,14 @@ namespace IogoSistem.Views
         {
             try
             {
-                var dao = new ProdutoDAO();
 
-                dataGridConsultarProd.ItemsSource = dao.List();
+                _produto = new ProdutoDAO().List();
+
+                dataGridConsultarProd.ItemsSource = _produto;
+
+
+
+              
 
             }
             catch (Exception ex)
@@ -61,7 +68,10 @@ namespace IogoSistem.Views
             LoadDataGrid();
 
         }
-
+        private void BtnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
         private void BtnEX_Click(object sender, RoutedEventArgs e)
         {
             var userselected = dataGridConsultarProd.SelectedItem as Produto;
@@ -86,6 +96,14 @@ namespace IogoSistem.Views
         private void BtnExcluir_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Btnbusca_Click(object sender, RoutedEventArgs e)
+        {
+            var text = txtbusca.Text;
+
+            var filterlist = _produto.Where(i => i.Nome.ToLower().Contains(text));
+            dataGridConsultarProd.ItemsSource = filterlist;
         }
     }
 }

@@ -131,6 +131,7 @@
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\AbstractDAO.cs" />
+    <Compile Include="Models\CadastrarEstoqueDAO.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\EventoDAO.cs" />

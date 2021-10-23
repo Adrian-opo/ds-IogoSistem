@@ -86,7 +86,8 @@ namespace IogoSistem.Views
 
         private void btn_funcionario_Copy_Click(object sender, RoutedEventArgs e)
         {
-
+            var window = new CadastrarestoqueFormWindow();
+            window.ShowDialog();
         }
     }
 }

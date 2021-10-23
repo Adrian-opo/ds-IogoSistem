@@ -159,16 +159,16 @@ namespace IogoSistem.Models
             try
             {
                 var query = conn.Query();
-                query.CommandText = "UPDATE produto SET descricao_prod=@descricao,nome_prod=@nome,sabor_prod=@sabor,medida_prod=@medida,valorVenda_prod=@valor_vendae,stoque_prod=@estoque WHERE id_produto=@id";
+                query.CommandText = "UPDATE produto SET descricao_prod=@descricao, nome_prod=@nome, sabor_prod=@sabor, medida_prod=@medida, valorVenda_prod=@valor_venda, estoque_prod=@estoque WHERE id_produto=@id";
 
 
-                query.Parameters.AddWithValue("@decricao", t.Descricao);
+                query.Parameters.AddWithValue("@descricao", t.Descricao);
                 query.Parameters.AddWithValue("@nome", t.Nome);
                 query.Parameters.AddWithValue("@sabor", t.Sabor);
                 query.Parameters.AddWithValue("@medida", t.Medida);
                 query.Parameters.AddWithValue("@valor_venda", t.Valor_Produto);
-
                 query.Parameters.AddWithValue("@estoque", t.Estoque);
+                query.Parameters.AddWithValue("@id", t.Id);
 
 
                 var result = query.ExecuteNonQuery();

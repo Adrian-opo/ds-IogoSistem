@@ -21,7 +21,7 @@
 
 
 
-        <TextBlock x:Name="cliente" Margin="10,75,433,311" FontSize="20"><Run Text="Pesquisar Produto:"/><Span Foreground="Black"><Run Text="            "/></Span><Span Foreground="Blue"><Run Text="&lt;"/></Span><Span Foreground="#FFA31515"><Run Text="TextBox"/></Span><Span Foreground="Red"><Run Text=" x"/></Span><Span Foreground="Blue"><Run Text=":"/></Span><Span Foreground="Red"><Run Text="Name"/></Span><Span Foreground="Blue"><Run Text="=&quot;TxtRecebe_Fornecedor&quot;"/></Span><Span Foreground="Red"><Run Text=" Padding"/></Span><Span Foreground="Blue"><Run Text="=&quot;1&quot;"/></Span><Span Foreground="Red"><Run Text=" FontSize"/></Span><Span Foreground="Blue"><Run Text="=&quot;17&quot;"/></Span><Span Foreground="Black"><Run Text=" "/></Span><Span Foreground="Red"><Run Text=" Style"/></Span><Span Foreground="Blue"><Run Text="=&quot;{"/></Span><Span Foreground="#FFA31515"><Run Text="StaticResource"/></Span><Span Foreground="Red"><Run Text=" MaterialDesignOutlinedTextBox"/></Span><Span Foreground="Blue"><Run Text="}&quot;"/></Span><Span Foreground="Red"><Run Text=" Margin"/></Span><Span Foreground="Blue"><Run Text="=&quot;10,35,10,10&quot;"/></Span><Span Foreground="Red"><Run Text=" HorizontalAlignment"/></Span><Span Foreground="Blue"><Run Text="=&quot;Left&quot;"/></Span><Span Foreground="Red"><Run Text=" Height"/></Span><Span Foreground="Blue"><Run Text="=&quot;29&quot;"/></Span><Span Foreground="Red"><Run Text=" Width"/></Span><Span Foreground="Blue"><Run Text="=&quot;350&quot;/&gt;"/></Span><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="cliente" Margin="29,12,414,374" FontSize="20"><Run Text="Pesquisar Produto:"/><Span Foreground="Black"><Run Text="            "/></Span><Span Foreground="Blue"><Run Text="&lt;"/></Span><Span Foreground="#FFA31515"><Run Text="TextBox"/></Span><Span Foreground="Red"><Run Text=" x"/></Span><Span Foreground="Blue"><Run Text=":"/></Span><Span Foreground="Red"><Run Text="Name"/></Span><Span Foreground="Blue"><Run Text="=&quot;TxtRecebe_Fornecedor&quot;"/></Span><Span Foreground="Red"><Run Text=" Padding"/></Span><Span Foreground="Blue"><Run Text="=&quot;1&quot;"/></Span><Span Foreground="Red"><Run Text=" FontSize"/></Span><Span Foreground="Blue"><Run Text="=&quot;17&quot;"/></Span><Span Foreground="Black"><Run Text=" "/></Span><Span Foreground="Red"><Run Text=" Style"/></Span><Span Foreground="Blue"><Run Text="=&quot;{"/></Span><Span Foreground="#FFA31515"><Run Text="StaticResource"/></Span><Span Foreground="Red"><Run Text=" MaterialDesignOutlinedTextBox"/></Span><Span Foreground="Blue"><Run Text="}&quot;"/></Span><Span Foreground="Red"><Run Text=" Margin"/></Span><Span Foreground="Blue"><Run Text="=&quot;10,35,10,10&quot;"/></Span><Span Foreground="Red"><Run Text=" HorizontalAlignment"/></Span><Span Foreground="Blue"><Run Text="=&quot;Left&quot;"/></Span><Span Foreground="Red"><Run Text=" Height"/></Span><Span Foreground="Blue"><Run Text="=&quot;29&quot;"/></Span><Span Foreground="Red"><Run Text=" Width"/></Span><Span Foreground="Blue"><Run Text="=&quot;350&quot;/&gt;"/></Span><LineBreak/><Run/></TextBlock>
         <StackPanel Orientation="Horizontal" Margin="74,285,-384,10">
             <Button x:Name="btn_novo" Style="{StaticResource MaterialDesignRaisedLightButton}"
                 
@@ -45,15 +45,46 @@
                      Content="SALVAR" Background="Lime" BorderBrush="Lime" Width="148" Click="BtnSalvar_Click" Height="74" VerticalAlignment="Bottom"
             />
         </StackPanel>
-        <RadioButton Content="Retirar Produto" HorizontalAlignment="Left" Margin="221,164,0,0" VerticalAlignment="Top" />
-        <RadioButton Content="Adicionar Produto" HorizontalAlignment="Left" Margin="404,166,0,0" VerticalAlignment="Top" />
-        <TextBlock x:Name="Datavalidade" Margin="10,218,445,168" FontSize="20"><Run Text="Data de Validade"/><Run Text=":"/><Span Foreground="Black"><Run Text="            "/></Span><Span Foreground="Blue"><Run Text="&lt;"/></Span><Span Foreground="#FFA31515"><Run Text="TextBox"/></Span><Span Foreground="Red"><Run Text=" x"/></Span><Span Foreground="Blue"><Run Text=":"/></Span><Span Foreground="Red"><Run Text="Name"/></Span><Span Foreground="Blue"><Run Text="=&quot;TxtRecebe_Fornecedor&quot;"/></Span><Span Foreground="Red"><Run Text=" Padding"/></Span><Span Foreground="Blue"><Run Text="=&quot;1&quot;"/></Span><Span Foreground="Red"><Run Text=" FontSize"/></Span><Span Foreground="Blue"><Run Text="=&quot;17&quot;"/></Span><Span Foreground="Black"><Run Text=" "/></Span><Span Foreground="Red"><Run Text=" Style"/></Span><Span Foreground="Blue"><Run Text="=&quot;{"/></Span><Span Foreground="#FFA31515"><Run Text="StaticResource"/></Span><Span Foreground="Red"><Run Text=" MaterialDesignOutlinedTextBox"/></Span><Span Foreground="Blue"><Run Text="}&quot;"/></Span><Span Foreground="Red"><Run Text=" Margin"/></Span><Span Foreground="Blue"><Run Text="=&quot;10,35,10,10&quot;"/></Span><Span Foreground="Red"><Run Text=" HorizontalAlignment"/></Span><Span Foreground="Blue"><Run Text="=&quot;Left&quot;"/></Span><Span Foreground="Red"><Run Text=" Height"/></Span><Span Foreground="Blue"><Run Text="=&quot;29&quot;"/></Span><Span Foreground="Red"><Run Text=" Width"/></Span><Span Foreground="Blue"><Run Foreground="Blue" Text="=&quot;350&quot;/&gt;"/></Span><LineBreak/><Run/></TextBlock>
-        <DatePicker
-                    Style="{StaticResource MaterialDesignOutlinedDatePicker}" Height="48" Margin="177,210,243,168" />
-        <TextBlock x:Name="Quantidade" Margin="10,267,445,119" FontSize="20"><Run Text="Quantidade"/><Run Text=":"/><Span Foreground="Black"><Run Text="            "/></Span><Span Foreground="Blue"><Run Text="&lt;"/></Span><Span Foreground="#FFA31515"><Run Text="TextBox"/></Span><Span Foreground="Red"><Run Text=" x"/></Span><Span Foreground="Blue"><Run Text=":"/></Span><Span Foreground="Red"><Run Text="Name"/></Span><Span Foreground="Blue"><Run Text="=&quot;TxtRecebe_Fornecedor&quot;"/></Span><Span Foreground="Red"><Run Text=" Padding"/></Span><Span Foreground="Blue"><Run Text="=&quot;1&quot;"/></Span><Span Foreground="Red"><Run Text=" FontSize"/></Span><Span Foreground="Blue"><Run Text="=&quot;17&quot;"/></Span><Span Foreground="Black"><Run Text=" "/></Span><Span Foreground="Red"><Run Text=" Style"/></Span><Span Foreground="Blue"><Run Text="=&quot;{"/></Span><Span Foreground="#FFA31515"><Run Text="StaticResource"/></Span><Span Foreground="Red"><Run Text=" MaterialDesignOutlinedTextBox"/></Span><Span Foreground="Blue"><Run Text="}&quot;"/></Span><Span Foreground="Red"><Run Text=" Margin"/></Span><Span Foreground="Blue"><Run Text="=&quot;10,35,10,10&quot;"/></Span><Span Foreground="Red"><Run Text=" HorizontalAlignment"/></Span><Span Foreground="Blue"><Run Text="=&quot;Left&quot;"/></Span><Span Foreground="Red"><Run Text=" Height"/></Span><Span Foreground="Blue"><Run Text="=&quot;29&quot;"/></Span><Span Foreground="Red"><Run Text=" Width"/></Span><Span Foreground="Blue"><Run Foreground="Blue" Text="=&quot;350&quot;/&gt;"/></Span><LineBreak/><Run/></TextBlock>
-        <TextBox x:Name="TBquantidade" Margin="177,267,243,119" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+        <RadioButton Content="Retirar Produto" HorizontalAlignment="Left" Margin="236,63,0,0" VerticalAlignment="Top" />
+        <RadioButton Content="Adicionar Produto" HorizontalAlignment="Left" Margin="419,65,0,0" VerticalAlignment="Top" />
+        <TextBlock x:Name="Quantidade" Margin="41,88,414,298" FontSize="20"><Run Text="Quantidade"/><Run Text=":"/><Span Foreground="Black"><Run Text="            "/></Span><Span Foreground="Blue"><Run Text="&lt;"/></Span><Span Foreground="#FFA31515"><Run Text="TextBox"/></Span><Span Foreground="Red"><Run Text=" x"/></Span><Span Foreground="Blue"><Run Text=":"/></Span><Span Foreground="Red"><Run Text="Name"/></Span><Span Foreground="Blue"><Run Text="=&quot;TxtRecebe_Fornecedor&quot;"/></Span><Span Foreground="Red"><Run Text=" Padding"/></Span><Span Foreground="Blue"><Run Text="=&quot;1&quot;"/></Span><Span Foreground="Red"><Run Text=" FontSize"/></Span><Span Foreground="Blue"><Run Text="=&quot;17&quot;"/></Span><Span Foreground="Black"><Run Text=" "/></Span><Span Foreground="Red"><Run Text=" Style"/></Span><Span Foreground="Blue"><Run Text="=&quot;{"/></Span><Span Foreground="#FFA31515"><Run Text="StaticResource"/></Span><Span Foreground="Red"><Run Text=" MaterialDesignOutlinedTextBox"/></Span><Span Foreground="Blue"><Run Text="}&quot;"/></Span><Span Foreground="Red"><Run Text=" Margin"/></Span><Span Foreground="Blue"><Run Text="=&quot;10,35,10,10&quot;"/></Span><Span Foreground="Red"><Run Text=" HorizontalAlignment"/></Span><Span Foreground="Blue"><Run Text="=&quot;Left&quot;"/></Span><Span Foreground="Red"><Run Text=" Height"/></Span><Span Foreground="Blue"><Run Text="=&quot;29&quot;"/></Span><Span Foreground="Red"><Run Text=" Width"/></Span><Span Foreground="Blue"><Run Foreground="Blue" Text="=&quot;350&quot;/&gt;"/></Span><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="TBquantidade" Margin="230,88,190,298" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+        <DataGrid  Margin="74,154,94,126" CanUserAddRows="False" CanUserDeleteRows="False"  
+                       x:Name="dataGridCadatrarestoque"  AutoGenerateColumns="False" 
+                       AlternatingRowBackground="LightBlue" AlternationCount="2" SelectionChanged="dataGridConsultarProd_SelectionChanged" >
+            <DataGrid.Columns>
+
+
+                <DataGridCheckBoxColumn IsThreeState="False"
+                                            ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}"
+                                            EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}" />
+
+
+
+                <DataGridTextColumn Header="Codigo" Binding="{Binding Id}"  />
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" />
+                <DataGridTextColumn Header="Quantidade" Binding="{Binding Estoque}" />
+               
+
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                        Content="{materialDesign:PackIcon Eye}" ToolTip="Visualizar Registro" Margin="0 0 5 0" Click="BtnUpdate_Click"/>
+                                <Button Style="{StaticResource MaterialDesignIconForegroundButton}" 
+                                        Content="{materialDesign:PackIcon Delete}"
+                                        ToolTip="Excluir Registro" Click="BtnEX_Click"  />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+
+        </DataGrid>
         <ComboBox x:Name="produtos" HorizontalAlignment="Left" VerticalAlignment="Top" 
-                  Width="299" Margin="211,73,0,0"
+                  Width="299" Margin="230,10,0,0"
                   Style="{StaticResource MaterialDesignOutlinedComboBox}"
                   ItemsSource="{Binding ShortStringList}" Height="31"
                   Padding="0" FontSize="20"/>

@@ -47,12 +47,13 @@
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
 
-            <TextBox  x:Name="nameuser" Margin="0 17 20 15" Width="740" materialDesign:HintAssist.Hint="Item a ser pesquisado" 
+            <TextBox  x:Name="txtbusca" Margin="0 17 20 15" Width="740" materialDesign:HintAssist.Hint="Item a ser pesquisado" 
                       materialDesign:HintAssist.Background="#d3ecff" Padding="5" FontSize="17" 
                       Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="{x:Null}" />
 
-            <Button Height="35">
-                <materialDesign:PackIcon Kind="Magnify" />
+            <Button Height="35" Click="Btnbusca_Click"> 
+                <materialDesign:PackIcon Kind="Magnify"  />
+               
             </Button>
 
         </StackPanel>
