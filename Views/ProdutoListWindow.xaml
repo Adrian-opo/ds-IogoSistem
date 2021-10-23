@@ -67,11 +67,7 @@
                 <DataGrid.Columns>
 
 
-                    <DataGridCheckBoxColumn IsThreeState="False"
-                                            ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}"
-                                            EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}" />
-
-
+                   
 
                     <DataGridTextColumn Header="Codigo" Binding="{Binding Id}"  />
                     <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" />

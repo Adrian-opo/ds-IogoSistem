@@ -89,5 +89,10 @@ namespace IogoSistem.Views
             var window = new CadastrarestoqueFormWindow();
             window.ShowDialog();
         }
+        private void btn_ajuda(object sender, RoutedEventArgs e)
+        {
+            var window = new Ajuda();
+            window.ShowDialog();
+        }
     }
 }

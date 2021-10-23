@@ -149,6 +149,9 @@
     </Compile>
     <Compile Include="Models\Venda.cs" />
     <Compile Include="Models\VendaDAO.cs" />
+    <Compile Include="Views\Ajuda.xaml.cs">
+      <DependentUpon>Ajuda.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CadastrarestoqueFormWindow.xaml.cs">
       <DependentUpon>CadastrarestoqueFormWindow.xaml</DependentUpon>
     </Compile>
@@ -183,6 +186,10 @@
       <DependentUpon>Venda.xaml</DependentUpon>
     </Compile>
     <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Ajuda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

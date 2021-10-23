@@ -36,5 +36,6 @@
             </Button.RenderTransform>
         </Button>
         <Button x:Name="btn_estoque" Content="Button" HorizontalAlignment="Left" Margin="210,30,0,0" VerticalAlignment="Top" Width="75" Click="btn_funcionario_Copy_Click"/>
+        <Button x:Name="btn_help" Content="Button" HorizontalAlignment="Left" Margin="210,93,0,0" VerticalAlignment="Top" Width="75" Click="btn_ajuda"/>
     </Grid>
 </Window>
