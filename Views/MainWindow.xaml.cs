@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,6 @@ namespace IogoSistem.Views
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
 
-               
         }
 
         private void Abrir_Usuario(object sender, RoutedEventArgs e)
@@ -93,6 +93,62 @@ namespace IogoSistem.Views
         {
             var window = new Ajuda();
             window.ShowDialog();
+        }
+        private void Button_Type(string nome)
+        {
+            Window window;
+
+
+            switch (nome)
+            {
+                case "MN_Produto":
+                    window = new ProdutoListWindow();
+                    window.ShowDialog();
+                    break;
+                case "MN_Cliente":
+                case "MN_HE_Cliente":
+                    Process.Start("Calc.exe");
+
+                    break;
+                case "MN_Fornecedor":
+                    window = new FornecedorListWindow();
+                    window.ShowDialog();
+                    break;
+                case "MN_Funcionario":
+                    window = new FuncionarioListWindow();
+                    window.ShowDialog();
+                    break;
+                case "MN_Usuario":
+                    window = new UsuarioListWindow();
+                    window.ShowDialog();
+                    break;
+                case "MN_Calculadora":
+                    Process.Start("Calc.exe");
+                    break;
+
+            }
+        }
+
+        private void Menu_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            string nome;
+            if (sender is MenuItem)
+            {
+                var button = sender as MenuItem;
+                nome = button.Name;
+                Button_Type(nome);
+            }
+            else
+            {
+                var button = sender as Button;
+                nome = button.Name;
+                Button_Type(nome);
+
+            }
+
+
+           
         }
     }
 }

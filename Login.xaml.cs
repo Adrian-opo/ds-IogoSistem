@@ -32,6 +32,8 @@ namespace IogoSistem
             _ = txtUsuario.Focus();
         }
 
+
+
        private void BtnAcessar_Click(object sender, RoutedEventArgs e)
         {
             string usuario = txtUsuario.Text;
@@ -41,12 +43,12 @@ namespace IogoSistem
 
             if (user!=null)
             {
+                MessageBox.Show(user.Funcionario.Nome.ToString());
+                //DadosSistema.SetUser(user);
 
-                DadosSistema.SetUser(user);
-
-                var main = new MainWindow();
-                main.Show();
-                this.Close();
+//                var main = new MainWindow();
+  //              main.Show();
+    //            this.Close();
             }
             else
             {
