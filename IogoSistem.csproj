@@ -134,6 +134,7 @@
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\EventoDAO.cs" />
+    <Compile Include="Models\EventoValidator.cs" />
     <Compile Include="Models\Fornecedor.cs" />
     <Compile Include="Models\FornecedorDAO.cs" />
     <Compile Include="Models\Funcionario.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="Models\FuncionarioValitador.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\ProdutoDAO.cs" />
+    <Compile Include="Models\UsuarioValidator.cs" />
     <Compile Include="Views\AgendaWindow.xaml.cs">
       <DependentUpon>AgendaWindow.xaml</DependentUpon>
     </Compile>

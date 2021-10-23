@@ -70,35 +70,59 @@ namespace IogoSistem.Views
         {
             try
             {
-                var dao = new EventoDAO();
-                var text = "Atualizado";
+                if (Validate())
+                {
 
-                if (_evento.Id == 0)
-                {
-                    text = "cadastrado";
-                    dao.Insert(_evento);
-                    CloseFormVerify();
-                }
-                else
-                {
+                    var dao = new EventoDAO();
+                    var text = "Atualizado";
+
+                    if (_evento.Id == 0)
+                    {
+                        text = "cadastrado";
+                        dao.Insert(_evento);
+                        CloseFormVerify();
+                    }
+                    else
+                    {
 
                     
-                    dao.Update(_evento);
-                    MessageBox.Show($"O funcionario foi {text}", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
-                    ClearInputs();
-                    _evento.Id = 0;
+                        dao.Update(_evento);
+                        MessageBox.Show($"O funcionario foi {text}", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
+                        ClearInputs();
+                        _evento.Id = 0;
 
+                    }
+
+
+
+                    LoadDataGrid();
                 }
-
-
-
-                LoadDataGrid();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "não executado", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
+        }
+
+        private bool Validate()
+        {
+            var validator = new EventoValidator();
+            var result = validator.Validate(_evento);
+
+            if (!result.IsValid)
+            {
+                string errors = null;
+                var count = 1;
+
+                foreach (var faliure in result.Errors)
+                {
+                    errors += $"{count++} -{faliure.ErrorMessage}\n";
+                }
+                MessageBox.Show(errors, "validação de dados", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            return result.IsValid;
         }
         private void CloseFormVerify()
         {

@@ -47,6 +47,7 @@ namespace IogoSistem.Views
 
         private void Btn_Salvar(object sender, RoutedEventArgs e)
         {
+
             if (ver.IsChecked == true)
             {
                 _usuario.Nome = txtname.Text;
@@ -68,28 +69,53 @@ namespace IogoSistem.Views
 
         }  
 
+        private bool Validate()
+        {
+            var validator = new UsuarioValidator();
+            var result = validator.Validate(_usuario);
+
+            if (!result.IsValid)
+            {
+                string errors = null;
+                var count = 1;
+
+                foreach(var faliure in result.Errors)
+                {
+                    errors += $"{count++} -{faliure.ErrorMessage}\n";
+                }
+                MessageBox.Show(errors, "validação de dados", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            return result.IsValid;
+        }
+
         private void SaveData()
         {
             try
             {
-                var dao = new UsuarioDAO();
-                var text = "Atualizado";
-
-                if (_usuario.Id == 0)
+                
+                if (Validate())
                 {
-                    text = "cadastrado";
-                    dao.Insert(_usuario);
-                    CloseFormVerify();
+                    var dao = new UsuarioDAO();
+                    var text = "Atualizado";
+
+                    if (_usuario.Id == 0)
+                    {
+                        text = "cadastrado";
+                        dao.Insert(_usuario);
+                        CloseFormVerify();
+                    }
+                    else
+                    { 
+                        dao.Update(_usuario);
+                        this.Close();
+                    }
+
+
+
+                    MessageBox.Show($"O usuario foi {text}", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-                else
-                { 
-                    dao.Update(_usuario);
-                    this.Close();
-                }
 
-
-
-                MessageBox.Show($"O usuario foi {text}", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
 
             }
             catch (Exception ex)
@@ -175,13 +201,6 @@ namespace IogoSistem.Views
             string email = txtemail.Text.Trim();
         }
 
-        private void txtcpf_lostFocus(object sender, RoutedEventArgs e)
-        {
-            string cpf = txtcpf.Text;
-            cpf.Replace('_', '0');
-            
-
-        }
 
         private void BtnCancelar_Click(object sender, RoutedEventArgs e)
         {
@@ -193,5 +212,7 @@ namespace IogoSistem.Views
             ClearInputs();
 
         }
+
+
     }
 }

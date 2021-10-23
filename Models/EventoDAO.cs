@@ -27,7 +27,7 @@ namespace IogoSistem.Models
             try
             {
                 var query = conn.Query();
-                query.CommandText = "DELETE FROM evento WHERE id_evento=@id";
+                query.CommandText = "DELETE FROM eventousuario,evento USING eventousuario,evento  WHERE evento.id_evento=@id";
 
                 query.Parameters.AddWithValue("@id", t.Id);
 

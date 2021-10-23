@@ -37,10 +37,7 @@
             <TextBlock x:Name="tbemail_error"  Margin="45 0 0 0"  Text="E-mail inválido " Foreground=  "Red"  Visibility="Collapsed"   />
 
             <TextBlock x:Name="tbcpf" Text="CPF:"  Margin="45 23 0 0"   FontSize="17"/>
-            <wpftool:MaskedTextBox  Mask="000\.000\.000-00" x:Name="txtcpf"  Margin="45 0 370 0"  Padding="5" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" LostFocus="txtcpf_lostFocus" />
-
-            <TextBlock x:Name="tbcpf_error"  Margin="45 0"  Text="CPF inválido " Foreground=  "Red"  Visibility="Collapsed"   />
-
+            <wpftool:MaskedTextBox  Mask="000\.000\.000-00" x:Name="txtcpf"  Margin="45 0 370 0"  Padding="5" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}"  />
 
             <TextBlock x:Name="tbsenha" Text="Senha:"  Margin="45 23 0 0"   FontSize="17"/>
 

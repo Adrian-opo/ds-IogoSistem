@@ -47,8 +47,11 @@
         </StackPanel>
 
         <StackPanel Grid.Row="0" Grid.Column="1" >
-            <TextBox x:Name="txt_observacao" Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="White" Margin="20 20 20 0" Height="160">
-            </TextBox>
+
+
+            <TextBox x:Name="txt_observacao" Background="White" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Top"
+                     Height="180" FontSize="17" Margin="20 20 20 0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+ 
             <Label Content="Observação" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
 
         </StackPanel>
