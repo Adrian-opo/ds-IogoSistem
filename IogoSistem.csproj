@@ -126,6 +126,7 @@
     </ApplicationDefinition>
     <Compile Include="DadosSistema.cs" />
     <Compile Include="Helpers\DAOHelper.cs" />
+    <Compile Include="Helpers\Estado.cs" />
     <Compile Include="Interfaces\IDAO.cs" />
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -133,6 +134,7 @@
     <Compile Include="Models\AbstractDAO.cs" />
     <Compile Include="Models\CadastrarEstoqueDAO.cs" />
     <Compile Include="Models\Endereco.cs" />
+    <Compile Include="Models\EnderecoDAO.cs" />
     <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\EventoDAO.cs" />
     <Compile Include="Models\EventoValidator.cs" />

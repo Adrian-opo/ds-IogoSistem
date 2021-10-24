@@ -16,9 +16,9 @@ namespace IogoSistem.Database
 
         private static string user = "root";
 
-        private static string password = "b8r5o2t9e1i";
+        private static string password = "danilosaiter12";
 
-        private static string dbname = "bd_iogosistem";
+        private static string dbname = "BD_iogosistem";
 
         private static MySqlConnection connection;
 

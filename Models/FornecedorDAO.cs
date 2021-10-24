@@ -6,20 +6,15 @@ using System.Threading.Tasks;
 using IogoSistem.Interfaces;
 using IogoSistem.Database;
 using MySql.Data.MySqlClient;
+using System.Data;
+using IogoSistem.Helpers;
 
 namespace IogoSistem.Models
 {
-    class FornecedorDAO : IDAO<Fornecedor>
+    class FornecedorDAO : AbstractDAO<Fornecedor>
     {
 
-        private static Conexao conn;
-
-        public FornecedorDAO()
-        {
-            conn = new Conexao();
-        }
-
-        public void Delete(Fornecedor t)
+        public override void Delete(Fornecedor t)
         {
             try
             {
@@ -31,7 +26,7 @@ namespace IogoSistem.Models
                 var result = query.ExecuteNonQuery();
 
                 if (result == 0)
-                    throw new Exception("Não foi removido da sua casa amém");
+                    throw new Exception("O fornecedor não foi removido. Verifique e tente novamente.");
 
             }
             catch (Exception e)
@@ -44,12 +39,12 @@ namespace IogoSistem.Models
             }
         }
 
-        public Fornecedor GetById(int id)
+        public override Fornecedor GetById(int id)
         {
             try
             {
                 var query = conn.Query();
-                query.CommandText = "SELECT * FROM fornecedor WHERE id_fornecedor= @id";
+                query.CommandText = "SELECT * FROM fornecedor LEFT JOI endereco ON id_endereco_fk = @id_endereco WHERE id_fornecedor= @id";
 
 
                 query.Parameters.AddWithValue("@id", id);
@@ -79,6 +74,17 @@ namespace IogoSistem.Models
                     fornecedor.ProdutoFornecido = reader.GetString("produtofornecido_for");
                     fornecedor.Complemento = reader.GetString("complento_for");
 
+                    if (!DAOHelper.IsNull(reader, "id_endereco_fk"))
+                        fornecedor.Endereco = new Endereco()
+                        {
+                            Id = reader.GetInt32("id_endereco"),
+                            Numero = reader.GetInt32("numero_end"),
+                            Lagradouro = reader.GetString("rua_end"),
+                            Bairro = reader.GetString("bairro_end"),
+                            Cidade = reader.GetString("cidade_end"),
+                            UF = reader.GetString("uf_end"),
+                            CEP = reader.GetString("cep_end")
+                        };
                 }
                 return fornecedor;
             }
@@ -92,15 +98,15 @@ namespace IogoSistem.Models
             }
         }
 
-        public void Insert(Fornecedor t)
+        public override void Insert(Fornecedor t)
         {
             try
             {
-                var query = conn.Query();
-                query.CommandText = "INSERT INTO fornecedor (nome_for ,telefone_for ,cpf_for ,rg_for, email_for, produtoFornecido_for, celular_for, razaoSocial_for, cnpj_for, complento_for, id_endereco_fk  ) " +
-                    "VALUES (@nome,@telefone,@cpf,@rg,@email,@produtoFornecido,@celular,@razaoSocial,@cnpj,@complemento, @id_endereço_fk )";
+                var enderecoId = new EnderecoDAO().Insert(t.Endereco);
 
-                
+                var query = conn.Query();
+                query.CommandText = "INSERT INTO fornecedor (nome_for, telefone_for, cpf_for, rg_for, email_for, produtoFornecido_for, celular_for, razaoSocial_for, cnpj_for, complemento_for, id_endereco_fk)" +
+                    "VALUES (@nome, @telefone, @cpf, @rg, @email, @produtoFornecido, @celular, @razaoSocial, @cnpj, @complemento, @id_endereco)";
 
                 query.Parameters.AddWithValue("@nome", t.Nome);
                 query.Parameters.AddWithValue("@telefone", t.Telefone);
@@ -113,19 +119,14 @@ namespace IogoSistem.Models
                 query.Parameters.AddWithValue("@cnpj", t.CNPJ);
                 query.Parameters.AddWithValue("@complemento", t.Complemento);
 
-                query.Parameters.AddWithValue("@id_endereço_fk", t.Lagradouro);
-                query.Parameters.AddWithValue("@id_endereço_fk", t.Numero);
-                query.Parameters.AddWithValue("@id_endereço_fk", t.Bairro);
-                query.Parameters.AddWithValue("@id_endereço_fk", t.Cidade);
-                query.Parameters.AddWithValue("@id_endereço_fk", t.UF);
-                query.Parameters.AddWithValue("@id_endereço_fk", t.CEP);
+                query.Parameters.AddWithValue("@id_endereco", enderecoId);
 
 
 
                 var result = query.ExecuteNonQuery();
 
                 if (result == 0)
-                    throw new Exception("O registro não foi inserido, troxa");
+                    throw new Exception("O registro não foi inserido. Verifique e tente novamente.");
 
             }
             catch (Exception e)
@@ -137,13 +138,13 @@ namespace IogoSistem.Models
                 conn.Close();
             }
         }
-        public List<Fornecedor> List()
+        public override List<Fornecedor> List()
         {
             try
             {
                 List<Fornecedor> list = new List<Fornecedor>();
                 var query = conn.Query();
-                query.CommandText = "Select * FROM Fornecedor";
+                query.CommandText = "Select id_fornecedor, nome_for";
 
                 MySqlDataReader reader = query.ExecuteReader();
 
@@ -169,12 +170,20 @@ namespace IogoSistem.Models
             }
         }
 
-        public void Update(Fornecedor t)
+        public override void Update(Fornecedor t)
         {
             try
             {
+                long enderecoID = t.Endereco.Id;
+                var endDAO = new EnderecoDAO();
+
+                if (enderecoID > 0)
+                    endDAO.Update(t.Endereco);
+                else
+                    enderecoID = endDAO.Insert(t.Endereco);
+
                 var query = conn.Query();
-                query.CommandText = "UPDATE Fornecedor SET nome_for=@nome ,telefone_for=@telefone ,cpf_for=@cpf ,rg_for=@rg, email_for=@email, produtoFornecido_for=@produtoFornecido, celular_for=@celular, razaoSocial_for=@razaoSocial, cnpj_for=@cnpj, complento_for=@complemento WHERE id_fornecedor=@id";
+                query.CommandText = "UPDATE Fornecedor SET nome_for=@nome ,telefone_for=@telefone ,cpf_for=@cpf ,rg_for=@rg, email_for=@email, produtoFornecido_for=@produtoFornecido, celular_for=@celular, razaoSocial_for=@razaoSocial, cnpj_for=@cnpj, complento_for=@complemento, id_endereco_fk=@enderecoID WHERE id_fornecedor=@id";
 
                 query.Parameters.AddWithValue("@razaoSocial", t.RazaoSocial);
                 query.Parameters.AddWithValue("@cnpj", t.CNPJ);
@@ -188,6 +197,8 @@ namespace IogoSistem.Models
                 query.Parameters.AddWithValue("@email", t.Email);
                 query.Parameters.AddWithValue("@produtoFornecido", t.ProdutoFornecido);
                 query.Parameters.AddWithValue("@Complemento", t.Complemento);
+
+                query.Parameters.AddWithValue("@enderecoId", enderecoID);
 
                 query.Parameters.AddWithValue("@id", t.Id);
 

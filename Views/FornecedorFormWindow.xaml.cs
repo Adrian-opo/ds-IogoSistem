@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using IogoSistem.Models;
+using IogoSistem.Helpers;
 
 namespace IogoSistem.Views
 {
@@ -39,8 +40,23 @@ namespace IogoSistem.Views
         private void FornecedorFormWindow_Loaded(object sender, RoutedEventArgs e)
         {
             _fornecedor = new Fornecedor();
+
+            LoadComboBox();
+
             if (_id > 0)
                 fillForm();
+        }
+
+        private void LoadComboBox()
+        {
+            try
+            {
+                recebe_uf.ItemsSource = Estado.List();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         private void BtnSalvar_Click(object sender, RoutedEventArgs e)
@@ -57,6 +73,20 @@ namespace IogoSistem.Views
             _fornecedor.Email = recebe_email.Text;
             _fornecedor.ProdutoFornecido = recebe_produtofornecido.Text;
             _fornecedor.Complemento = recebe_complemento.Text;
+
+            _fornecedor.Endereco = new Endereco();
+
+            _fornecedor.Endereco.Lagradouro = recebe_lagradouro.Text;
+
+            if(int.TryParse(recebe_numero.Text, out int numero))
+                _fornecedor.Endereco.Numero = numero;
+
+            if (recebe_uf.SelectedItem != null)
+                _fornecedor.Endereco.UF = recebe_uf.SelectedItem as string;
+
+            _fornecedor.Endereco.Bairro = recebe_bairro.Text;
+            _fornecedor.Endereco.Cidade = recebe_cidade.Text;
+            _fornecedor.Endereco.CEP = recebe_cep.Text;
 
             SaveData();
            
@@ -109,6 +139,20 @@ namespace IogoSistem.Views
                 recebe_email.Text = _fornecedor.Email;
                 recebe_produtofornecido.Text = _fornecedor.ProdutoFornecido;
                 recebe_complemento.Text = _fornecedor.Complemento;
+
+                if (_fornecedor.Endereco != null)
+                {
+                    recebe_lagradouro.Text = _fornecedor.Endereco.Lagradouro;
+                    recebe_numero.Text = _fornecedor.Endereco.Numero.ToString();
+                    recebe_bairro.Text = _fornecedor.Endereco.Bairro;
+                    recebe_cep.Text = _fornecedor.Endereco.CEP;
+                    recebe_cidade.Text = _fornecedor.Endereco.Cidade;
+
+
+                    recebe_uf.SelectedValue = _fornecedor.Endereco.UF;
+                }
+
+
             }
             catch (Exception ex)
             {

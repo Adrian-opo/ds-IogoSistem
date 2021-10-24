@@ -191,7 +191,6 @@ namespace IogoSistem.Models
             {
                 var query = conn.Query();
                 query.CommandText = "cadastrarUsuario";
-                query.CommandType = CommandType.StoredProcedure;
 
                 query.Parameters.AddWithValue("@nomeUser", t.Nome);
                 query.Parameters.AddWithValue("@cpf_user", t.CPF);

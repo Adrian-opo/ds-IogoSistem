@@ -74,8 +74,8 @@
                       Margin="10,10,10,10" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}"
                       Width="400"/>
             <TextBlock Text="UF:" Margin="10,10,10,10" FontSize="15"/>
-            <TextBox x:Name="recebe_uf"
-                      Margin="10,10,10,10" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            <ComboBox x:Name="recebe_uf"
+                      Margin="10,10,10,10" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedComboBox}"
                       Width="50"/>
             <TextBlock Text="CEP:" Margin="10,10,10,10" FontSize="15"/>
             <wpftool:MaskedTextBox  Mask="00000-000" x:Name="recebe_cep" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10" Width="115"/>

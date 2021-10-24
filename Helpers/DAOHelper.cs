@@ -30,6 +30,10 @@ namespace IogoSistem.Helpers
             return value;
         }
 
+        internal static bool IsNull(MySqlDataReader reader, string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
