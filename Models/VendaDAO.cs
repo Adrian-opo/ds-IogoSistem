@@ -105,24 +105,24 @@ namespace IogoSistem.Models
             try
             {
                 var clienteId = new ClienteDAO().Insert(t.Cliente);
-                var funcionarioId = new FuncionarioDAO().Insert(t.Funcionario);
+                //var funcionarioId = new FuncionarioDAO().Insert(t.Funcionario);
 
                 var query = conn.Query();
                 query.CommandText = "INSERT INTO fornecedor (nome_for, telefone_for, cpf_for, rg_for, email_for, produtoFornecido_for, celular_for, razaoSocial_for, cnpj_for, complemento_for, id_endereco_fk)" +
                     "VALUES (@nome, @telefone, @cpf, @rg, @email, @produtoFornecido, @celular, @razaoSocial, @cnpj, @complemento, @id_endereco)";
 
-                query.Parameters.AddWithValue("@nome", t.Nome);
-                query.Parameters.AddWithValue("@telefone", t.Telefone);
-                query.Parameters.AddWithValue("@cpf", t.CPF);
-                query.Parameters.AddWithValue("@rg", t.RG);
-                query.Parameters.AddWithValue("@email", t.Email);
-                query.Parameters.AddWithValue("@produtoFornecido", t.ProdutoFornecido);
-                query.Parameters.AddWithValue("@celular", t.Celular);
-                query.Parameters.AddWithValue("@razaoSocial", t.RazaoSocial);
-                query.Parameters.AddWithValue("@cnpj", t.CNPJ);
-                query.Parameters.AddWithValue("@complemento", t.Complemento);
+                //query.Parameters.AddWithValue("@nome", t.Nome);
+                //query.Parameters.AddWithValue("@telefone", t.Telefone);
+                //query.Parameters.AddWithValue("@cpf", t.CPF);
+                //query.Parameters.AddWithValue("@rg", t.RG);
+                //query.Parameters.AddWithValue("@email", t.Email);
+                //query.Parameters.AddWithValue("@produtoFornecido", t.ProdutoFornecido);
+                //query.Parameters.AddWithValue("@celular", t.Celular);
+                //query.Parameters.AddWithValue("@razaoSocial", t.RazaoSocial);
+                //query.Parameters.AddWithValue("@cnpj", t.CNPJ);
+                //query.Parameters.AddWithValue("@complemento", t.Complemento);
 
-                query.Parameters.AddWithValue("@id_endereco", enderecoId);
+                //query.Parameters.AddWithValue("@id_endereco", enderecoId);
 
 
 
@@ -141,11 +141,11 @@ namespace IogoSistem.Models
                 conn.Close();
             }
         }
-        public override List<Fornecedor> List()
+        public override List<Venda> List()
         {
             try
             {
-                List<Fornecedor> list = new List<Fornecedor>();
+                List<Venda> list = new List<Venda>();
                 var query = conn.Query();
                 query.CommandText = "Select id_fornecedor, nome_for FROM Fornecedor";
 
@@ -153,10 +153,10 @@ namespace IogoSistem.Models
 
                 while (reader.Read())
                 {
-                    list.Add(new Fornecedor()
+                    list.Add(new Venda()
                     {
                         Id = reader.GetInt32("id_fornecedor"),
-                        Nome = reader.GetString("nome_for")
+                        //Nome = reader.GetString("nome_for")
                     });
                 }
 
@@ -173,10 +173,11 @@ namespace IogoSistem.Models
             }
         }
 
-        public override void Update(Fornecedor t)
+        public override void Update(Venda t)
         {
             try
             {
+                /*
                 long enderecoID = t.Endereco.Id;
                 var endDAO = new EnderecoDAO();
 
@@ -210,7 +211,7 @@ namespace IogoSistem.Models
 
                 if (result == 0)
                     throw new Exception("Atualização nao realizada");
-
+                */
             }
             catch (Exception e)
             {

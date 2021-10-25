@@ -92,8 +92,8 @@
 
 
                     <DataGridTextColumn Header="Tipo de Evento" Binding="{Binding Tipo}" />
-                    <DataGridTextColumn Header="Inicio" Binding="{Binding Inicio}" />
-                    <DataGridTextColumn Header="Fim" Binding="{Binding Fim}" />
+                    <DataGridTextColumn Header="Inicio" Binding="{Binding Inicio,StringFormat={}{0:d}}" />
+                    <DataGridTextColumn Header="Fim" Binding="{Binding Fim,StringFormat={}{0:d}}" />
                     <DataGridTextColumn Header="Observação" Binding="{Binding Descricao}" />
 
                     <DataGridTemplateColumn Header="Ações">

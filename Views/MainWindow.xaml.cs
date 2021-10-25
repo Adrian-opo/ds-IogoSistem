@@ -31,69 +31,29 @@ namespace IogoSistem.Views
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
 
-        }
+            var x = DadosSistema.GetUser();
+            txtuser.Text=x.Funcionario.Nome.ToString();
+            txtDataAtual.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            LoadDataGripEventos();
 
-        private void Abrir_Usuario(object sender, RoutedEventArgs e)
+
+        }
+        public void LoadDataGripEventos()
         {
-            var window = new UsuarioFormWindow();
-            window.ShowDialog();
+            try
+            {
+                
+                var dao = new EventoDAO();
 
+                dataGridEventos.ItemsSource = dao.List();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
-        private void Abrir_lista(object sender, RoutedEventArgs e)
-        {
-            var window = new UsuarioListWindow();
-            window.ShowDialog();
-        }
-
-        private void Abrir_Evento(object sender, RoutedEventArgs e)
-        {
-            var window = new EventoFormWindow();
-            window.ShowDialog();
-        }
-
-        private void produtos(object sender, RoutedEventArgs e)
-        {
-            var window = new ProdutoFormWindow();
-            window.ShowDialog();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var window = new FornecedorFormWindow();
-            window.ShowDialog();
-        }
-
-        private void BtnConsultarFor_Click(object sender, RoutedEventArgs e)
-        {
-            var window = new FornecedorListWindow();
-            window.ShowDialog();
-        }
-
-        private void Abrir_Agenda(object sender, RoutedEventArgs e)
-        {
-            var window = new AgendaWindow();
-            window.ShowDialog();
-
-        }
-        ///////////////
-
-        private void btn_list_funck_Click(object sender, RoutedEventArgs e)
-        {
-            var window = new FuncionarioFormWindow();
-            window.ShowDialog();
-        }
-
-        private void btn_funcionario_Copy_Click(object sender, RoutedEventArgs e)
-        {
-            var window = new CadastrarestoqueFormWindow();
-            window.ShowDialog();
-        }
-        private void btn_ajuda(object sender, RoutedEventArgs e)
-        {
-            var window = new Ajuda();
-            window.ShowDialog();
-        }
         private void Button_Type(string nome)
         {
             Window window;
@@ -101,29 +61,82 @@ namespace IogoSistem.Views
 
             switch (nome)
             {
+                
                 case "MN_Produto":
-                    window = new ProdutoListWindow();
+                case "MN_CA_Produto":
+                    window = new ProdutoFormWindow();
                     window.ShowDialog();
                     break;
+                case "MN_Estoque":
+                case "MN_CA_Estoque":
+                    //ABRIR TELA ESTOQUE
+                    break;
                 case "MN_Cliente":
-                case "MN_HE_Cliente":
-                    Process.Start("Calc.exe");
-
+                case "MN_CA_Cliente":
+                    //ABRIR TELA CLIENTE
                     break;
                 case "MN_Fornecedor":
-                    window = new FornecedorListWindow();
+                case "MN_CA_Fornecedor":
+                    window = new FornecedorFormWindow();
                     window.ShowDialog();
                     break;
                 case "MN_Funcionario":
-                    window = new FuncionarioListWindow();
+                case "MN_CA_Funcionario":
+                    window = new FuncionarioFormWindow();
                     window.ShowDialog();
                     break;
                 case "MN_Usuario":
-                    window = new UsuarioListWindow();
+                case "MN_CA_Usuario":
+                    window = new UsuarioFormWindow();
                     window.ShowDialog();
                     break;
                 case "MN_Calculadora":
                     Process.Start("Calc.exe");
+                    break;
+                case "MN_Eventos":
+                    window = new EventoFormWindow();
+                    window.ShowDialog();
+                    LoadDataGripEventos();
+                    break;
+                //CONSULTAR
+                case "MN_CO_Cliente":
+                    //ABRIR TELA CLIENTE
+                    break;
+                case "MN_CO_Fornecedor":
+                    window = new FornecedorListWindow();
+                    window.ShowDialog();
+                    break;
+                case "MN_CO_Funcionario":
+                    window = new FuncionarioListWindow();
+                    window.ShowDialog();
+                    break;
+                case "MN_CO_Usuario":
+                    window = new UsuarioListWindow();
+                    window.ShowDialog();
+                    break;
+                case "MN_CO_Produto":
+                    window = new ProdutoListWindow();
+                    window.ShowDialog();
+                    break;
+                //FINANCEIRO
+                case "MN_FI_Ganho":
+                case "Btn_Despesas":
+                    //ABRIR TELA GANHO
+                    break;
+                case "MN_FI_Despesa":
+                case "Btn_Ganhos":
+                    //ABRIR TELA DESPESA
+                    break;
+                case "MN_FI_Caixa":
+                case "Btn_Caixa":
+                    //ABRIR TELA CAIXA
+                    break;
+                case "MN_AG_AGENDA":
+                    window = new AgendaWindow();
+                    window.ShowDialog();
+                    break;
+                case "MN_AJ_AjudaUser":
+                    //ABRIR TELA AJUDA AO USUARIO
                     break;
 
             }

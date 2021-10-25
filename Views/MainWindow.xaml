@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow" Height="auto" Width="auto">
+        Title="MainWindow" Width="860" Height="625" MinHeight="625" MinWidth="860" WindowStartupLocation="CenterOwner" WindowState="Maximized"  ResizeMode="NoResize" >
     
     <DockPanel Background="#d3ecff">
         <StackPanel DockPanel.Dock="Left" Width="160" Margin="5 0">
@@ -27,6 +27,13 @@
                 </StackPanel>
             </Button>
 
+            <Button Margin="0 2" Height="50" Click="Menu_Button_Click" Name="MN_Estoque">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="16" Padding="10">Estoque</TextBlock>
+                    <materialDesign:PackIcon Kind="CartPlus" Width="28" Height="28" Margin="0 4" />
+                </StackPanel>
+            </Button>
+
             <Button Margin="0 2" Height="50"  Name="MN_Cliente" Click="Menu_Button_Click">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock FontSize="16" Padding="5 10">Cliente</TextBlock>
@@ -36,31 +43,39 @@
 
             <Button Margin="0 2" Height="50" Click="Menu_Button_Click" Name="MN_Fornecedor">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock FontSize="14" Padding="10">Fornecedor</TextBlock>
+                    <TextBlock FontSize="16" Padding="10">Fornecedor</TextBlock>
                     <materialDesign:PackIcon Kind="AccountGroup" Width="28" Height="28" Margin="0 4" />
                 </StackPanel>
             </Button>
 
             <Button Margin="0 2" Height="50"  Name="MN_Funcionario" Click="Menu_Button_Click">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock FontSize="14" Padding="10">Funcionario</TextBlock>
+                    <TextBlock FontSize="16" Padding="10">Funcionario</TextBlock>
                     <materialDesign:PackIcon Kind="AccountHardHat" Width="28" Height="28" Margin="0 4" />
                 </StackPanel>
             </Button>
 
             <Button Margin="0 2" Height="50" Click="Menu_Button_Click" Name="MN_Usuario">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock FontSize="14" Padding="10">Usuario</TextBlock>
+                    <TextBlock FontSize="16" Padding="10">Usuario</TextBlock>
                     <materialDesign:PackIcon Kind="Account" Width="28" Height="28" Margin="0 4" />
                 </StackPanel>
             </Button>
 
+            <Button Margin="0 2" Height="50" Click="Menu_Button_Click" Name="MN_Eventos">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="16" Padding="10">Eventos</TextBlock>
+                    <materialDesign:PackIcon Kind="Calendar" Width="28" Height="28" Margin="0 4" />
+                </StackPanel>
+            </Button>
+            
             <Button Margin="0 2" Height="50" Click="Menu_Button_Click" Name="MN_Calculadora">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock FontSize="14" Padding="10">Calculadora</TextBlock>
+                    <TextBlock FontSize="16" Padding="10">Calculadora</TextBlock>
                     <materialDesign:PackIcon Kind="Calculator" Width="28" Height="28" Margin="0 4" />
                 </StackPanel>
             </Button>
+
         </StackPanel>
 
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Width="auto">
@@ -70,45 +85,44 @@
         Background="#d3ecff">
 
 
-                <MenuItem Header="CADASTROS" Name="teste" FontSize="13" Width="auto">
-                    <MenuItem Name="MN_HE_Cliente" Header="Cadastrar Cliente" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
-                    <MenuItem x:Name="itCadCi" Header="Cadastrar Cidade" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
-                    <MenuItem x:Name="itCadForn" Header="Cadastrar Fornecedor" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
-                    <MenuItem x:Name="itCadFunc" Header="Cadastrar Funcionário" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
-                    <MenuItem x:Name="itCadNovUsu" Header="Cadastrar Usuário" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
-                    <MenuItem x:Name="itCadGanh" Header="Cadastrar Ganhos" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
-                    <MenuItem x:Name="itCadProd" Header="Cadastrar Produtos" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
-                    <MenuItem x:Name="itCadEven" Header="Cadastrar Eventos" FontSize="13" FontFamily="Arial"  Click="Menu_Button_Click"/>
-                    <MenuItem x:Name="itCadEsto" Header="Cadastrar Estoque" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
-                    <MenuItem x:Name="itCadDes" Header="Cadastrar Despesas" FontSize="13" FontFamily="Arial"  Click="Menu_Button_Click"/>
+                <MenuItem Header="CADASTROS" Name="teste" FontSize="17" Width="auto" FontWeight="Bold">
+                    <MenuItem x:Name="MN_CA_Cliente" Header="Cliente" FontSize="15" FontFamily="Arial" Click="Menu_Button_Click"/>
+                    <MenuItem x:Name="MN_CA_Fornecedor" Header="Fornecedor" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
+                    <MenuItem x:Name="MN_CA_Funcionario" Header="Funcionário" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
+                    <MenuItem x:Name="MN_CA_Usuario" Header="Usuário" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
+                    <MenuItem x:Name="MN_CA_Produto" Header="Produtos" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
+                    <MenuItem x:Name="MN_CA_Estoque" Header="Estoque" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
 
                 </MenuItem>
 
                 <Separator/>
 
 
-                <MenuItem Header="CONSULTAS" FontSize="13"  Width="auto" >
-                    <MenuItem x:Name="itConCli" Header="Consultar Cliente" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
-                    <MenuItem x:Name="itConForn" Header="Consultar Fornecedor" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
-                    <MenuItem x:Name="itConUsu" Header="Consultar Usuário" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
-                    <MenuItem x:Name="itConPro" Header="Consultar Produtos" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
+                <MenuItem Header="CONSULTAS" FontSize="17"  Width="auto" FontWeight="Bold">
+                    <MenuItem x:Name="MN_CO_Cliente" Header="Cliente" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
+                    <MenuItem x:Name="MN_CO_Fornecedor" Header="Fornecedor" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
+                    <MenuItem x:Name="MN_CO_Funcionario" Header="Funcionário" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
+                    <MenuItem x:Name="MN_CO_Usuario" Header="Usuário" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
+                    <MenuItem x:Name="MN_CO_Produto" Header="Produtos" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
                 </MenuItem>
 
 
                 <Separator/>
 
-                <MenuItem Header="FINANCEIRO" FontSize="13"  Width="auto">
-                    <MenuItem x:Name="iRegisGanho" Header="Ganhos" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
-                    <MenuItem x:Name="iRegisDesp" Header="Despesa" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
-                    <MenuItem x:Name="itContCaix" Header="Caixa de Caixa" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
+                <MenuItem Header="FINANCEIRO" FontSize="17"  Width="auto" FontWeight="Bold">
+                    <MenuItem x:Name="MN_FI_Ganho" Header="Ganhos" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
+                    <MenuItem x:Name="MN_FI_Despesa" Header="Despesa" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
+                    <MenuItem x:Name="MN_FI_Caixa" Header="Caixa de Caixa" FontSize="13" FontFamily="Arial" Click="Menu_Button_Click"/>
 
                 </MenuItem>
     
                 <Separator/>
 
+                <MenuItem x:Name="MN_AG_AGENDA" Header="AGENDA" FontSize="17" Width="auto" Click="Menu_Button_Click" FontWeight="Bold">
 
+                </MenuItem>
 
-                <MenuItem Header="AJUDA AO USUÁRIO" FontSize="13" Width="auto" Click="Menu_Button_Click">
+                <MenuItem x:Name="MN_AJ_AjudaUser" Header="AJUDA AO USUÁRIO" FontSize="17" Width="auto"  Click="Menu_Button_Click" FontWeight="Bold">
 
                 </MenuItem>
             </Menu>
@@ -124,13 +138,13 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0" Orientation="Horizontal">
-                <TextBlock FontWeight="Bold" Padding="5">Usuário Logado:</TextBlock>
-                <TextBlock x:Name="user" Padding="0 5"></TextBlock>
+                <TextBlock FontWeight="Bold" FontSize="17"  Padding="5">Usuário Logado:</TextBlock>
+                <TextBlock x:Name="txtuser" FontSize="17"  Padding="0 5"></TextBlock>
             </StackPanel>
 
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock FontWeight="Bold" Padding="5">Data:</TextBlock>
-                <TextBlock x:Name="txtDataAtual" Padding="0 5 5 5"/>
+                <TextBlock FontWeight="Bold" FontSize="17"  Padding="5">Data:</TextBlock>
+                <TextBlock x:Name="txtDataAtual" FontSize="17"  Padding="0 5 5 5" Margin="0 0 5 0"/>
             </StackPanel>
 
         </Grid>
@@ -150,7 +164,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Grid Grid.Column="0" Height="auto">
-                    <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Click="Menu_Button_Click" Height="auto" Margin="10"
+                    <Button x:Name="Btn_Despesas" Style="{StaticResource MaterialDesignRaisedLightButton}" Click="Menu_Button_Click" Height="auto" Margin="10"
                             materialDesign:ButtonAssist.CornerRadius="5" ToolTip="MaterialDesignRaisedLightButton with Round Corners">
 
                         <TextBlock Text="Registrar Despesas" FontSize="16" />
@@ -159,7 +173,7 @@
                 </Grid>
 
                 <Grid Grid.Column="1" Height="auto">
-                    <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Click="Menu_Button_Click" Height="auto" Margin="10"
+                    <Button x:Name="Btn_Ganhos" Style="{StaticResource MaterialDesignRaisedLightButton}" Click="Menu_Button_Click" Height="auto" Margin="10"
                             materialDesign:ButtonAssist.CornerRadius="5" ToolTip="MaterialDesignRaisedLightButton with Round Corners">
 
                         <TextBlock Text="Registrar Ganhos" FontSize="16" />
@@ -168,7 +182,7 @@
                 </Grid>
 
                 <Grid Grid.Column="2" Height="auto">
-                    <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Click="Menu_Button_Click" Height="auto" Margin="10"
+                    <Button x:Name="Btn_Caixa" Style="{StaticResource MaterialDesignRaisedLightButton}" Click="Menu_Button_Click" Height="auto" Margin="10"
                             materialDesign:ButtonAssist.CornerRadius="5" ToolTip="MaterialDesignRaisedLightButton with Round Corners">
 
                         <TextBlock Text="Caixa" FontSize="23" />
@@ -218,27 +232,39 @@
                 <Grid Grid.Column="2">
                     
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="120"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
                     <Grid Grid.Row="0">
-                        <TextBlock Margin="5" FontSize="20">Saldo</TextBlock>
-                        <TextBox x:Name="recebe_id" Text="R$:00,00" FontSize="21" Margin="5 20 5 5"/>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10">
+                            <TextBlock  FontSize="27" FontWeight="Bold" VerticalAlignment="Center">Saldo:</TextBlock>
+                            <TextBox x:Name="recebe_id" Text="R$:00,00" FontSize="28" Margin="5 0 0 0" IsReadOnly="True"/>
+                        </StackPanel>
                     </Grid>
 
                     <Grid Grid.Row="1">
-                        <DataGrid  Margin="10" CanUserAddRows="False" CanUserDeleteRows="False"  
-                       x:Name="dataGridConsultarusuri"  AutoGenerateColumns="False" 
-                       AlternatingRowBackground="LightBlue" AlternationCount="2" >
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="Data" Binding="{Binding Nome}" />
-                                <DataGridTextColumn Header="Descrição" Binding="{Binding Nome}" />
 
-                            </DataGrid.Columns>
-
-
-                        </DataGrid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        
+                        <StackPanel Orientation="Horizontal" Grid.Row="0">
+                            <TextBlock Margin="10 15" Text="Eventos:" FontSize="20" />
+                        </StackPanel>
+                        
+                        <StackPanel Grid.Row="1">
+                            <DataGrid IsReadOnly="True" Margin="10" CanUserAddRows="False" CanUserDeleteRows="False"  
+                           x:Name="dataGridEventos"  AutoGenerateColumns="False" 
+                           AlternatingRowBackground="LightBlue" AlternationCount="2"  >
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Tipo" Binding="{Binding Tipo}" />
+                                    <DataGridTextColumn Header="Data" Binding="{Binding Inicio, StringFormat={}{0:d}}" />
+                                    <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
                     </Grid>
 
                 </Grid>

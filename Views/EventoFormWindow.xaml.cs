@@ -78,9 +78,13 @@ namespace IogoSistem.Views
 
                     if (_evento.Id == 0)
                     {
+                       
+
                         text = "cadastrado";
                         dao.Insert(_evento);
                         CloseFormVerify();
+
+
                     }
                     else
                     {
@@ -90,10 +94,9 @@ namespace IogoSistem.Views
                         MessageBox.Show($"O funcionario foi {text}", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearInputs();
                         _evento.Id = 0;
+              
 
                     }
-
-
 
                     LoadDataGrid();
                 }

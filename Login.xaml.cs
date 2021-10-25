@@ -43,12 +43,14 @@ namespace IogoSistem
 
             if (user!=null)
             {
-                MessageBox.Show(user.Funcionario.Nome.ToString());
-                //DadosSistema.SetUser(user);
+                var ativo = new UsuarioDAO();
+                ativo.AtivarUsuario(usuario,senha);
+                
+                DadosSistema.SetUser(user);
 
-//                var main = new MainWindow();
-  //              main.Show();
-    //            this.Close();
+                var main = new MainWindow();
+                main.Show();
+                this.Close();
             }
             else
             {
@@ -96,6 +98,9 @@ namespace IogoSistem
 
                 if (user != null)
                 {
+
+                    DadosSistema.SetUser(user);
+
                     var main = new MainWindow();
                     main.Show();
                     this.Close();
