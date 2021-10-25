@@ -133,6 +133,8 @@
     </Compile>
     <Compile Include="Models\AbstractDAO.cs" />
     <Compile Include="Models\CadastrarEstoqueDAO.cs" />
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\ClienteDAO.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\EnderecoDAO.cs" />
     <Compile Include="Models\Evento.cs" />
@@ -184,8 +186,8 @@
     <Compile Include="Views\UsuarioListWindow.xaml.cs">
       <DependentUpon>UsuarioListWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Venda.xaml.cs">
-      <DependentUpon>Venda.xaml</DependentUpon>
+    <Compile Include="Views\VendaFormWindow.xaml.cs">
+      <DependentUpon>VendaFormWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
@@ -252,9 +254,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Venda.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Views\VendaFormWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>

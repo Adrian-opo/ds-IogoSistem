@@ -1,4 +1,4 @@
-﻿<Window x:Class="IogoSistem.Views.Venda"
+﻿<Window x:Class="IogoSistem.Views.VendaFormWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -19,10 +19,7 @@
 
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Orientation="Horizontal" Margin="209,0,198,0" Width="387">
-            <RadioButton x:Name="registrarganhossimples" GroupName="tipo_ganho" Content="Registrar Ganho Simples" Margin="30,10,0,10" Checked="registrarganhossimples_Checked"/>
-            <RadioButton x:Name="registrarganhosdetalhados" GroupName="tipo_ganho" Content="Registrar Ganho Detalhado" Margin="30,10,0,10" Checked="registrarganhosdetalhados_Checked"/>
-        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Orientation="Horizontal" Margin="209,0,198,0" Width="387"/>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal">
             <TextBlock x:Name="cliente" Text="Cliente:" Margin="10,10,10,10" FontSize="15"/>

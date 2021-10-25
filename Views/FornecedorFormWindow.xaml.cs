@@ -55,7 +55,7 @@ namespace IogoSistem.Views
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message, "Erro ComboBox", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -111,7 +111,7 @@ namespace IogoSistem.Views
 
 
 
-                MessageBox.Show($"O funcionario foi {text}", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show($"O fornecedor foi {text}", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Close();
             }
             catch (Exception ex)
@@ -156,7 +156,7 @@ namespace IogoSistem.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Exceção nao sei pq", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -164,7 +164,7 @@ namespace IogoSistem.Views
         {
             var result = MessageBox.Show("Deseja continuar?", "continuar?", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
-            if (result == MessageBoxResult.No)
+            if (result != MessageBoxResult.No)
                 this.Close();
             else
                 ClearInputs();
@@ -184,6 +184,13 @@ namespace IogoSistem.Views
             recebe_email.Text = "";
             recebe_produtofornecido.Text = "";
             recebe_complemento.Text = "";
+
+            recebe_bairro.Text = "";
+            recebe_cep.Text = "";
+            recebe_cidade.Text = "";
+            recebe_lagradouro.Text = "";
+            recebe_numero.Text = "";
+            recebe_uf.Text = "";
         }
 
         private void recebe_numero_KeyDown(object sender, KeyEventArgs e)

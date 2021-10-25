@@ -85,11 +85,6 @@ namespace IogoSistem.Views
 
         }
 
-
-
-
-
-
         private void BtnExcluir_Click(object sender, RoutedEventArgs e)
         {
 

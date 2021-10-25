@@ -8,17 +8,15 @@ namespace IogoSistem.Models
 {
     class Venda
     {
-        public string Cliente { get; set; }
-        public int id_cliente { get; set; }
         public int Id { get; set; }
         public DateTime DataVenda { get; set; }
-        public string FormaPagamento { get; set; }
-        public int QuantParcelas { get; set; }
         public DateTime DataVencimentoParcela { get; set; }
-        public string Produto { get; set; }
-        public int id_produto { get; set; }
-        public double QuantProduto { get; set; }
+        public int QuantidadeParcelas { get; set; }
         public double Valor { get; set; }
+        public Produto Produto { get; set; }
+        public Cliente Cliente { get; set; }
 
+        public Funcionario Funcionario { get; set; }
+        
     }
 }

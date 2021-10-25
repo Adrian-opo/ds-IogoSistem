@@ -12,7 +12,7 @@ namespace IogoSistem.Helpers
         {
             List<string> estados = new List<string>
             {
-                "Rondônia"
+                "RO"
 
             };
 

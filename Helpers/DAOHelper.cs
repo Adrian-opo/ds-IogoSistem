@@ -30,9 +30,9 @@ namespace IogoSistem.Helpers
             return value;
         }
 
-        internal static bool IsNull(MySqlDataReader reader, string v)
+        public static bool IsNull(MySqlDataReader reader, string column_name)
         {
-            throw new NotImplementedException();
+            return reader.IsDBNull(reader.GetOrdinal(column_name));
         }
     }
 

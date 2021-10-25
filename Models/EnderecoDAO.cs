@@ -15,8 +15,8 @@ namespace IogoSistem.Models
             try
             {
                 var query = conn.Query();
-                query.CommandText = "INSERT INTO endereco (rua_end, numero_end, bairro_end, cidade_end, uf_end, cep_end)" + 
-                    "VALUES (@rua, @numero, @bairro, @cidade, @uf, @cep)";
+                query.CommandText = "INSERT INTO endereco (rua_end, numero_end, bairro_end, cidade_end, uf_end, cep_end, pais_end) " + 
+                    "VALUES (@rua, @numero, @bairro, @cidade, @uf, @cep, @pais)";
 
                 query.Parameters.AddWithValue("@rua", t.Lagradouro);
                 query.Parameters.AddWithValue("@numero", t.Numero);
@@ -24,6 +24,7 @@ namespace IogoSistem.Models
                 query.Parameters.AddWithValue("@cidade", t.Cidade);
                 query.Parameters.AddWithValue("@uf", t.UF);
                 query.Parameters.AddWithValue("@cep", t.CEP);
+                query.Parameters.AddWithValue("@pais", "Brasil");
 
                 var result = query.ExecuteNonQuery();
 
@@ -45,7 +46,7 @@ namespace IogoSistem.Models
             try
             {
                 var query = conn.Query();
-                query.CommandText = "UPDATE endereco SET rua_end= @rua, numero_end=@numero, bairro_end=@bairro, cidade_end=@cidade, uf_end=@uf, cep_end=@cep";
+                query.CommandText = "UPDATE endereco SET rua_end= @rua, numero_end=@numero, bairro_end=@bairro, cidade_end=@cidade, uf_end=@uf, cep_end=@cep, pais_end=@pais ";
 
                 query.Parameters.AddWithValue("@rua", t.Lagradouro);
                 query.Parameters.AddWithValue("@numero", t.Numero);
@@ -53,6 +54,7 @@ namespace IogoSistem.Models
                 query.Parameters.AddWithValue("@cidade", t.Cidade);
                 query.Parameters.AddWithValue("@uf", t.UF);
                 query.Parameters.AddWithValue("@cep", t.CEP);
+                query.Parameters.AddWithValue("@pais", "Brasil");
 
                 query.Parameters.AddWithValue("@id", t.Id);
 
