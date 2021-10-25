@@ -191,11 +191,14 @@ namespace IogoSistem.Models
             {
                 var query = conn.Query();
                 query.CommandText = "cadastrarUsuario";
+                query.CommandType = CommandType.StoredProcedure;
 
                 query.Parameters.AddWithValue("@nomeUser", t.Nome);
                 query.Parameters.AddWithValue("@cpf_user", t.CPF);
                 query.Parameters.AddWithValue("@email", t.Email);
                 query.Parameters.AddWithValue("@senha", t.Senha);
+                //create procedure cadastrarUsuario(nomeUser varchar(30), cpf_user varchar(14), email varchar(100), senha varchar(10))
+
 
 
                 MySqlDataReader reader = query.ExecuteReader();
