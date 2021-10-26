@@ -10,7 +10,7 @@ namespace IogoSistem.Models
     class ClienteDAO
     {
         private static Conexao conn = new Conexao();
-        public long Insert(Cliente t)
+        public void Insert(Cliente t)
         {
             try
             {
@@ -25,7 +25,7 @@ namespace IogoSistem.Models
                 if (result == 0)
                     throw new Exception("Erro ao salvar o cliente. Verifique e tente novamente.");
 
-                return query.LastInsertedId;
+                
 
             }
             catch (Exception e)

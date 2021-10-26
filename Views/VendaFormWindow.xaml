@@ -12,8 +12,8 @@
     <Grid Background="#d3ecff">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="200"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="250"/>
             <RowDefinition Height="*"/>
             <RowDefinition/>
 
@@ -21,119 +21,56 @@
 
         <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Orientation="Horizontal" Margin="209,0,198,0" Width="387"/>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <TextBlock x:Name="cliente" Text="Cliente:" Margin="10,10,10,10" FontSize="15"/>
-            <ComboBox x:Name="recebe_cliente"
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="10">
+
+            <ComboBox x:Name="recebe_cliente"  materialDesign:HintAssist.Background="#d3ecff" materialDesign:HintAssist.Hint="Cliente" VerticalAlignment="Center"
                       Padding="1" FontSize="17"
                       Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                      ItemsSource="{Binding ShortStringList}"
-                      Width="400" RenderTransformOrigin="0.5,0.481" />
-
-            <TextBlock x:Name="id_cliente" Text="ID Cliente:" Margin="10,10,10,10" FontSize="15"/>
-            <ComboBox x:Name="recebe_idcliente"
+                      ItemsSource="{Binding ShortStringList}" RenderTransformOrigin="0.5,0.481" Margin="50,0,50,10" />
+            <ComboBox x:Name="recebe_funcionario"  materialDesign:HintAssist.Background="#d3ecff" materialDesign:HintAssist.Hint="Funcionário" VerticalAlignment="Center"
                       Padding="1" FontSize="17"
                       Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                      ItemsSource="{Binding ShortStringList}"
-                      Width="157" RenderTransformOrigin="0.5,0.481" Margin="0,1,10,0" />
-
-            <Button x:Name="add_cliente" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                
-                Height="Auto" Margin="0,12,0,10" Width="40"
-                materialDesign:ButtonAssist.CornerRadius="25"
-
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="#FF00FF17" BorderBrush="#FF00FF17">
-
-
-
-                <TextBlock Text="+" />
-            </Button>
-
+                      ItemsSource="{Binding ShortStringList}" RenderTransformOrigin="0.5,0.481" Margin="50,0,50,10"  />
+            <Button x:Name="AdicionarProduto"  Style="{StaticResource MaterialDesignRaisedAccentButton}" 
+                     
+                     Height="36" FontSize="23"
+                     ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                     Content="Adicionar Produto" Background="Blue" BorderBrush="Blue" Width="400" Margin="187,0" Click="AdicionarProduto_Click"
+            />
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,10,0,90" >
-            <TextBlock Text="ID:" Height="30" Margin="10,10,10,60" FontSize="15" Width="20"/>
-            <TextBox x:Name="recebe_idganhos" Text="00" Height="30" Margin="10,10,10,60" FontSize="15" IsEnabled="False" Width="20"/>
-            <TextBlock Text="Data:" Height="30" Margin="10,10,10,60" FontSize="15" Width="35"/>
-            <wpftool:MaskedTextBox  Mask="00/00/0000" x:Name="recebe_data" Padding="1" FontSize="17"  Style="{StaticResource MaterialDesignOutlinedTextBox}"  Width="116" Margin="10,10,10,60"/>
-            <TextBlock Text="Forma de Pagamento:" Height="30" Margin="10,10,10,60" FontSize="15"/>
-            <ComboBox x:Name="recebe_formadepagamento"
-                      Padding="1" FontSize="17"
-                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                      ItemsSource="{Binding ShortStringList}"
-                      Width="323" RenderTransformOrigin="0.495,0.462" Margin="10,10,10,60" Height="30"/>
-        </StackPanel>
-
-        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0,0,10" >
-            <TextBlock Text="Número de Parcelas:" Margin="10,60,10,100" FontSize="15" Height="30"/>
-            <TextBox x:Name="recebe_numerodeparcelas" Margin="10,60,10,100" Height="30" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="316" KeyDown="recebe_numerodeparcelas_KeyDown"/>
-            <TextBlock Text="Data de Vencimento:" Margin="10,60,10,100" Height="30" FontSize="15"/>
-            <wpftool:MaskedTextBox  Mask="00/00/0000" x:Name="recebe_datadevencimento" Height="30" Padding="1" FontSize="17" Margin="10,60,10,100" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="111"/>
-
-        </StackPanel>
-
-        <StackPanel Grid.Row="2" Orientation="Horizontal"  >
-
-            <Button x:Name="acrescentar_produto" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                
-                Height="Auto" Margin="10,92,0,78" Width="40"
-                materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="#FF0051FF" BorderBrush="#FF0051FF">
-                <TextBlock Text="+" />
-            </Button>
-
-            <Button x:Name="excluir_produto" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                
-                Height="Auto" Margin="50,92,0,78" Width="40"
-                materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="#FFFF0C00" BorderBrush="#FFFF0C00">
-                <TextBlock Text="-" />
-            </Button>
-        </StackPanel>
-
-        <StackPanel Grid.Row="2" Orientation="Horizontal" >
-            <TextBlock Text="Nome do Produto:" Height="30" Margin="10,127,10,43" FontSize="15"/>
-            <ComboBox x:Name="recebe_nomedoproduto"
-                      Padding="1" FontSize="17"
-                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                      ItemsSource="{Binding ShortStringList}"
-                      Width="337" RenderTransformOrigin="0.495,0.462" Margin="10,127,10,43" Height="30"/>
-
-            <TextBlock Text="ID do Produto:" Height="30" Margin="10,127,10,43" FontSize="15"/>
-            <ComboBox x:Name="recebe_iddoproduto"
-                      Padding="1" FontSize="17"
-                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                      ItemsSource="{Binding ShortStringList}"
-                      Width="86" RenderTransformOrigin="0.495,0.462" Margin="10,127,10,43"  Height="30"/>
-
-            <Button x:Name="add_produto" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                
-                Height="Auto" Margin="0,127,0,43" Width="40"
-                materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="#FF00FF17" BorderBrush="#FF00FF17">
-                <TextBlock Text="+" />
-            </Button>
-
-        </StackPanel>
-
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <TextBlock Text="Quantidade:" Margin="10,167,10,3" FontSize="15" Height="30"/>
-            <TextBox x:Name="recebe_quantidade" Margin="10,167,10,3" Height="30" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="316" KeyDown="recebe_quantidade_KeyDown"/>
-
-            <TextBlock Text="Valor (R$):" Margin="10,167,10,3" FontSize="15" Height="30"/>
-            <TextBox x:Name="recebe_valor" Margin="10,167,10,3" Height="30" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="236"/>
-        </StackPanel>
-
-        <StackPanel Grid.Row="3">
-            <DataGrid  Margin="10 10 10 10" ItemsSource="{Binding}" x:Name="dataGridProdutosVenda"   IsReadOnly="True" AutoGenerateColumns="False" AlternatingRowBackground="#FF03A9F4" AlternationCount="2" Height="103" >
+        <StackPanel Grid.Row="2" Orientation="Vertical">
+            <DataGrid  Margin="10 10 10 10" 
+                       ItemsSource="{Binding}" 
+                       x:Name="dataGridProdutosVenda" 
+                       CellEditEnding="dataGridProdutosVenda_CellEditEnding"  
+                       IsReadOnly="True" 
+                       CanUserAddRows="False"
+                       CanUserDeleteRows="False"
+                       AutoGenerateColumns="False" 
+                       AlternatingRowBackground="#FF03A9F4" 
+                       AlternationCount="2" Height="228" >
                 <DataGrid.Columns>
 
                     <DataGridCheckBoxColumn Header="" IsThreeState="False" Binding="{Binding checkbox}"/>
 
-                    <DataGridTextColumn Header="Codigo" Binding="{Binding Codigo}"  Width="100"/>
-                    <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="200" />
-                    <DataGridTextColumn Header="Valor (R$)" Binding="{Binding Valor}" Width="150"/>
-                    <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}" Width="150"/>
-                    <DataGridTextColumn Header="Valor Total (R$)" Binding="{Binding Valor_Total}" Width="150"/>
+                    <DataGridTextColumn Header="#" IsReadOnly="True"  Binding="{Binding Id}"/>
+                    <DataGridTextColumn Header="Produto" IsReadOnly="True"  Binding="{Binding Produto.Nome}"/>
+                    <DataGridTextColumn Header="Quantidade" IsReadOnly="True"  Binding="{Binding Quantidade}"/>
+                    <DataGridTextColumn Header="Valor Unitario (R$)" IsReadOnly="True"  Binding="{Binding Valor, ConverterCulture='pt-BR', StringFormat=C}"/>
+                    <DataGridTextColumn Header="Valor Total (R$)" IsReadOnly="True"  Binding="{Binding ValorTotal, ConverterCulture='pt-BR', StringFormat=C}"/>
+
+                    <DataGridTemplateColumn Header="Remover">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}" 
+                                        Content="{materialDesign:PackIcon Delete}"
+                                        ToolTip="Excluir Produto" Click="BtnDelete_Click"  />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
 
 
@@ -141,50 +78,23 @@
         </StackPanel>
 
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBlock Text="Valor Final (R$):" Margin="10,120,10,10" FontSize="15"  Height="30"/>
-            <TextBlock Text="00,00" Margin="10,120,10,11" FontSize="15" Height="30"/>
-            <TextBlock Text="0x de (R$):" Margin="10,120,10,11" FontSize="15" Height="30"/>
-            <TextBlock Text="00,00:" Margin="10,120,10,11" FontSize="15" Height="30"/>
+            <ComboBox x:Name="recebe_formaPagamento"  materialDesign:HintAssist.Background="#d3ecff" materialDesign:HintAssist.Hint="Forma De Pagamento" VerticalAlignment="Center"
+                      Padding="1" FontSize="17"
+                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                      ItemsSource="{Binding ShortStringList}" RenderTransformOrigin="0.5,0.481" Margin="10"/>
+            <DatePicker   x:Name="recebe_data"  materialDesign:HintAssist.Background="#d3ecff" Style="{StaticResource MaterialDesignOutlinedDatePicker}" Padding="1" FontSize="17"  Margin="10" Width="116"/>
+            <TextBlock Text="Valor Total (R$):"  Margin="10" FontSize="15" Height="30"/>
+            <TextBox x:Name="recebe_valorTotal"  Margin="10" Height="30" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="234"/>
+
         </StackPanel>
 
-        <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="10,10,10,10">
-            <Button x:Name="btn_novo" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                
-                Height="50" Margin="0 10 20 10" Width="130"
-                materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Cyan" BorderBrush="Cyan">
-                <TextBlock Text="NOVO" />
-            </Button>
-
-            <Button x:Name="btn_excluir" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                
-                Height="50" Margin="0 10 20 10" Width="130"
-                materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red">
-                <TextBlock Text="EXCLUIR" />
-            </Button>
-
-            <Button x:Name="btn_editar" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                
-                Height="50" Margin="0 10 20 10" Width="130"
-                materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange">
-                <TextBlock Text="EDITAR" />
-            </Button>
-
-            <Button x:Name="btn_cancelar" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                
-                Height="50" Margin="0 10 20 10" Width="130"
-                materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Gray" BorderBrush="Gray" >
-                <TextBlock Text="CANCELAR" />
-            </Button>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="10,10,10,10" HorizontalAlignment="Center">
 
             <Button x:Name="BtnSalvar"  Style="{StaticResource MaterialDesignRaisedAccentButton}" 
                      
                      Height="Auto" Margin="20,10" FontSize="23"
                      ToolTip="Resource name: MaterialDesignRaisedAccentButton"
-                     Content="SALVAR" Background="Lime" BorderBrush="Lime" Width="150"
+                     Content="SALVAR" Background="Lime" BorderBrush="Lime" Width="749" Click="BtnSalvar_Click"
             />
         </StackPanel>
 

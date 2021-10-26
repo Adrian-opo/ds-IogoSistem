@@ -147,6 +147,9 @@ namespace IogoSistem.Views
 
         private void Menu_Button_Click(object sender, RoutedEventArgs e)
         {
+            Window window;
+            window = new VendaFormWindow();
+            window.ShowDialog();
 
             string nome;
             if (sender is MenuItem)

@@ -7,6 +7,7 @@ using IogoSistem.Interfaces;
 using IogoSistem.Database;
 using MySql.Data.MySqlClient;
 using IogoSistem.Helpers;
+using System.Data;
 
 namespace IogoSistem.Models
 {
@@ -38,7 +39,7 @@ namespace IogoSistem.Models
             }
         }
 
-        public override Venda GetById(int id)
+        /*public override Venda GetById(int id)
         {
             try
             {
@@ -98,38 +99,47 @@ namespace IogoSistem.Models
             {
                 conn.Query();
             }
-        }
+        }*/
 
         public override void Insert(Venda t)
         {
             try
             {
-                var clienteId = new ClienteDAO().Insert(t.Cliente);
-                //var funcionarioId = new FuncionarioDAO().Insert(t.Funcionario);
-
                 var query = conn.Query();
-                query.CommandText = "INSERT INTO fornecedor (nome_for, telefone_for, cpf_for, rg_for, email_for, produtoFornecido_for, celular_for, razaoSocial_for, cnpj_for, complemento_for, id_endereco_fk)" +
-                    "VALUES (@nome, @telefone, @cpf, @rg, @email, @produtoFornecido, @celular, @razaoSocial, @cnpj, @complemento, @id_endereco)";
+                query.CommandText = "cadastrarVenda";
+                query.CommandType = CommandType.StoredProcedure;
 
-                //query.Parameters.AddWithValue("@nome", t.Nome);
-                //query.Parameters.AddWithValue("@telefone", t.Telefone);
-                //query.Parameters.AddWithValue("@cpf", t.CPF);
-                //query.Parameters.AddWithValue("@rg", t.RG);
-                //query.Parameters.AddWithValue("@email", t.Email);
-                //query.Parameters.AddWithValue("@produtoFornecido", t.ProdutoFornecido);
-                //query.Parameters.AddWithValue("@celular", t.Celular);
-                //query.Parameters.AddWithValue("@razaoSocial", t.RazaoSocial);
-                //query.Parameters.AddWithValue("@cnpj", t.CNPJ);
-                //query.Parameters.AddWithValue("@complemento", t.Complemento);
+                //var query = conn.Query();
+                //query.CommandText = "CALL cadastrarVenda (@dataVencimentoParcelas, @dataVenda, @funcionario, @cliente, @quantParcelas, @valor)";
+                
 
-                //query.Parameters.AddWithValue("@id_endereco", enderecoId);
+                
+                query.Parameters.AddWithValue("@dataVenda", t.DataVenda?.ToString("yyyy-mm-dd"));
+                query.Parameters.AddWithValue("@funcionario", t.Funcionario.Id);
+                query.Parameters.AddWithValue("@cliente", t.Cliente.Id);
+                query.Parameters.AddWithValue("@formaPagamento", t.FormaPagamento);
+                query.Parameters.AddWithValue("@valorTotal", t.ValorTotal);
 
+                
 
+                MySqlDataReader reader = query.ExecuteReader();
 
-                var result = query.ExecuteNonQuery();
+                while (reader.Read())
+                {
+                    if (reader.GetName(0).Equals("Alerta"))
+                    {
+                        throw new Exception(reader.GetString("Alerta"));
+                    }
+                }
 
-                if (result == 0)
-                    throw new Exception("O registro não foi inserido. Verifique e tente novamente.");
+                long vendaId = query.LastInsertedId;
+
+                InsertItens(vendaId, t.Itens);
+
+                //var result = query.ExecuteNonQuery();
+
+                //if (result == 0)
+                //throw new Exception("O registro não foi inserido. Verifique e tente novamente.");
 
             }
             catch (Exception e)
@@ -141,13 +151,38 @@ namespace IogoSistem.Models
                 conn.Close();
             }
         }
-        public override List<Venda> List()
+
+        private void InsertItens(long vendaId, List<VendaProduto> itens)
+        {
+            foreach(VendaProduto item in itens)
+            {
+                var query = conn.Query();
+                query.CommandText = "inserirProdutoVenda";
+                query.CommandType = CommandType.StoredProcedure;
+
+                query.Parameters.AddWithValue("@quantidade", item.Quantidade);
+                query.Parameters.AddWithValue("@venda", item.Venda.Id);
+                query.Parameters.AddWithValue("@produto", item.Produto.Id);
+
+                MySqlDataReader reader = query.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (reader.GetName(0).Equals("Alerta"))
+                    {
+                        throw new Exception(reader.GetString("Alerta"));
+                    }
+                }
+            }
+        }
+
+        /*public override List<Venda> List()
         {
             try
             {
                 List<Venda> list = new List<Venda>();
                 var query = conn.Query();
-                query.CommandText = "Select id_fornecedor, nome_for FROM Fornecedor";
+                query.CommandText = "Select valor, cliente, funcionario FROM Venda";
 
                 MySqlDataReader reader = query.ExecuteReader();
 
@@ -155,8 +190,7 @@ namespace IogoSistem.Models
                 {
                     list.Add(new Venda()
                     {
-                        Id = reader.GetInt32("id_fornecedor"),
-                        //Nome = reader.GetString("nome_for")
+                        Valor = reader.GetInt32("valor")
                     });
                 }
 
@@ -171,47 +205,30 @@ namespace IogoSistem.Models
             {
                 conn.Close();
             }
-        }
+        }*/
 
-        public override void Update(Venda t)
+        /*public override void Update(Venda t)
         {
             try
             {
-                /*
-                long enderecoID = t.Endereco.Id;
-                var endDAO = new EnderecoDAO();
-
-                if (enderecoID > 0)
-                    endDAO.Update(t.Endereco);
-                else
-                    enderecoID = endDAO.Insert(t.Endereco);
 
                 var query = conn.Query();
-                query.CommandText = "UPDATE Fornecedor SET nome_for=@nome ,telefone_for=@telefone ,cpf_for=@cpf ,rg_for=@rg, email_for=@email, produtoFornecido_for=@produtoFornecido, celular_for=@celular, razaoSocial_for=@razaoSocial, cnpj_for=@cnpj, complemento_for=@complemento, id_endereco_fk=@enderecoID WHERE id_fornecedor=@id";
+                query.CommandText = "UPDATE venda SET valor_vend=@valor ,data_vend=@dataVenda ,dataVencimentoParcelas_vend=@dataVencimentoParcelas ,quantParcelas_vend=@quantParcelas, id_funcionario_fk=@funcionario, id_cliente_fk=@cliente WHERE id_venda=@id";
 
-                query.Parameters.AddWithValue("@razaoSocial", t.RazaoSocial);
-                query.Parameters.AddWithValue("@cnpj", t.CNPJ);
 
-                query.Parameters.AddWithValue("@nome", t.Nome);
-                query.Parameters.AddWithValue("@cpf", t.CPF);
-                query.Parameters.AddWithValue("@rg", t.RG);
-
-                query.Parameters.AddWithValue("@telefone", t.Telefone);
-                query.Parameters.AddWithValue("@celular", t.Celular);
-                query.Parameters.AddWithValue("@email", t.Email);
-                query.Parameters.AddWithValue("@produtoFornecido", t.ProdutoFornecido);
-                query.Parameters.AddWithValue("@Complemento", t.Complemento);
-
-                query.Parameters.AddWithValue("@enderecoId", enderecoID);
-
-                query.Parameters.AddWithValue("@id", t.Id);
+                query.Parameters.AddWithValue("@dataVencimentoParcelas", t.DataVencimentoParcela?.ToString("yyyy-mm-dd"));
+                query.Parameters.AddWithValue("@dataVenda", t.DataVenda?.ToString("yyyy-mm-dd"));
+                query.Parameters.AddWithValue("@funcionario", t.Funcionario);
+                query.Parameters.AddWithValue("@cliente", t.Cliente);
+                query.Parameters.AddWithValue("@quantParcelas", t.QuantidadeParcelas);
+                query.Parameters.AddWithValue("@valor", t.Valor);
 
 
                 var result = query.ExecuteNonQuery();
 
                 if (result == 0)
                     throw new Exception("Atualização nao realizada");
-                */
+                
             }
             catch (Exception e)
             {
@@ -221,6 +238,6 @@ namespace IogoSistem.Models
             {
                 conn.Close();
             }
-        }
+        }*/
     }
 }

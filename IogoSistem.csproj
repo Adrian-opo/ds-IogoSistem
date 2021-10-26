@@ -127,6 +127,7 @@
     <Compile Include="DadosSistema.cs" />
     <Compile Include="Helpers\DAOHelper.cs" />
     <Compile Include="Helpers\Estado.cs" />
+    <Compile Include="Helpers\FormaPagamento.cs" />
     <Compile Include="Interfaces\IDAO.cs" />
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -148,6 +149,7 @@
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\ProdutoDAO.cs" />
     <Compile Include="Models\UsuarioValidator.cs" />
+    <Compile Include="Models\VendaProduto.cs" />
     <Compile Include="Views\AgendaWindow.xaml.cs">
       <DependentUpon>AgendaWindow.xaml</DependentUpon>
     </Compile>
@@ -188,6 +190,9 @@
     </Compile>
     <Compile Include="Views\VendaFormWindow.xaml.cs">
       <DependentUpon>VendaFormWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VendaProdutoList.xaml.cs">
+      <DependentUpon>VendaProdutoList.xaml</DependentUpon>
     </Compile>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
@@ -257,6 +262,10 @@
     <Page Include="Views\VendaFormWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\VendaProdutoList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
