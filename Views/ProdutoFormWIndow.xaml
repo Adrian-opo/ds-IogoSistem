@@ -73,10 +73,8 @@
                      Content="PESQUISAR" Background="#363636" BorderBrush="#363636" Width="Auto"
              Click="Abrir_Pesquisa"
                 />
-        <TextBlock Margin="480,31,212,358" FontSize="15" Text="DESCRIÇÃO"/>
-        <TextBlock Margin="672,28,20,361" FontSize="15"><Run Text="FOT"/><Run Text="O"/></TextBlock>
-        <materialDesign:PackIcon Kind="BottleWine" RenderTransformOrigin="43.125,7.5" Margin="630,57,0,0" Width="130" Height="111" />
-        <TextBox x:Name="Descrição" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="437,65,192,264"/>
+        <TextBlock Margin="516,31,176,358" FontSize="15" Text="DESCRIÇÃO"/>
+        <TextBox x:Name="Descrição" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="437,65,107,264"/>
         <TextBlock Margin="304,302,400,88" FontSize="15"><Run Text="Quantidade"/><Run Text=":"/></TextBlock>
         <TextBox x:Name="Estoque" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="405,288,227,94"/>
     </Grid>

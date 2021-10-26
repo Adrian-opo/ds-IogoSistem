@@ -31,7 +31,35 @@ namespace IogoSistem.Models
 
         public void Insert(Produto t)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var query = conn.Query();
+                //query.CommandText = "CALL cadastrarProduto (@descricao,@nome,@sabor,@medida,@valorVenda,@estoque)";
+                query.CommandText = "cadastrarProduto";
+                query.CommandType = CommandType.StoredProcedure;
+
+
+                query.Parameters.AddWithValue("@descricao", t.Descricao);
+                query.Parameters.AddWithValue("@nome", t.Nome);
+                query.Parameters.AddWithValue("@sabor", t.Sabor);
+                query.Parameters.AddWithValue("@medida", t.Medida);
+                query.Parameters.AddWithValue("@valorVenda", t.Valor_Produto);
+                query.Parameters.AddWithValue("@estoque", t.Estoque);
+
+                var result = query.ExecuteNonQuery();
+
+                if (result == 0)
+                    throw new Exception("O registro não foi inserido, tu é burro");
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         public List<Produto> List()
@@ -48,10 +76,9 @@ namespace IogoSistem.Models
                 {
                     list.Add(new Produto()
                     {
-                        Id = reader.GetInt32("id_produto"),
-                        Nome = reader.GetString("nome_prod"),
                         
-                        Estoque = reader.GetInt32("estoque_prod"),
+                        Nome = reader.GetString("nome_prod")
+                       
                      
                     });
                 }
@@ -71,7 +98,31 @@ namespace IogoSistem.Models
 
         public void Update(Produto t)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var query = conn.Query();
+                query.CommandText = "UPDATE produto SET estoque_prod=@estoque WHERE id_produto=@id";
+
+
+               
+                query.Parameters.AddWithValue("@estoque", t.Estoque);
+               
+
+
+                var result = query.ExecuteNonQuery();
+
+                if (result == 0)
+                    throw new Exception("Atualização nao realizada");
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 

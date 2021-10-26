@@ -20,24 +20,41 @@ namespace IogoSistem.Views
     /// </summary>
     public partial class CadastrarestoqueFormWindow : Window
     {
+
+        private List<Produto> _produto = new List<Produto>();
+       
+
+        private Produto _pdt;
+        private int _id;
         public CadastrarestoqueFormWindow()
         {
             InitializeComponent();
-            Loaded += FornecedorListWindow_Loaded;
+            Loaded += CadastrarestoqueFormWindow_Loaded;
         }
 
-        private void FornecedorListWindow_Loaded(object sender, RoutedEventArgs e)
+        private void CadastrarestoqueFormWindow_Loaded(object sender, RoutedEventArgs e)
         {
+
+            _pdt = new Produto();
+            if (_id > 0)
+                fillForm();
             LoadDataGrid();
         }
+
+       
 
         private void LoadDataGrid()
         {
             try
             {
-                var dao = new CadastrarEstoqueDAO();
 
-                dataGridCadatrarestoque.ItemsSource = dao.List();
+                _produto = new ProdutoDAO().List();
+
+                dataGridCadatrarestoque.ItemsSource = _produto;
+
+
+
+
 
             }
             catch (Exception ex)
@@ -65,36 +82,128 @@ namespace IogoSistem.Views
 
         private void BtnEX_Click(object sender, RoutedEventArgs e)
         {
-            var userselected = dataGridCadatrarestoque.SelectedItem as Fornecedor;
-            var result = MessageBox.Show($"Deseja remover o fornecedor {userselected.Nome}?", "Confirmação de exclusão", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-
+          
+        }
+        private void SaveData()
+        {
             try
             {
-                if (result == MessageBoxResult.Yes)
+                var dao = new CadastrarEstoqueDAO();
+                var text = "Atualizado";
+
+                if (_pdt.Id == 0)
                 {
-                    var dao = new FornecedorDAO();
-                    dao.Delete(userselected);
-                    LoadDataGrid();
+                    text = "cadastrado";
+                    dao.Insert(_pdt);
+                    CloseFormVerify();
                 }
+                else
+                    dao.Update(_pdt);
+
+
+
+                MessageBox.Show($"O produto foi {text}", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Exeção", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+                MessageBox.Show(ex.Message, "não executado", MessageBoxButton.OK, MessageBoxImage.Error);
 
+            }
         }
 
+        private void CloseFormVerify()
+        {
+            var result = MessageBox.Show("Deseja continuar?", "continuar?", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
+            if (result == MessageBoxResult.No)
+                this.Close();
+            else
+                ClearInputs();
+        }
+        private void ClearInputs()
+        {
 
+            TBquantidade.Text = "";
+        }
 
         private void BtnSalvar_Click(object sender, RoutedEventArgs e)
         {
+            _pdt.Estoque = int.Parse(TBquantidade.Text);
 
+            SaveData();
+        }
+       
+        
+
+
+        private void fillForm()
+        {
+            try
+            {
+                var dao = new CadastrarEstoqueDAO();
+           
+
+
+                TBquantidade.Text = _pdt.Estoque.ToString();
+              
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void dataGridConsultarProd_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
+
+        private void produtos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void Pquantidade_TextChanged(object sender, TextChangedEventArgs e)
+        {
+           
+        }
+
+        private void Btnbusca_Click(object sender, RoutedEventArgs e)
+        {
+            var text = txtbusca.Text;
+
+            var filterlist = _produto.Where(i => i.Nome.ToLower().Contains(text));
+            dataGridCadatrarestoque.ItemsSource = filterlist;
+
+            try
+            {
+                var dao = new CadastrarEstoqueDAO();
+
+
+
+                TBquantidade.Text = _pdt.Estoque.ToString();
+
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+
+
+
+        }
     }
-}
+    }
+

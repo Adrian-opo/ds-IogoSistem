@@ -69,7 +69,8 @@ namespace IogoSistem.Views
                     break;
                 case "MN_Estoque":
                 case "MN_CA_Estoque":
-                    //ABRIR TELA ESTOQUE
+                    window = new CadastrarestoqueFormWindow();
+                    window.ShowDialog();
                     break;
                 case "MN_Cliente":
                 case "MN_CA_Cliente":
@@ -137,6 +138,8 @@ namespace IogoSistem.Views
                     break;
                 case "MN_AJ_AjudaUser":
                     //ABRIR TELA AJUDA AO USUARIO
+                    window = new Ajuda();
+                    window.ShowDialog();
                     break;
 
             }
