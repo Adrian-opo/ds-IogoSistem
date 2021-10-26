@@ -98,7 +98,7 @@ namespace IogoSistem.Models
                 //    "VALUES (@nome, @cpf, @rg, @datanasc, @email, @celular, @funcao, @salario, @sexo)";
                 // resenha varchar(200),tipoEvento varchar(50),inicioEvento date, fimEvento date
                 query.CommandText = "cadastrarEvento";
-
+                query.CommandType = CommandType.StoredProcedure;
 
                 /*
                  * CREATE DEFINER=`root`@`%` PROCEDURE `inserir_funcionario`(IN nome varchar(200), IN cod_sexo int, IN cpf varchar(20), IN rg varchar(20),
