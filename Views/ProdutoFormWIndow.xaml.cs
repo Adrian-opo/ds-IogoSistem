@@ -130,14 +130,31 @@ namespace IogoSistem.Views
         private void BtnSalvar_Click(object sender, RoutedEventArgs e)
 
         {
-            _produto.Descricao = Descrição.Text;
-            _produto.Nome = Nome.Text;
-            _produto.Medida = Medida.Text;
-            _produto.Sabor = Sabor.Text;
-            _produto.Valor_Produto = double.Parse(Valor.Text);
-            _produto.Estoque = int.Parse(Estoque.Text);
 
-            SaveData();
+
+            if (Descrição.Text == "" || Nome.Text == "" || Medida.Text =="" || Sabor.Text =="" || Valor.Text == "" || Estoque.Text =="")
+            {
+                string message = "Campos em brnaco";
+
+                MessageBox.Show(message);
+            }
+
+            else
+            {
+                _produto.Descricao = Descrição.Text;
+                _produto.Nome = Nome.Text;
+                _produto.Medida = Medida.Text;
+                _produto.Sabor = Sabor.Text;
+                _produto.Valor_Produto = double.Parse(Valor.Text);
+                _produto.Estoque = int.Parse(Estoque.Text);
+
+                SaveData();
+
+
+            }
+
+
+
         }
 
         private void btn_editar_Click(object sender, RoutedEventArgs e)
