@@ -53,10 +53,18 @@ namespace IogoSistem.Views
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            // MessageBox.Show("Salvo com sucesso");
+        {   
+            _caixa = new Caixa();
+            _caixa.DataAbertura_cai = wpftooldataabertura.Text;
+            _caixa.DataFechamento_cai = wpftooldatafechamento.Text;
+            //_caixa.id_caixa = recebe_idCaixa.Text;
+           _caixa.Observacoes_cai = txt_observacoes.Text;
+            _caixa.SaldoAnterior_cai = textboxsaldoanterior.Text;
+            _caixa.ValorCredito_cai = textboxvalorcredito.Text;
+            _caixa.ValorDebito_cai = textboxvalordebito.Text;
+            _caixa.Saldo_cai = textboxsaldoatual.Text;
             try {                
-                new CaixaDAO().Insert(new Caixa());
+                new CaixaDAO().Insert(_caixa);
                 MessageBox.Show("Salvo com sucesso");
             }
             catch (Exception err){
