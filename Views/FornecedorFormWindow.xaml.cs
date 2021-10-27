@@ -92,27 +92,48 @@ namespace IogoSistem.Views
            
         }
 
+        private bool validate()
+        {
+            var validator = new FornecedorValitador();
+            var result = validator.Validate(_fornecedor);
+
+            if (!result.IsValid)
+            {
+                string errors = null;
+                var count = 1;
+
+                foreach (var failure in result.Errors)
+                {
+                    errors += $"{count++} - {failure.ErrorMessage}\n";
+                }
+                MessageBox.Show(errors, "validação de Dados", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            return result.IsValid;
+        }
+
 
         private void SaveData()
         {
             try
             {
-                var dao = new FornecedorDAO();
-                var text = "Atualizado";
-
-                if (_fornecedor.Id == 0)
+                if (validate())
                 {
-                    text = "cadastrado";
-                    dao.Insert(_fornecedor);
-                    CloseFormVerify();
+                    var dao = new FornecedorDAO();
+                    var text = "Atualizado";
+
+                    if (_fornecedor.Id == 0)
+                    {
+                        text = "cadastrado";
+                        dao.Insert(_fornecedor);
+                        CloseFormVerify();
+                    }
+                    else
+                        dao.Update(_fornecedor);
+
+                    MessageBox.Show($"O fornecedor foi {text}", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
+                    this.Close();
                 }
-                else
-                    dao.Update(_fornecedor);
-
-
-
-                MessageBox.Show($"O fornecedor foi {text}", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
-                this.Close();
+                
             }
             catch (Exception ex)
             {

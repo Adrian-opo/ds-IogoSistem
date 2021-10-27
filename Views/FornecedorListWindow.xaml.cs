@@ -111,8 +111,6 @@ namespace IogoSistem.Views
         {
             this.Close();
         }
-
-
     }
 
 

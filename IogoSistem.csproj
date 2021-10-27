@@ -145,6 +145,7 @@
     <Compile Include="Models\EventoValidator.cs" />
     <Compile Include="Models\Fornecedor.cs" />
     <Compile Include="Models\FornecedorDAO.cs" />
+    <Compile Include="Models\FornecedorValitador.cs" />
     <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\funcionarioDAO.cs" />
     <Compile Include="Models\FuncionarioValitador.cs" />
