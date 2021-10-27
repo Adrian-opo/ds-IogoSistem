@@ -19,7 +19,19 @@ namespace IogoSistem.Database
 
  
 
+<<<<<<< Updated upstream
         private static string password = "15051238";
+=======
+<<<<<<< Updated upstream
+        private static string password = "adrian123";
+=======
+<<<<<<< Updated upstream
+        private static string password = "15051238";
+=======
+        private static string password = "danilosaiter12";
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 
 
