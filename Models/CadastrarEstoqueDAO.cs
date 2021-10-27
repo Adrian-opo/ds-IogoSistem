@@ -26,11 +26,52 @@ namespace IogoSistem.Models
 
         public Produto GetById(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var query = conn.Query();
+                query.CommandText = "SELECT * FROM produto WHERE id_produto= @id";
+
+
+                query.Parameters.AddWithValue("@id", id);
+
+                MySqlDataReader reader = query.ExecuteReader();
+
+                if (!reader.HasRows)
+                    throw new Exception("nenhum registro foi encontrado");
+
+                Produto produto = null;
+
+                while (reader.Read())
+                {
+                    produto = new Produto();
+                    produto.Id = reader.GetInt32("id_produto");
+                    produto.Nome = reader.GetString("nome_prod");
+                    produto.Descricao = reader.GetString("descricao_prod");
+                    produto.Estoque = reader.GetInt32("estoque_prod");
+                    produto.Sabor = reader.GetString("sabor_prod");
+                    produto.Medida = reader.GetString("medida_prod");
+                    produto.Valor_Produto = reader.GetDouble("valorVenda_prod");
+
+
+               
+                   
+
+                }
+                return produto;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                conn.Query();
+            }
         }
 
         public void Insert(Produto t)
         {
+
             try
             {
                 var query = conn.Query();
@@ -76,10 +117,14 @@ namespace IogoSistem.Models
                 {
                     list.Add(new Produto()
                     {
-                        
-                        Nome = reader.GetString("nome_prod")
-                       
+
+                        Id = reader.GetInt32("id_produto"),
+                        Nome = reader.GetString("nome_prod"),
                      
+                        Estoque = reader.GetInt32("estoque_prod"),
+                      
+
+
                     });
                 }
 
@@ -106,7 +151,7 @@ namespace IogoSistem.Models
 
                
                 query.Parameters.AddWithValue("@estoque", t.Estoque);
-               
+                query.Parameters.AddWithValue("@id", t.Id);
 
 
                 var result = query.ExecuteNonQuery();

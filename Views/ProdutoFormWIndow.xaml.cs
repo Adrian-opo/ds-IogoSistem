@@ -145,6 +145,9 @@ namespace IogoSistem.Views
 
         }
 
-
+        private void btn_cancelar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

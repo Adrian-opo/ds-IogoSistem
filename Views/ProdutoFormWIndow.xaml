@@ -17,45 +17,22 @@
     <Grid Background="#d3ecff">
 
 
-        <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="10,319,10,1">
-            <Button x:Name="btn_novo" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                
-                Height="50" Margin="0,34,20,14" Width="130"
-                materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Cyan" BorderBrush="Cyan">
-                <TextBlock Text="NOVO" />
-            </Button>
-            <Button x:Name="btn_excluir" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                
-                Height="50" Margin="0,36,20,12" Width="130"
-                materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red">
-                <TextBlock Text="EXCLUIR" />
-            </Button>
-            <Button x:Name="btn_editar" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                
-                Height="50" Margin="0,34,20,14" Width="130"
-                materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange" Click="btn_editar_Click">
-                <TextBlock Text="EDITAR" />
-            </Button>
-
+        <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="38,310,-18,10">
             <Button x:Name="btn_cancelar" Style="{StaticResource MaterialDesignRaisedLightButton}"
                 
-                Height="50" Margin="0,34,20,14" Width="130"
+                Height="51" Margin="0,45,20,0" Width="130"
                 materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Gray" BorderBrush="Gray">
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red" VerticalAlignment="Top" Click="btn_cancelar_Click">
                 <TextBlock Text="CANCELAR" />
             </Button>
 
-            <Button x:Name="BtnSalvar"  Style="{StaticResource MaterialDesignRaisedAccentButton}" 
-                     
-                     Height="Auto" Margin="20,10" FontSize="23"
-                     ToolTip="Resource name: MaterialDesignRaisedAccentButton"
-                     Content="SALVAR" Background="Lime" BorderBrush="Lime" Width="150" Click="BtnSalvar_Click"
-            />
         </StackPanel>
-
+        <Button x:Name="BtnSalvar"  Style="{StaticResource MaterialDesignRaisedAccentButton}" 
+                     
+                     Height="auto" Margin="630,335,20,10" FontSize="23"
+                     ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                     Content="SALVAR" Background="Lime" BorderBrush="Lime" Click="BtnSalvar_Click"
+            />
         <TextBlock Margin="10,65,722,324" FontSize="15"><Run Text="Nome"/><Run Text=" "/><Run Text=":"/></TextBlock>
         <TextBox x:Name="Nome" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="72,57,412,332"/>
         <TextBlock Margin="12,18,720,371" FontSize="15" Text="ID"/>

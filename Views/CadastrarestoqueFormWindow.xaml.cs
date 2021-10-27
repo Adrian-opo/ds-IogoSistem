@@ -26,18 +26,23 @@ namespace IogoSistem.Views
 
         private Produto _pdt;
         private int _id;
+      
+
+
+
         public CadastrarestoqueFormWindow()
         {
             InitializeComponent();
             Loaded += CadastrarestoqueFormWindow_Loaded;
         }
 
+        
+       
         private void CadastrarestoqueFormWindow_Loaded(object sender, RoutedEventArgs e)
         {
 
             _pdt = new Produto();
-            if (_id > 0)
-                fillForm();
+           
             LoadDataGrid();
         }
 
@@ -48,9 +53,9 @@ namespace IogoSistem.Views
             try
             {
 
-                _produto = new ProdutoDAO().List();
-
-                dataGridCadatrarestoque.ItemsSource = _produto;
+                _produto = new CadastrarEstoqueDAO().List();
+                var dao = new CadastrarEstoqueDAO();
+                dataGridCadatrarestoque.ItemsSource = dao.List();
 
 
 
@@ -70,13 +75,34 @@ namespace IogoSistem.Views
             LoadDataGrid();
         }
 
-        private void BtnUpdate_Click(object sender, RoutedEventArgs e)
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-            var userselected = dataGridCadatrarestoque.SelectedItem as Fornecedor;
+            var produtoselected = dataGridCadatrarestoque.SelectedItem as Produto;
+            _id = produtoselected.Id;
 
-            var window = new FornecedorFormWindow(userselected.Id);
-            window.ShowDialog();
-            LoadDataGrid();
+
+
+            try
+            {
+                var dao = new CadastrarEstoqueDAO();
+
+                _pdt = dao.GetById(_id);
+                
+
+                TBquantidade.Text = _pdt.Estoque.ToString();
+
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+
 
         }
 
@@ -91,14 +117,8 @@ namespace IogoSistem.Views
                 var dao = new CadastrarEstoqueDAO();
                 var text = "Atualizado";
 
-                if (_pdt.Id == 0)
-                {
-                    text = "cadastrado";
-                    dao.Insert(_pdt);
-                    CloseFormVerify();
-                }
-                else
-                    dao.Update(_pdt);
+                dao.Update(_pdt);
+                _pdt.Id = 0;
 
 
 
@@ -129,6 +149,8 @@ namespace IogoSistem.Views
 
         private void BtnSalvar_Click(object sender, RoutedEventArgs e)
         {
+
+
             _pdt.Estoque = int.Parse(TBquantidade.Text);
 
             SaveData();
@@ -142,7 +164,7 @@ namespace IogoSistem.Views
             try
             {
                 var dao = new CadastrarEstoqueDAO();
-           
+                _pdt = dao.GetById(_id);
 
 
                 TBquantidade.Text = _pdt.Estoque.ToString();
@@ -181,28 +203,14 @@ namespace IogoSistem.Views
             var filterlist = _produto.Where(i => i.Nome.ToLower().Contains(text));
             dataGridCadatrarestoque.ItemsSource = filterlist;
 
-            try
-            {
-                var dao = new CadastrarEstoqueDAO();
+            
 
 
+        }
 
-                TBquantidade.Text = _pdt.Estoque.ToString();
-
-
-
-
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-
-
-
-
+        private void cancelar(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
     }

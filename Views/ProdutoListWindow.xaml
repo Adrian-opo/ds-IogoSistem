@@ -59,7 +59,7 @@
 
                     <DataGridTextColumn Header="Preco Venda" Binding="{Binding Valor_Produto}" />
                     <DataGridTextColumn Header="Qtd Estoque" Binding="{Binding Estoque}" />
-                    <DataGridTextColumn Header="Descrição" Binding="{Binding Descricão}" />
+                    <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}" />
                     <DataGridTemplateColumn Header="Ações">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

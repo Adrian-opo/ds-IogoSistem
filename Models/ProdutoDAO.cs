@@ -103,8 +103,7 @@ namespace IogoSistem.Models
 
                 var result = query.ExecuteNonQuery();
 
-                if (result == 0)
-                    throw new Exception("O registro não foi inserido, tu é burro");
+              
 
             }
             catch (Exception e)
