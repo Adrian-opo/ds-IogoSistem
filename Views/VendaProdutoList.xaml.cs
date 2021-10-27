@@ -60,7 +60,7 @@ namespace IogoSistem.Views
             }
 
             if (ProdutosSelecionados.Count == 0)
-                MessageBox.Show("Nnenhum Produto Foi Selecionado!", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Nenhum Produto Foi Selecionado!", "", MessageBoxButton.OK, MessageBoxImage.Information);
 
             this.Close();
 

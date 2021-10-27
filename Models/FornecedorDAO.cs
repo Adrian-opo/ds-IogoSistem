@@ -197,7 +197,7 @@ namespace IogoSistem.Models
                 query.Parameters.AddWithValue("@celular", t.Celular);
                 query.Parameters.AddWithValue("@email", t.Email);
                 query.Parameters.AddWithValue("@produtoFornecido", t.ProdutoFornecido);
-                query.Parameters.AddWithValue("@Complemento", t.Complemento);
+                query.Parameters.AddWithValue("@complemento", t.Complemento);
 
                 query.Parameters.AddWithValue("@enderecoId", enderecoID);
 

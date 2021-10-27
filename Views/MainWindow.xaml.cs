@@ -149,7 +149,8 @@ namespace IogoSistem.Views
 
         private void Menu_Button_Click(object sender, RoutedEventArgs e)
         {
-        
+           
+
             string nome;
             if (sender is MenuItem)
             {

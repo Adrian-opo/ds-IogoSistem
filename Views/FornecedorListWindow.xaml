@@ -22,28 +22,13 @@
             <RowDefinition Height="278.4"/>
             <RowDefinition Height="175.2"/>
         </Grid.RowDefinitions>
-        <StackPanel  Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="16,20,16.2,19.6" Width="811">
-            <TextBlock Text="Consultar por:"  Margin="0 10 10 0" FontSize="21"/>
-            <ComboBox x:Name="Cmbconsultarfor"   Width="670" 
-                       Padding="5" FontSize="17"
-                      Style="{StaticResource MaterialDesignOutlinedComboBox}">
-
-
-                <ComboBoxItem Content="Nome" />
-                <ComboBoxItem Content="CPF" />
-                <ComboBoxItem Content="CNPJ" />
-
-
-            </ComboBox>
-        </StackPanel>
-
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
 
             <TextBox  x:Name="NomePesquisar" Margin="0 17 20 15" Width="740" materialDesign:HintAssist.Hint="Fornecedor a ser pesquisado" 
                       materialDesign:HintAssist.Background="#d3ecff" Padding="5" FontSize="17" 
                       Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="{x:Null}" />
-            <Button Height="35" Margin="0,18">
+            <Button x:Name="BtnPesquisar" Height="35" Margin="0,18">
                 <materialDesign:PackIcon Kind="Magnify" />
             </Button>
 

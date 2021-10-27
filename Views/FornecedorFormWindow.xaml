@@ -104,38 +104,7 @@
             <TextBox x:Name="recebe_complemento" Padding="1" FontSize="17" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10" Width="647"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" Margin="10,10,10,10">
-            <Button x:Name="btn_novo" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                
-                Height="50" Margin="0 10 20 10" Width="130"
-                materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Cyan" BorderBrush="Cyan">
-                <TextBlock Text="NOVO" />
-            </Button>
-
-            <Button x:Name="btn_excluir" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                
-                Height="50" Margin="0 10 20 10" Width="130"
-                materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Red" BorderBrush="Red">
-                <TextBlock Text="EXCLUIR" />
-            </Button>
-
-            <Button x:Name="btn_editar" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                
-                Height="50" Margin="0 10 20 10" Width="130"
-                materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange">
-                <TextBlock Text="EDITAR" />
-            </Button>
-
-            <Button x:Name="btn_cancelar" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                
-                Height="50" Margin="0 10 20 10" Width="130"
-                materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Gray" BorderBrush="Gray">
-                <TextBlock Text="CANCELAR" />
-            </Button>
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Margin="20,30,20,20">
 
             <Button x:Name="BtnSalvar"  Style="{StaticResource MaterialDesignRaisedAccentButton}" 
                      
