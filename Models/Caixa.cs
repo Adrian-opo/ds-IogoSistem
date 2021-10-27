@@ -26,7 +26,7 @@ namespace IogoSistem.Models
 
         public Caixa caixa { get; set; }
 
-        public int Id { get; internal set; }
+        public int id_caixa { get; internal set; }
 
         internal void ShowDialog()
         {

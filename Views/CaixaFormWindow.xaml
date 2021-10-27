@@ -24,10 +24,10 @@
 
         <Label x:Name="aberturaefechamento" Content="Abertura e fechamento" HorizontalAlignment="Left" Height="39" Margin="18,24,0,0" VerticalAlignment="Top" Width="300" FontSize="25" FontWeight="Bold"/>
         <Label Content="Número do Caixa:" FontSize="20" HorizontalAlignment="Left" Margin="39,94,0,0" VerticalAlignment="Top"/>
-        <Label Content="Observações:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" RenderTransformOrigin="2.1,0.866" Margin="503,10,163,276" Width="128" Grid.Row="2" Height="45"/>
+        <Label Content="Observações:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" RenderTransformOrigin="2.1,0.866" Margin="525,15,141,321" Width="128" Grid.Row="1" Height="45" Grid.RowSpan="2"/>
         <TextBox x:Name="txt_observacoes" Background="White" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Top"       
-                Height="180" FontSize="17" Margin="0,55,50,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Right" Width="241" Grid.Row="2" TextChanged="txt_observacoes_TextChanged"/>
-        <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Background="Lime" BorderBrush="Lime" Content="Salvar" HorizontalAlignment="Left" Margin="582,239,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+                Height="180" FontSize="17" Margin="0,10,28,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Right" Width="241" Grid.Row="2" TextChanged="txt_observacoes_TextChanged"/>
+        <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Background="Lime" BorderBrush="Lime" Content="Salvar" HorizontalAlignment="Left" Margin="604,240,0,0" Grid.Row="2" VerticalAlignment="Top" Width="94" Click="Button_Click" Height="40"/>
         <Label Content="Data de abertura:" FontSize="20" HorizontalAlignment="Left" Margin="40,163,0,0" VerticalAlignment="Top"/>
         <wpftool:MaskedTextBox  Mask="00/00/0000" x:Name="wpftooldataabertura" Padding="5" FontSize="20"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="206,157,489,45" RenderTransformOrigin="0.5,0.5" TextChanged="wpftooldataabertura_TextChanged">
             <wpftool:MaskedTextBox.RenderTransform>

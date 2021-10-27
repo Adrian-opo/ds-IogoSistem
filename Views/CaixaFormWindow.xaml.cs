@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,7 +54,16 @@ namespace IogoSistem.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Salvo com sucesso");
+            // MessageBox.Show("Salvo com sucesso");
+            try {                
+                new CaixaDAO().Insert(new Caixa());
+                MessageBox.Show("Salvo com sucesso");
+            }
+            catch (Exception err){
+                MessageBox.Show(err.ToString());
+            }
+
+          
         }
 
         private void txt_Tipo_TextChanged(object sender, TextChangedEventArgs e)
@@ -93,6 +103,11 @@ namespace IogoSistem.Views
 
         private void wpftooldataabertura_TextChanged(object sender, TextChangedEventArgs e)
         {
+            // MessageBox.Show("sender ->>>>>>>>>> ${sender}");
+            // MessageBox.Show("event ->>>>>>>>>>>", e.ToString());var user = new UsuarioDAO().Login(usuario, senha);
+            //var caixa = new CaixaDAO().GetById(1);
+            // Console.WriteLine("wpftooldataabertura ->>>>>>>>>>" + wpftooldataabertura);
+           // Console.WriteLine("caixa ->>>>>>>>>>" + caixa);
 
         }
 

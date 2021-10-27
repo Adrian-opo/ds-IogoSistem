@@ -47,7 +47,7 @@ namespace IogoSistem.Models
                 while (reader.Read())
                 {
                     caixa = new Caixa();
-                    caixa.Id = reader.GetInt32("id_caixa");
+                    caixa.id_caixa = reader.GetInt32("id_caixa");
                     // caixa.DataFechamento_cai = reader.GetString("dataFechamento_cai");
                     // caixa.DataAbertura_cai = reader.GetString("dataAbertura_cai");
 
@@ -71,11 +71,35 @@ namespace IogoSistem.Models
             try
             {
                 var query = conn.Query();
-                query.CommandText = "INSERT INTO caixa (dataFechamento_cai, dataAbertura_cai ) " +
-                    "VALUES (@DataFechamento, @DataAbertura)";
+                
+                query.Parameters.AddWithValue("@DataFechamento", "2020-10-20");
+                query.Parameters.AddWithValue("@DataAbertura", "2019-10-20");
+                query.Parameters.AddWithValue("@SaldoAnterior","100,00");
+                query.Parameters.AddWithValue("@ValorDebito", "100,00");
+                query.Parameters.AddWithValue("@Observacoes", "Vazio");
+                query.Parameters.AddWithValue("@ValorCredito", "100,00");
+                query.Parameters.AddWithValue("@SaldoCaixa", "100.00");
+                query.CommandText = "INSERT INTO caixa (dataFechamento_cai, dataAbertura_cai, saldoAnterior_cai, valorDebito_cai, observações_cai, valorCredito_cai, saldo_cai ) " +
+                    "VALUES (@DataFechamento, @DataAbertura,@SaldoAnterior,@ValorDebito,@Observacoes,@ValorCredito,@SaldoCaixa)";
 
-                query.Parameters.AddWithValue("@DataFechamento", t.DataFechamento_cai.ToString("yyyy-MMM-dd"));
-                query.Parameters.AddWithValue("@DataAbertura", t.DataAbertura_cai.ToString("yyyy-MMM-dd"));
+                // query.Parameters.AddWithValue("@DataFechamento", t.DataFechamento_cai.ToString("yyyy-MMM-dd"));
+                // query.Parameters.AddWithValue("@DataAbertura", t.dataAbertura_cai.ToString("yyyy-MMM-dd"));
+                // query.Parameters.AddWithValue("@SaldoAnterior", t.saldoAnterior_cai.ToString());
+                //query.Parameters.AddWithValue("@ValorDebito", t.valorDebito_cai.ToString());
+                //   query.Parameters.AddWithValue("@Observacoes", t.observações_cai.ToString());
+                //  query.Parameters.AddWithValue("@ValorCredito", t.valorCredito_cai.ToString());
+                //  query.Parameters.AddWithValue("@SaldoCaixa", t.saldo_cai.ToString());
+                //query.Parameters.AddWithValue("@ID", t.id_caixa.ToString());
+
+                Console.WriteLine("query.ToString() ->>>>>>>>>>" + query.ToString());
+                // query.Parameters.AddWithValue("@DataFechamento", "2020-10-20");
+                // query.Parameters.AddWithValue("@DataAbertura", "2019-10-20");
+                // query.Parameters.AddWithValue("@SaldoAnterior","100,00");
+                // query.Parameters.AddWithValue("@ValorDebito", "100,00");
+                // query.Parameters.AddWithValue("@Observacoes", "Vazio");
+                // query.Parameters.AddWithValue("@ValorCredito", "100,00");
+                // query.Parameters.AddWithValue("@SaldoCaixa", "100,00");
+                // query.Parameters.AddWithValue("@ID", "0");
 
                 var result = query.ExecuteNonQuery();
 
@@ -86,8 +110,9 @@ namespace IogoSistem.Models
 
             }
             catch (Exception e)
-            {
-                throw e;
+            {   
+                Console.WriteLine("Erroooou ->>>>>>>>>>" + e);
+                // throw e;
             }
 
             finally
