@@ -20,53 +20,39 @@
 
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="67"/>
+            <RowDefinition Height="62.4"/>
+            <RowDefinition Height="84.8"/>
             <RowDefinition Height="343"/>
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
 
-        <StackPanel  Grid.Row="0" Orientation="Horizontal" Height="50" HorizontalAlignment="Center">
-            <TextBlock Text="Consultar por:"  Margin="10 10 10 0" FontSize="21"/>
-            <ComboBox x:Name="comboboxConsultar"   Width="670" Margin="0 0 10 0"
-                       Padding="5" FontSize="17"
-                      Style="{StaticResource MaterialDesignOutlinedComboBox}" >
+        <StackPanel  Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="442,8,441.2,8.4" Width="0"/>
 
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="38,7.6,37.2,342.4" Grid.RowSpan="2" Width="808">
 
-                <DataGridTextColumn Header="Nome de Funcionario" Binding="{Binding Nome}" />
-                <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
-            </ComboBox>
-        </StackPanel>
-
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-
-            <TextBox  x:Name="nameuser" Margin="0 17 20 15" Width="740" materialDesign:HintAssist.Hint="Pesquisar" 
+            <TextBox  x:Name="nameuser" Margin="0,-7,20,38.6" Width="740" materialDesign:HintAssist.Hint="Pesquisar" 
                       materialDesign:HintAssist.Background="#d3ecff" Padding="5" FontSize="17" 
-                      Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="{x:Null}" />
+                      Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="{x:Null}" TextChanged="nameuser_TextChanged" />
 
-            <Button Height="35" >
+            <Button Height="35" Margin="0,-3,0,45.6" >
                 <materialDesign:PackIcon Kind="Magnify" />
             </Button>
 
         </StackPanel>
 
 
-        <Grid Grid.Row="2"  HorizontalAlignment="Center" >
+        <Grid Grid.Row="2"  HorizontalAlignment="Center" Margin="0,1.8,0.2,69.8" Grid.RowSpan="2" Width="883" >
 
             <DataGrid  CanUserAddRows="False" CanUserDeleteRows="False"  
                        x:Name="dataGridConsultarfuncionario"  AutoGenerateColumns="False" 
-                       AlternatingRowBackground="LightBlue" AlternationCount="2" >
+                       AlternatingRowBackground="LightBlue" AlternationCount="2" Margin="0,-12,0,12" >
                 <DataGrid.Columns>
 
-
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
                     <DataGridTextColumn Header="Nome de funcionario" Binding="{Binding Nome}" />
                     <DataGridTextColumn Header="CPF" Binding="{Binding CPF}" />
                     <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
-                    <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}" />
-                    <DataGridTextColumn Header="Endereco" Binding="{Binding Endereco}" />
-                    <DataGridTextColumn Header="DataNascimento" Binding="{Binding DataNascimento}" />
                     <DataGridTextColumn Header="RG" Binding="{Binding RG}" />
-                    <DataGridTextColumn Header="PCD" Binding="{Binding PCD}" />
                     <DataGridTextColumn Header="NumeroCarteira" Binding="{Binding NumeroCarteira}" />
                     <DataGridTextColumn Header="Salario" Binding="{Binding Salario}" />
                     <DataGridTextColumn Header="DataAdimissao" Binding="{Binding DataAdimissao}" />
@@ -100,20 +86,20 @@
 
 
 
-        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="146,1.6,146.2,-1.2" Width="591">
             <Button x:Name="BtnExcluirPesquisa" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                Height="50" Margin="20,5,250,5" Width="150" BorderBrush="#FFFF4C4C"
+                Height="50" Margin="20,4,250,15.6" Width="150" BorderBrush="Orange"
                     materialDesign:ButtonAssist.CornerRadius="25"
-               ToolTip="MaterialDesignRaisedLightButton with Round Corners"  Background="#FFFF4C4C" >
-                <TextBlock Text="Excluir" />
+               ToolTip="MaterialDesignRaisedLightButton with Round Corners"  Background="Orange">
+                <TextBlock Text="Cancelar" />
             </Button>
 
             <Button x:Name="BtnEditarFuncionario" Style="{StaticResource MaterialDesignRaisedLightButton}"
                 Click="Add_novo_click"
-                Height="50" Margin="0,0,20,10.2" Width="150"
+                Height="50" Margin="0,0,20,15.6" Width="150"
                 materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange" VerticalAlignment="Bottom" >
-                <TextBlock Text="virar novo" />
+                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Lime" BorderBrush="Lime" VerticalAlignment="Bottom" >
+                <TextBlock Text="Novo" />
             </Button>
         </StackPanel>
     </Grid>
