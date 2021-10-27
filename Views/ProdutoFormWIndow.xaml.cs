@@ -149,5 +149,10 @@ namespace IogoSistem.Views
         {
             this.Close();
         }
+
+        private void BtnLimpar_Click(object sender, RoutedEventArgs e)
+        {
+            ClearInputs();
+        }
     }
 }
