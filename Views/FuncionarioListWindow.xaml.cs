@@ -65,7 +65,6 @@ namespace IogoSistem.Views
             window.ShowDialog();
             LoadDataGrid();
 
-
         }
 
         private void BtnDelete_fun_Click(object sender, RoutedEventArgs e)
@@ -87,10 +86,6 @@ namespace IogoSistem.Views
             {
                 MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
-
-        private void nameuser_TextChanged(object sender, TextChangedEventArgs e)
-        {
         }
     }
 }

@@ -46,57 +46,29 @@ namespace IogoSistem.Views
             if (_id > 0)
                 FillForm();
 
+
         }
 
         private void BtnSalvar_Click(object sender, RoutedEventArgs e)
         {
 
-            if (int.TryParse(recebe_id.Text, out int id))
-                _funcionario.Id = id;
-
-
             _funcionario.Nome = txtNome.Text;
             _funcionario.CPF = TxtBox_RecebeCPF.Text;
             _funcionario.Email = recebe_email.Text;
             _funcionario.Telefone = recebe_telefone.Text;
-            //  _funcionario.Endereco = recebe_Endereco.Text;
+            _funcionario.Endereco = recebe_Endereco.Text;
             _funcionario.RG = recebe_rg.Text;
-
-            if (recebe_PCD.Text == "sim")
-
-                _funcionario.PCD = true;
-            else
-                _funcionario.PCD = false;
-
-
-
-
+            _funcionario.PCD = recebe_PCD.Text;
             _funcionario.NumeroCarteira = recebe_NCarteira.Text;
             _funcionario.Salario = recebe_Tipo_Salario.Text;
             _funcionario.SetorTrabalho = recebe_SetorTrabalho.Text;
             _funcionario.CargaHoraria = recebe_CargaHoraria.Text;
 
-            _funcionario.Endereco = new Endereco();
-
-            _funcionario.Endereco.Lagradouro = recebe_rua.Text;
-
-            if (int.TryParse(recebe_Numero.Text, out int numero))
-                _funcionario.Endereco.Numero = numero;
-
-            _funcionario.Endereco.UF = recebe_uf.Text;
-            _funcionario.Endereco.Bairro = recebe_bairro.Text;
-            _funcionario.Endereco.Cidade = recebe_cidade.Text;
-            _funcionario.Endereco.CEP = recebe_cep.Text;
-            _funcionario.Endereco.Pais = recebe_pais.Text;
-
-
-            //_funcionario.Endereco.Numero = 
-
             if (!recebe_DataNasc.Text.Equals(""))
                 _funcionario.DataNascimento = Convert.ToDateTime(recebe_DataNasc.Text);
 
 
-            if (!recebe_DataAdim.Text.Equals(""))
+            if (recebe_DataAdim.Text.Equals(""))
                 _funcionario.DataAdimissao = Convert.ToDateTime(recebe_DataAdim.Text);
 
 
@@ -160,44 +132,25 @@ namespace IogoSistem.Views
 
             try
             {
-
                 var dao = new FuncionarioDAO();
                 _funcionario = dao.GetById(_id);
-
 
                 recebe_id.Text = _funcionario.Id.ToString();
                 txtNome.Text = _funcionario.Nome;
                 TxtBox_RecebeCPF.Text = _funcionario.CPF;
                 recebe_email.Text = _funcionario.Email;
                 recebe_telefone.Text = _funcionario.Telefone;
-                // recebe_Endereco.Text = _funcionario.Endereco;
-                recebe_DataNasc.Text = _funcionario.DataNascimento?.ToString("yyyy-mm-dd");
+                recebe_Endereco.Text = _funcionario.Endereco;
+                recebe_DataNasc.Text = _funcionario.DataAdimissao?.ToString("yyyy-mm-dd");
                 recebe_rg.Text = _funcionario.RG;
-
-                if (_funcionario.PCD == true)
-
-                    recebe_PCD.Text = "Sim";
-                else
-                    recebe_PCD.Text = "Não";
-
-
+                recebe_PCD.Text = _funcionario.PCD;
                 recebe_NCarteira.Text = _funcionario.NumeroCarteira;
                 recebe_Tipo_Salario.Text = _funcionario.Salario;
                 recebe_DataAdim.Text = _funcionario.DataAdimissao?.ToString("yyyy-mm-dd");
                 recebe_SetorTrabalho.Text = _funcionario.SetorTrabalho;
                 recebe_CargaHoraria.Text = _funcionario.CargaHoraria;
 
-                if (_funcionario.Endereco != null)
-                {
-                    recebe_rua.Text = _funcionario.Endereco.Lagradouro;
-                    recebe_Numero.Text = _funcionario.Endereco.Numero.ToString();
-                    recebe_bairro.Text = _funcionario.Endereco.Bairro;
-                    recebe_pais.Text = _funcionario.Endereco.Pais;
-                    recebe_cep.Text = _funcionario.Endereco.CEP;
-                    recebe_cidade.Text = _funcionario.Endereco.Cidade;
-                    recebe_uf.Text = _funcionario.Endereco.UF;
 
-                }
             }
             catch (Exception ex)
             {
@@ -230,36 +183,22 @@ namespace IogoSistem.Views
             TxtBox_RecebeCPF.Text = "";
             recebe_email.Text = "";
             recebe_telefone.Text = "";
-            //recebe_Endereco.Text = "";
+            recebe_Endereco.Text = "";
             recebe_DataNasc.Text = null;
             recebe_rg.Text = "";
             recebe_PCD.Text = "";
             recebe_NCarteira.Text = "";
             recebe_Tipo_Salario.Text = "";
-            recebe_DataAdim.Text = null;
+            recebe_DataAdim.Text = "";
             recebe_SetorTrabalho.Text = "";
             recebe_CargaHoraria.Text = "";
-            recebe_bairro.Text = "";
-            recebe_cep.Text = "";
-            recebe_cidade.Text = "";
-            recebe_rua.Text = "";
-            recebe_Numero.Text = "";
-            recebe_uf.Text = "";
-            recebe_pais.Text = "";
+
             //           recebe_DataAdim.DataContext = "";
 
         }
 
 
 
-        private void btn_excluir_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
 
-        private void btn_limpar_Click(object sender, RoutedEventArgs e)
-        {
-            ClearInputs();
-        }
     }
 }

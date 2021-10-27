@@ -19,11 +19,13 @@ namespace IogoSistem.Models
 
         public string Telefone { get; set; }
 
+        public string Endereco { get; set; }
+
         public DateTime? DataNascimento { get; set; }
 
         public string RG { get; set; }
 
-        public bool PCD { get; set; }
+        public string PCD { get; set; }
 
         public string NumeroCarteira { get; set; }
 
@@ -35,7 +37,7 @@ namespace IogoSistem.Models
 
         public string CargaHoraria { get; set; }
 
-        public Endereco Endereco { get; set; }
+
 
 
 
