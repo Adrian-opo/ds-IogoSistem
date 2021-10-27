@@ -10,9 +10,9 @@ namespace IogoSistem.Models
     {
 
 
-        public DateTime DataFechamento_cai { get; set; }
+        public string DataFechamento_cai { get; set; }
 
-        public DateTime DataAbertura_cai { get; set; }
+        public string DataAbertura_cai { get; set; }
 
         public string SaldoAnterior_cai { get; set; }
 
@@ -22,7 +22,7 @@ namespace IogoSistem.Models
 
         public string ValorCredito_cai { get; set; }
 
-        public double Saldo_cai { get; set; }
+        public string Saldo_cai { get; set; }
 
         public Caixa caixa { get; set; }
 
