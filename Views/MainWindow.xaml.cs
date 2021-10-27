@@ -130,6 +130,8 @@ namespace IogoSistem.Views
                     break;
                 case "MN_FI_Caixa":
                 case "Btn_Caixa":
+                    window = new CaixaFormWindow();
+                    window.ShowDialog();
                     //ABRIR TELA CAIXA
                     break;
                 case "MN_AG_AGENDA":
@@ -147,10 +149,7 @@ namespace IogoSistem.Views
 
         private void Menu_Button_Click(object sender, RoutedEventArgs e)
         {
-            Window window;
-            window = new VendaFormWindow();
-            window.ShowDialog();
-
+        
             string nome;
             if (sender is MenuItem)
             {
