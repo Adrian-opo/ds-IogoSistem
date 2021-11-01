@@ -236,10 +236,10 @@ namespace IogoSistem.Models
             try
             {
                 var query = conn.Query();
-                query.CommandText = "UPDATE funcionario SET (nome_fun = @nome, cpf_fun = @cpf, email_fun = @email, telefone_fun = @celular, dataNasciemto_fun = @datanasc, rg_fun = @rg, estado_end = @estado, deficiencia_fun = @PCD, " +
-                    "numeroCarteira_fun = @numerocarteira, tipoSalario_fun = @salario, dataAdimissão_fun = @dataadmissao, setor_fun = @setortrabalho," +
-                    " cargaHorario_fun = @cargahoraria, numero_end = @numero, rua_end = @rua, bairro_end = @bairro, cidade_end = @cidade, cep_end = @cep, uf_end = @uf, pais_end = @pais)  " +
-                    "WHERE  id_funcionario = @id";
+                query.CommandText = "UPDATE funcionario SET (nome_fun=@nome, cpf_fun=@cpf, email_fun=@email, telefone_fun=@celular, dataNasciemto_fun=@datanasc, rg_fun=@rg, estado_end=@estado, deficiencia_fun=@PCD, " +
+                    "numeroCarteira_fun=@numerocarteira, tipoSalario_fun=@salario, dataAdimissão_fun=@dataadmissao, setor_fun=@setortrabalho," +
+                    " cargaHorario_fun=@cargahoraria, numero_end=@numero, rua_end=@rua, bairro_end=@bairro, cidade_end=@cidade, cep_end=@cep, uf_end=@uf, pais_end=@pais)  " +
+                    "WHERE  id_funcionario=@id";
 
 
                 query.Parameters.AddWithValue("@nome", t.Nome);

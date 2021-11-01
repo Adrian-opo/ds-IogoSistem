@@ -22,7 +22,6 @@ namespace IogoSistem.Models
 			RuleFor(x => x.RG).NotEmpty().WithMessage("O RG é obrigatorio, favor preencher!");
 			RuleFor(x => x.CargaHoraria).NotEmpty().WithMessage("O CargaHoraria é obrigatorio, favor preencher!");
 			RuleFor(x => x.NumeroCarteira).NotEmpty().WithMessage("O NumeroCarteira é obrigatorio, favor preencher!");
-			RuleFor(x => x.PCD).NotEmpty().WithMessage("O PCD é obrigatorio, favor preencher!");
 			RuleFor(x => x.Salario).NotEmpty().WithMessage("O Salario é obrigatorio, favor preencher!");
 			RuleFor(x => x.SetorTrabalho).NotEmpty().WithMessage("O SetorTrabalho é obrigatorio, favor preencher!");
 			RuleFor(x => x.Endereco.Numero).NotEmpty().WithMessage("O numero é obrigatorio, favor preencher!");

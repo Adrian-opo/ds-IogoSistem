@@ -15,25 +15,8 @@ namespace IogoSistem.Database
         private static string port = "3306";
 
         private static string user = "root";
-
-
- 
-
-<<<<<<< Updated upstream
+         
         private static string password = "15051238";
-=======
-<<<<<<< Updated upstream
-        private static string password = "adrian123";
-=======
-<<<<<<< Updated upstream
-        private static string password = "15051238";
-=======
-        private static string password = "danilosaiter12";
->>>>>>> Stashed changes
->>>>>>> Stashed changes
->>>>>>> Stashed changes
-
-
 
         private static string dbname = "BD_iogosistem";
 

@@ -261,5 +261,9 @@ namespace IogoSistem.Views
         {
             ClearInputs();
         }
+
+        private void recebe_PCD_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+        }
     }
 }
