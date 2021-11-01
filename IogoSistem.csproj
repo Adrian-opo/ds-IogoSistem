@@ -182,6 +182,9 @@
     <Compile Include="Views\CaixaFormWindow.xaml.cs">
       <DependentUpon>CaixaFormWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CaixaListWindow.xaml.cs">
+      <DependentUpon>CaixaListWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EventoFormWindow.xaml.cs">
       <DependentUpon>EventoFormWindow.xaml</DependentUpon>
     </Compile>
@@ -224,6 +227,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CaixaFormWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CaixaListWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
