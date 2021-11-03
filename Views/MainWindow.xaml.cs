@@ -122,6 +122,8 @@ namespace IogoSistem.Views
                 //FINANCEIRO
                 case "MN_FI_Ganho":
                 case "Btn_Despesas":
+                    window = new VendaFormWindow();
+                    window.ShowDialog();
                     //ABRIR TELA GANHO
                     break;
                 case "MN_FI_Despesa":
@@ -149,7 +151,9 @@ namespace IogoSistem.Views
 
         private void Menu_Button_Click(object sender, RoutedEventArgs e)
         {
-           
+            Window window;
+            window = new VendaFormWindow();
+            window.ShowDialog();
 
             string nome;
             if (sender is MenuItem)

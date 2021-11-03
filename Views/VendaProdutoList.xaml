@@ -64,18 +64,10 @@
 
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="127,0,127,94" Width="590">
             <Button x:Name="BtnAdicionarProduto" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                Height="50" Margin="20,5,250,5" Width="150" BorderBrush="#FFFF4C4C"
+                Height="50" Margin="200,5,20,5" Width="150" BorderBrush="#FFFF4C4C"
                     materialDesign:ButtonAssist.CornerRadius="25"
-               ToolTip="MaterialDesignRaisedLightButton with Round Corners"  Background="#FFFF4C4C">
+               ToolTip="MaterialDesignRaisedLightButton with Round Corners"  Background="#FFFF4C4C" Click="BtnAdicionarProduto_Click" >
                 <TextBlock Text="Adicionar Produto" />
-            </Button>
-
-            <Button x:Name="BtnNovo" Style="{StaticResource MaterialDesignRaisedLightButton}"
-                
-                Height="50" Margin="0 5 20 5" Width="150"
-                materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedLightButton with Round Corners" Background="Orange" BorderBrush="Orange">
-                <TextBlock Text="Novo" />
             </Button>
         </StackPanel>
 

@@ -14,7 +14,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="FornecedorListWindow" Height="550" Width="850" ResizeMode="NoResize" SizeToContent="Width" WindowStartupLocation="CenterScreen">
+        Title="Consultar Fornecedor" Height="550" Width="850" ResizeMode="NoResize" SizeToContent="Width" WindowStartupLocation="CenterScreen">
     <Grid Background="#d3ecff">
         <Grid.RowDefinitions>
             <RowDefinition Height="89.6"/>

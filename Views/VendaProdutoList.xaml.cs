@@ -22,7 +22,7 @@ namespace IogoSistem.Views
     public partial class VendaProdutoList : Window
     {
         private List<Produto> _produtoList = new List<Produto>();
-        public List<Produto> ProdutosSelecionados { get; private set; }
+        public List<Produto> ProdutosSelecionados { get; private set; } = new List<Produto>();
         public VendaProdutoList()
         {
             InitializeComponent();
@@ -50,7 +50,8 @@ namespace IogoSistem.Views
         {
             var itens = dataGrid.Items;
             ProdutosSelecionados.Clear();
-            foreach(Produto produto in itens)
+
+            foreach (Produto produto in itens)
             {
                 if (produto.IsSelected)
                 {
@@ -62,6 +63,8 @@ namespace IogoSistem.Views
             if (ProdutosSelecionados.Count == 0)
                 MessageBox.Show("Nenhum Produto Foi Selecionado!", "", MessageBoxButton.OK, MessageBoxImage.Information);
 
+
+            
             this.Close();
 
         }
@@ -72,5 +75,6 @@ namespace IogoSistem.Views
             var filteredList = _produtoList.Where(i => i.Nome.ToLower().Contains(text));
             dataGrid.ItemsSource = filteredList;
         }
+
     }
 }

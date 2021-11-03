@@ -16,7 +16,7 @@ namespace IogoSistem.Database
 
         private static string user = "root";
          
-        private static string password = "15051238";
+        private static string password = "danilosaiter12";
 
         private static string dbname = "BD_iogosistem";
 
